@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VeletSolo — Velvet Solitude. Boundless Desire.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;800&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #07060a;
+    --deep: #0c0a12;
+    --surface: #12101a;
+    --surface2: #1a1626;
+    --crimson: #6b1535;
+    --crimson-bright: #9e2050;
+    --velvet: #3d1a4a;
+    --velvet-bright: #5c2870;
+    --gold: #c9a96e;
+    --gold-light: #e8cc97;
+    --rose: #c4688a;
+    --cream: #f2eae0;
+    --muted: #7a6f82;
+    --white: #faf6f2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── AGE GATE ── */
+  #age-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  #age-gate .ag-logo {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    letter-spacing: 0.3em;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--rose) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+  }
+  #age-gate .ag-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto; opacity: .5; }
+  #age-gate p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--muted);
+    max-width: 420px;
+    font-style: italic;
+  }
+  #age-gate .ag-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: var(--cream);
+    font-style: normal;
+    font-weight: 400;
+  }
+  .ag-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .ag-btn {
+    padding: 0.9rem 2.4rem;
+    border: 1px solid;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  .ag-btn-yes {
+    background: var(--crimson);
+    border-color: var(--crimson);
+    color: var(--white);
+  }
+  .ag-btn-yes:hover { background: var(--crimson-bright); border-color: var(--crimson-bright); }
+  .ag-btn-no {
+    background: transparent;
+    border-color: var(--muted);
+    color: var(--muted);
+  }
+  .ag-btn-no:hover { border-color: var(--cream); color: var(--cream); }
+  #age-gate .legal {
+    font-size: 0.65rem;
+    color: var(--muted);
+    max-width: 380px;
+    line-height: 1.6;
+    opacity: .6;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 1.4rem 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(8,6,8,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(2px);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.35em;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 40%, var(--rose) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    padding: 0.55rem 1.4rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 35%, rgba(61,26,74,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 15% 75%, rgba(107,21,53,0.2) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 50% at 85% 20%, rgba(196,104,138,0.1) 0%, transparent 50%),
+      linear-gradient(160deg, #0e0a14 0%, #07060a 45%, #0e0812 100%);
+  }
+  .hero-deco {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-deco::before {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    border: 1px solid rgba(201,169,110,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 6s ease-in-out infinite;
+  }
+  .hero-deco::after {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border: 1px solid rgba(201,169,110,0.05);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 6s ease-in-out 1.5s infinite;
+  }
+  @keyframes pulse-ring {
+    0%,100% { transform: translate(-50%,-50%) scale(1); opacity: .6; }
+    50% { transform: translate(-50%,-50%) scale(1.06); opacity: 1; }
+  }
+
+  /* Floating abstract shapes */
+  .hero-shape {
+    position: absolute;
+    pointer-events: none;
+  }
+  .shape-1 {
+    width: 320px; height: 480px;
+    right: 8vw; top: 10%;
+    background: linear-gradient(135deg, rgba(61,26,74,0.35), rgba(107,21,53,0.1));
+    clip-path: polygon(30% 0%, 100% 15%, 90% 85%, 10% 100%, 0% 40%);
+    filter: blur(1px);
+    animation: float1 8s ease-in-out infinite;
+  }
+  .shape-2 {
+    width: 200px; height: 340px;
+    left: 6vw; bottom: 15%;
+    background: linear-gradient(135deg, rgba(196,104,138,0.15), rgba(201,169,110,0.05));
+    clip-path: polygon(20% 0%, 80% 5%, 100% 50%, 75% 95%, 15% 100%, 0% 55%);
+    filter: blur(2px);
+    animation: float2 10s ease-in-out infinite;
+  }
+  @keyframes float1 {
+    0%,100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-24px) rotate(2deg); }
+  }
+  @keyframes float2 {
+    0%,100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(18px) rotate(-1.5deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 4vw;
+    max-width: 900px;
+  }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fade-up 1s 0.3s ease forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 9vw, 8rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 0.3em;
+    opacity: 0;
+    animation: fade-up 1s 0.5s ease forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold-light), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2.8rem;
+    opacity: 0;
+    animation: fade-up 1s 0.7s ease forwards;
+  }
+  .hero-line {
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 0 auto 2rem;
+    opacity: 0;
+    animation: fade-up 1s 0.9s ease forwards;
+  }
+  .hero-desc {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: rgba(240,232,218,0.6);
+    max-width: 540px;
+    margin: 0 auto 2.8rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    animation: fade-up 1s 1.1s ease forwards;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fade-up 1s 1.3s ease forwards;
+  }
+  .btn-primary {
+    padding: 1rem 2.8rem;
+    background: var(--crimson);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--crimson);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.08));
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+  .btn-primary:hover::before { transform: translateX(0); }
+  .btn-primary:hover { background: var(--crimson-bright); border-color: var(--crimson-bright); }
+  .btn-secondary {
+    padding: 1rem 2.8rem;
+    background: transparent;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(201,169,110,0.4);
+    transition: all 0.35s ease;
+  }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(201,169,110,0.06); }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fade-up 1s 1.6s ease forwards;
+  }
+  .scroll-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: scroll-bounce 2s ease-in-out infinite;
+  }
+  @keyframes scroll-bounce {
+    0%,100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.3; }
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--surface);
+    border-top: 1px solid rgba(201,169,110,0.1);
+    border-bottom: 1px solid rgba(201,169,110,0.1);
+    padding: 1.2rem 4vw;
+    overflow: hidden;
+  }
+  .trust-track {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+  .trust-icon { color: var(--gold); font-size: 0.9rem; }
+
+  /* ── STORY SECTION ── */
+  .story-section {
+    padding: 10rem 4vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .story-visual {
+    position: relative;
+  }
+  .story-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+  }
+  .story-frame-inner {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(61,26,74,0.4) 0%, rgba(107,21,53,0.2) 50%, transparent 100%),
+      linear-gradient(to bottom right, var(--surface2), var(--black));
+  }
+  /* Abstract silhouette composition */
+  .story-art {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .art-line {
+    position: absolute;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.15;
+  }
+  .art-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201,169,110,0.2);
+  }
+  .story-frame-border {
+    position: absolute;
+    inset: -1px;
+    border: 1px solid rgba(201,169,110,0.2);
+    pointer-events: none;
+  }
+  .story-frame-corner {
+    position: absolute;
+    width: 24px; height: 24px;
+  }
+  .story-frame-corner::before,
+  .story-frame-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--gold);
+  }
+  .story-frame-corner::before { width: 100%; height: 1px; top: 0; left: 0; }
+  .story-frame-corner::after { width: 1px; height: 100%; top: 0; left: 0; }
+  .corner-tl { top: -1px; left: -1px; }
+  .corner-tr { top: -1px; right: -1px; transform: scaleX(-1); }
+  .corner-bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
+  .corner-br { bottom: -1px; right: -1px; transform: scale(-1); }
+  .story-label {
+    position: absolute;
+    bottom: -1.4rem;
+    right: -1.4rem;
+    background: var(--crimson);
+    padding: 1.2rem 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--cream);
+    line-height: 1.5;
+    max-width: 180px;
+  }
+  .story-text { }
+  .section-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--crimson-bright);
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-tag::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--crimson-bright);
+  }
+  .story-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .story-heading em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold-light), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .story-body {
+    color: rgba(240,232,218,0.65);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 1.4rem;
+  }
+  .story-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--gold);
+    border-left: 2px solid var(--crimson);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    line-height: 1.6;
+  }
+
+  /* ── CATEGORIES GRID ── */
+  .categories-section {
+    padding: 8rem 4vw;
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+  }
+  .categories-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    opacity: 0.3;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+  }
+  .section-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold-light), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .section-divider {
+    width: 40px; height: 1px;
+    background: var(--gold);
+    margin: 1.5rem auto;
+    opacity: 0.5;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cat-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--deep);
+  }
+  .cat-card:first-child { grid-column: span 2; aspect-ratio: 2/1.2; }
+  .cat-card-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cat-card:hover .cat-card-bg { transform: scale(1.06); }
+
+  /* Category visual compositions */
+  .cat-bg-1 {
+    background:
+      radial-gradient(ellipse 70% 80% at 30% 60%, rgba(139,26,42,0.4), transparent 60%),
+      linear-gradient(160deg, #1a0e14 0%, #0d0810 60%, #14090e 100%);
+  }
+  .cat-bg-2 {
+    background:
+      radial-gradient(ellipse 60% 70% at 70% 30%, rgba(201,169,110,0.2), transparent 55%),
+      linear-gradient(135deg, #0c0c14 0%, #10080e 100%);
+  }
+  .cat-bg-3 {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 70%, rgba(139,26,42,0.35), transparent 55%),
+      linear-gradient(200deg, #100810 0%, #080608 100%);
+  }
+  .cat-bg-4 {
+    background:
+      radial-gradient(ellipse 60% 80% at 20% 40%, rgba(201,169,110,0.15), transparent 50%),
+      linear-gradient(170deg, #0a0a0e 0%, #10080e 100%);
+  }
+  .cat-bg-5 {
+    background:
+      radial-gradient(ellipse 70% 70% at 80% 60%, rgba(139,26,42,0.3), transparent 55%),
+      linear-gradient(145deg, #0e0810 0%, #0a0810 100%);
+  }
+
+  .cat-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--gold) 0px,
+      var(--gold) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  }
+  .cat-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,6,8,0.9) 0%, rgba(8,6,8,0.3) 50%, transparent 100%);
+    transition: background 0.4s ease;
+  }
+  .cat-card:hover .cat-overlay {
+    background: linear-gradient(to top, rgba(8,6,8,0.95) 0%, rgba(8,6,8,0.5) 60%, rgba(139,26,42,0.15) 100%);
+  }
+  .cat-deco {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; height: 120px;
+    border: 1px solid rgba(201,169,110,0.15);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+  }
+  .cat-card:hover .cat-deco {
+    width: 160px; height: 160px;
+    border-color: rgba(201,169,110,0.25);
+  }
+  .cat-deco::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(139,26,42,0.2);
+    border-radius: 50%;
+  }
+  .cat-icon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 2.2rem;
+    opacity: 0.35;
+    transition: all 0.4s ease;
+    filter: grayscale(1) brightness(2);
+  }
+  .cat-card:hover .cat-icon { opacity: 0.5; transform: translate(-50%, -65%); }
+  .cat-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2rem 1.8rem;
+  }
+  .cat-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    color: var(--crimson-bright);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .cat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+  .cat-desc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    max-width: 320px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+  }
+  .cat-card:hover .cat-desc { opacity: 1; transform: translateY(0); }
+  .cat-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.4s 0.05s ease;
+  }
+  .cat-arrow span { transition: transform 0.3s; }
+  .cat-card:hover .cat-arrow { opacity: 1; transform: translateX(0); }
+  .cat-card:hover .cat-arrow span { transform: translateX(4px); }
+
+  /* ── FEATURED PRODUCT SPOTLIGHT ── */
+  .spotlight-section {
+    padding: 10rem 4vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .spotlight-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .spotlight-card {
+    background: var(--surface);
+    padding: 1.8rem 2rem;
+    border-left: 2px solid transparent;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .spotlight-card:hover, .spotlight-card.active {
+    border-left-color: var(--crimson);
+    background: var(--surface2);
+  }
+  .sp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: rgba(201,169,110,0.15);
+    font-weight: 300;
+    line-height: 1;
+    min-width: 3rem;
+    transition: color 0.3s;
+  }
+  .spotlight-card:hover .sp-num, .spotlight-card.active .sp-num {
+    color: rgba(201,169,110,0.35);
+  }
+  .sp-info { }
+  .sp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+  }
+  .sp-sub {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .sp-badge {
+    margin-left: auto;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--crimson);
+    color: var(--crimson-bright);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .spotlight-detail {
+    position: relative;
+  }
+  .spotlight-visual {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--surface2);
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight-visual-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 40% 50%, rgba(139,26,42,0.3), transparent 60%),
+      linear-gradient(135deg, #14101a 0%, #0e0a10 100%);
+  }
+  .sv-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .sv-line {
+    position: absolute;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.1), transparent);
+    height: 1px;
+    width: 100%;
+    left: 0;
+  }
+  .sv-center-art {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .sv-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201,169,110,0.12);
+    animation: rotate-ring 20s linear infinite;
+  }
+  @keyframes rotate-ring { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .sv-icon-main {
+    font-size: 4rem;
+    opacity: 0.2;
+    position: relative;
+    z-index: 2;
+  }
+  .spotlight-price-tag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--black);
+    border: 1px solid rgba(201,169,110,0.2);
+    padding: 0.8rem 1.2rem;
+  }
+  .sp-price-from {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: block;
+  }
+  .sp-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 300;
+    display: block;
+  }
+  .spotlight-info {
+    background: var(--surface);
+    padding: 2rem 2rem;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+  .si-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .si-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.4rem;
+  }
+  .si-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+  }
+  .si-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.8rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .si-btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--crimson);
+    color: var(--white);
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .si-btn:hover { background: var(--crimson-bright); }
+
+  /* ── PHILOSOPHY / BRAND STORY ── */
+  .philosophy-section {
+    padding: 10rem 4vw;
+    background: var(--deep);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .philosophy-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 50%, rgba(61,26,74,0.2), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(107,21,53,0.15), transparent 55%);
+  }
+  .philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+  .philosophy-quote strong {
+    background: linear-gradient(135deg, var(--gold-light), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+  }
+  .philosophy-attr {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.35em;
+    color: var(--muted);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+  .philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+    margin: 5rem auto 0;
+    position: relative;
+    z-index: 1;
+  }
+  .pillar {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid rgba(201,169,110,0.1);
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .pillar:hover { border-color: rgba(201,169,110,0.25); }
+  .pillar-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+    display: block;
+  }
+  .pillar-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .pillar-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    padding: 8rem 4vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    background: var(--surface);
+    padding: 2.5rem 2rem;
+    position: relative;
+    border-top: 1px solid rgba(201,169,110,0.15);
+    transition: border-color 0.3s;
+  }
+  .testimonial-card:hover { border-top-color: rgba(201,169,110,0.4); }
+  .t-stars {
+    display: flex;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+  .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(240,232,218,0.8);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .t-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .t-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    border: 1px solid rgba(201,169,110,0.2);
+  }
+  .t-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .t-location {
+    font-size: 0.65rem;
+    color: rgba(122,111,128,0.6);
+    margin-top: 0.1rem;
+  }
+  .t-verified {
+    margin-left: auto;
+    font-size: 0.6rem;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  /* ── TRUST SECTION ── */
+  .trust-section {
+    padding: 7rem 4vw;
+    background: var(--surface);
+    border-top: 1px solid rgba(201,169,110,0.08);
+    border-bottom: 1px solid rgba(201,169,110,0.08);
+  }
+  .trust-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .trust-card {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .trust-icon-lg {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    display: block;
+  }
+  .trust-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .trust-card-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter-section {
+    padding: 9rem 4vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter-section::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(139,26,42,0.1), transparent 65%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .newsletter-content { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+  .newsletter-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--crimson-bright);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .newsletter-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold-light), var(--rose));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .newsletter-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto 1rem;
+  }
+  .newsletter-input {
+    flex: 1;
+    padding: 1rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-right: none;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .newsletter-input::placeholder { color: var(--muted); }
+  .newsletter-input:focus { border-color: rgba(201,169,110,0.5); }
+  .newsletter-btn {
+    padding: 1rem 1.6rem;
+    background: var(--crimson);
+    border: 1px solid var(--crimson);
+    color: var(--white);
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  .newsletter-btn:hover { background: var(--crimson-bright); }
+  .newsletter-disclaimer {
+    font-size: 0.65rem;
+    color: rgba(122,111,128,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid rgba(201,169,110,0.1);
+    padding: 5rem 4vw 2rem;
+  }
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand {}
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.35em;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--rose) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .social-link {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(201,169,110,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: all 0.3s;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.25s;
+    letter-spacing: 0.03em;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-legal {
+    font-size: 0.65rem;
+    color: rgba(122,111,128,0.5);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .footer-copy {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: rgba(122,111,128,0.4);
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .story-section { grid-template-columns: 1fr; gap: 3rem; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .cat-card:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+    .spotlight-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .philosophy-pillars { grid-template-columns: 1fr; gap: 1.5rem; max-width: 400px; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .cat-grid { grid-template-columns: 1fr; }
+    .cat-card:first-child { grid-column: span 1; aspect-ratio: 3/2; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-input { border-right: 1px solid rgba(201,169,110,0.2); border-bottom: none; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* Scroll reveal utility */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- AGE GATE -->
+<div id="age-gate">
+  <div class="ag-logo">VeletSolo</div>
+  <div class="ag-line"></div>
+  <p class="ag-title">This website contains adult content.</p>
+  <p>VeletSolo is an adult platform intended for individuals 18 years of age or older. By entering, you confirm you are of legal age in your jurisdiction to view mature content.</p>
+  <div class="ag-btns">
+    <button class="ag-btn ag-btn-yes" onclick="enterSite()">I Am 18+ — Enter</button>
+    <button class="ag-btn ag-btn-no" onclick="exitSite()">I Am Under 18 — Exit</button>
+  </div>
+  <p class="legal">By entering this site you agree to our Terms of Service and Privacy Policy. All products are intended for consenting adults. VeletSolo does not collect data from minors. © 2024 VeletSolo. All rights reserved.</p>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="https://veletsolo.com" class="nav-logo">VeletSolo</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#trust">Why Us</a></li>
+  </ul>
+  <a href="#collections" class="nav-cta">Shop Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-shape shape-1"></div>
+  <div class="hero-shape shape-2"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">The Courage to Know Yourself · The Grace to Feel Everything</p>
+    <h1 class="hero-title">Where Latex<br><em>Becomes</em><br>Velvet.</h1>
+    <p class="hero-subtitle">Intimacy that begins from within — private, fearless, yours alone.</p>
+    <div class="hero-line"></div>
+    <p class="hero-desc">VeletSolo is named for latex that feels like velvet against skin — and for the quiet courage it takes to face your deepest desires in private. Premium power-exchange collections, trusted by 40,000+ adults across the United States.</p>
+    <div class="hero-actions">
+      <a href="#collections" class="btn-primary">Explore Collections</a>
+      <a href="#story" class="btn-secondary">Our Philosophy</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Discover</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- TRUST MARQUEE -->
+<div class="trust-bar">
+  <div class="trust-track">
+    <div class="trust-item"><span class="trust-icon">🔒</span>Discreet Billing & Packaging</div>
+    <div class="trust-item"><span class="trust-icon">🇺🇸</span>Ships Across the US</div>
+    <div class="trust-item"><span class="trust-icon">⭐</span>40,000+ Satisfied Customers</div>
+    <div class="trust-item"><span class="trust-icon">✓</span>Body-Safe Materials Only</div>
+    <div class="trust-item"><span class="trust-icon">↩</span>30-Day Satisfaction Guarantee</div>
+    <div class="trust-item"><span class="trust-icon">🔐</span>SSL Encrypted & Secure</div>
+    <div class="trust-item"><span class="trust-icon">📦</span>Free Shipping Over $79</div>
+    <div class="trust-item"><span class="trust-icon">🌙</span>Adult 18+ Platform</div>
+    <!-- duplicate for infinite loop -->
+    <div class="trust-item"><span class="trust-icon">🔒</span>Discreet Billing & Packaging</div>
+    <div class="trust-item"><span class="trust-icon">🇺🇸</span>Ships Across the US</div>
+    <div class="trust-item"><span class="trust-icon">⭐</span>40,000+ Satisfied Customers</div>
+    <div class="trust-item"><span class="trust-icon">✓</span>Body-Safe Materials Only</div>
+    <div class="trust-item"><span class="trust-icon">↩</span>30-Day Satisfaction Guarantee</div>
+    <div class="trust-item"><span class="trust-icon">🔐</span>SSL Encrypted & Secure</div>
+    <div class="trust-item"><span class="trust-icon">📦</span>Free Shipping Over $79</div>
+    <div class="trust-item"><span class="trust-icon">🌙</span>Adult 18+ Platform</div>
+  </div>
+</div>
+
+<!-- BRAND STORY -->
+<section id="story" style="padding: 0 0 0 0;">
+  <div class="story-section">
+    <div class="story-visual reveal">
+      <div class="story-frame">
+        <div class="story-frame-inner"></div>
+        <div class="story-art">
+          <!-- Abstract geometric art representing power dynamics -->
+          <div class="art-circle" style="width:240px;height:240px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+          <div class="art-circle" style="width:160px;height:160px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(139,26,42,0.25);"></div>
+          <div class="art-circle" style="width:80px;height:80px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(201,169,110,0.4);"></div>
+          <div class="art-line" style="width:1px;height:60%;left:50%;top:20%;"></div>
+          <div class="art-line" style="width:60%;height:1px;top:50%;left:20%;background:linear-gradient(to right,transparent,rgba(201,169,110,0.12),transparent);"></div>
+          <!-- Stylized candle drip motif -->
+          <svg viewBox="0 0 200 280" style="position:absolute;width:180px;opacity:0.12;" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20 C100 20 95 60 80 90 C65 120 60 140 60 160 C60 195 77 220 100 220 C123 220 140 195 140 160 C140 140 135 120 120 90 C105 60 100 20 100 20Z" stroke="#c9a96e" stroke-width="1.5"/>
+            <circle cx="100" cy="12" r="8" stroke="#c9a96e" stroke-width="1"/>
+            <path d="M85 160 Q100 140 115 160 Q125 175 100 185 Q75 175 85 160Z" stroke="#8b1a2a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="story-frame-border"></div>
+        <div class="story-frame-corner corner-tl"></div>
+        <div class="story-frame-corner corner-tr"></div>
+        <div class="story-frame-corner corner-bl"></div>
+        <div class="story-frame-corner corner-br"></div>
+      </div>
+      <div class="story-label">"Latex that feels like velvet. Desire you finally stop hiding."<br><em style="font-size:0.7rem;color:rgba(240,232,218,0.5);">— VeletSolo</em></div>
+    </div>
+    <div class="story-text reveal reveal-delay-2">
+      <div class="section-tag">Our Story</div>
+      <h2 class="story-heading">The Name That<br><em>Holds the Secret</em></h2>
+      <p class="story-body"><strong style="color:var(--cream);font-weight:400;">Velet</strong> — a deliberate echo of velvet. Because the finest latex, worn close, feels exactly like that: impossibly smooth, second-skin warm, a luxury that exists only between you and yourself.</p>
+      <p class="story-body"><strong style="color:var(--cream);font-weight:400;">Solo</strong> — because the truest act of desire is a private one. It takes courage to look inward, to name what you want, to stop apologizing for the textures that move you.</p>
+      <blockquote class="story-quote">"VeletSolo exists for the moment before anyone else is in the room — the moment you decide to be honest with yourself."</blockquote>
+      <p class="story-body">We build for that courage. Every piece is crafted for sensation, safety, and the quiet luxury of knowing yourself completely.</p>
+      <a href="#collections" class="btn-primary" style="margin-top:1rem;display:inline-block;">View All Collections</a>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections" class="categories-section">
+  <div class="section-header reveal">
+    <div class="section-tag" style="justify-content:center;">Curated Collections</div>
+    <h2 class="section-title">Our Most <em>Coveted</em> Categories</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Explore our most-loved collections, each thoughtfully crafted for safety, sensation, and style.</p>
+  </div>
+  <div class="cat-grid">
+    <!-- Card 1 — wide, Chastity Devices -->
+    <div class="cat-card reveal">
+      <div class="cat-card-bg cat-bg-1">
+        <div class="cat-pattern"></div>
+        <!-- Decorative key SVG motif -->
+        <svg viewBox="0 0 400 220" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="110" r="55" stroke="#c9a96e" stroke-width="1.5"/>
+          <circle cx="120" cy="110" r="35" stroke="#c9a96e" stroke-width="0.75"/>
+          <line x1="170" y1="110" x2="320" y2="110" stroke="#c9a96e" stroke-width="1.5"/>
+          <line x1="280" y1="110" x2="280" y2="135" stroke="#c9a96e" stroke-width="1.5"/>
+          <line x1="300" y1="110" x2="300" y2="128" stroke="#c9a96e" stroke-width="1.5"/>
+          <line x1="320" y1="110" x2="320" y2="135" stroke="#c9a96e" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">🔑</div>
+      <div class="cat-content">
+        <div class="cat-tag">Bestseller</div>
+        <h3 class="cat-name">Chastity Devices</h3>
+        <p class="cat-desc">Stainless steel cages, adjustable belts, electronic locks, and custom-fit devices. Premium materials with surgical precision.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 2 — Latex Gear -->
+    <div class="cat-card reveal reveal-delay-1">
+      <div class="cat-card-bg cat-bg-2">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
+          <ellipse cx="100" cy="100" rx="55" ry="75" stroke="#c9a96e" stroke-width="1"/>
+          <ellipse cx="100" cy="100" rx="40" ry="60" stroke="#c9a96e" stroke-width="0.5"/>
+          <line x1="45" y1="170" x2="65" y2="230" stroke="#c9a96e" stroke-width="1"/>
+          <line x1="155" y1="170" x2="135" y2="230" stroke="#c9a96e" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">🖤</div>
+      <div class="cat-content">
+        <div class="cat-tag">Trending</div>
+        <h3 class="cat-name">Latex Gear</h3>
+        <p class="cat-desc">Catsuits, hoods, gloves, and full ensembles. Skin-tight, form-fitting latex for the Dominatrix and Rubberdoll aesthetic.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 3 — Wax Play -->
+    <div class="cat-card reveal reveal-delay-2">
+      <div class="cat-card-bg cat-bg-3">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.09;" fill="none">
+          <path d="M100 30 C100 30 90 80 75 110 C60 140 55 165 60 185 C65 205 80 218 100 218 C120 218 135 205 140 185 C145 165 140 140 125 110 C110 80 100 30 100 30Z" stroke="#8b1a2a" stroke-width="1.2"/>
+          <circle cx="100" cy="22" r="10" stroke="#c9a96e" stroke-width="1"/>
+          <path d="M70 100 Q100 80 130 100" stroke="#c9a96e" stroke-width="0.75"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">🕯️</div>
+      <div class="cat-content">
+        <div class="cat-tag">Sensory</div>
+        <h3 class="cat-name">Wax Play Candles</h3>
+        <p class="cat-desc">Low-temp aromatic candles for safe, sensuous drip play. Curated collections for every mood and skill level.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 4 — BDSM Tools -->
+    <div class="cat-card reveal reveal-delay-1">
+      <div class="cat-card-bg cat-bg-4">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none">
+          <line x1="40" y1="40" x2="160" y2="200" stroke="#c9a96e" stroke-width="1.5"/>
+          <path d="M40 40 C40 40 50 35 55 45" stroke="#c9a96e" stroke-width="1.5"/>
+          <circle cx="165" cy="205" r="12" stroke="#8b1a2a" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">⛓️</div>
+      <div class="cat-content">
+        <div class="cat-tag">Classic</div>
+        <h3 class="cat-name">BDSM Tools</h3>
+        <p class="cat-desc">Whips, cuffs, restraints, swings, and specialty furniture. Responsibly sourced and expertly crafted.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 5 — Sissy / Femme -->
+    <div class="cat-card reveal reveal-delay-2">
+      <div class="cat-card-bg cat-bg-5">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
+          <circle cx="100" cy="80" r="40" stroke="#c9a96e" stroke-width="1"/>
+          <line x1="100" y1="120" x2="100" y2="200" stroke="#c9a96e" stroke-width="1.2"/>
+          <line x1="70" y1="165" x2="130" y2="165" stroke="#c9a96e" stroke-width="1"/>
+          <path d="M80 195 L100 220 L120 195" stroke="#c9a96e" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">✨</div>
+      <div class="cat-content">
+        <div class="cat-tag">Gender Play</div>
+        <h3 class="cat-name">Femme & Sissy</h3>
+        <p class="cat-desc">Gender-fluid cosplay, feminine accessories, and role-play collections. Celebrating fluidity with style and zero judgment.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED SPOTLIGHT -->
+<section class="spotlight-section">
+  <div class="spotlight-grid">
+    <div>
+      <div class="section-tag reveal">Featured Products</div>
+      <h2 class="section-title reveal" style="text-align:left;margin-bottom:2.5rem;">Our <em>Most Loved</em><br>This Season</h2>
+      <div class="spotlight-cards">
+        <div class="spotlight-card active reveal">
+          <div class="sp-num">01</div>
+          <div class="sp-info">
+            <div class="sp-title">Stainless Steel CB Series</div>
+            <div class="sp-sub">Chastity Cage · Medical Grade Steel</div>
+          </div>
+          <div class="sp-badge">Top Seller</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-1">
+          <div class="sp-num">02</div>
+          <div class="sp-info">
+            <div class="sp-title">Low-Temp Drip Candle Set</div>
+            <div class="sp-sub">Wax Play · Aromatic Collection</div>
+          </div>
+          <div class="sp-badge">New</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-2">
+          <div class="sp-num">03</div>
+          <div class="sp-info">
+            <div class="sp-title">Full Latex Catsuit</div>
+            <div class="sp-sub">Latex Gear · Form-Fitting</div>
+          </div>
+          <div class="sp-badge">Popular</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-3">
+          <div class="sp-num">04</div>
+          <div class="sp-info">
+            <div class="sp-title">Premium Leather Cuffs Set</div>
+            <div class="sp-sub">BDSM Tools · Handcrafted</div>
+          </div>
+          <div class="sp-badge">Trending</div>
+        </div>
+      </div>
+    </div>
+    <div class="spotlight-detail reveal reveal-delay-2">
+      <div class="spotlight-visual">
+        <div class="spotlight-visual-bg"></div>
+        <div class="sv-lines">
+          <div class="sv-line" style="top:20%"></div>
+          <div class="sv-line" style="top:50%"></div>
+          <div class="sv-line" style="top:80%"></div>
+        </div>
+        <div class="sv-center-art">
+          <div class="sv-ring" style="width:200px;height:200px;"></div>
+          <div class="sv-ring" style="width:140px;height:140px;animation-duration:14s;border-color:rgba(139,26,42,0.2);animation-direction:reverse;"></div>
+          <div class="sv-icon-main">🔑</div>
+          <!-- Stylized lock SVG -->
+          <svg viewBox="0 0 120 160" style="width:90px;opacity:0.15;position:absolute;" fill="none">
+            <rect x="15" y="70" width="90" height="75" rx="6" stroke="#c9a96e" stroke-width="2"/>
+            <path d="M35 70 V48 C35 28 85 28 85 48 V70" stroke="#c9a96e" stroke-width="2"/>
+            <circle cx="60" cy="107" r="12" stroke="#8b1a2a" stroke-width="1.5"/>
+            <line x1="60" y1="119" x2="60" y2="133" stroke="#8b1a2a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="spotlight-price-tag">
+          <span class="sp-price-from">Starting From</span>
+          <span class="sp-price">$49</span>
+        </div>
+      </div>
+      <div class="spotlight-info">
+        <div class="si-name">Stainless Steel CB Series</div>
+        <div class="si-desc">Medical-grade stainless steel construction. Adjustable sizing system. Hygienic, body-safe, and built for long-term wear. Available with optional urethral insert.</div>
+        <div class="si-tags">
+          <span class="si-tag">Medical Grade</span>
+          <span class="si-tag">Body Safe</span>
+          <span class="si-tag">Adjustable Fit</span>
+          <span class="si-tag">3 Sizes</span>
+        </div>
+        <button class="si-btn" onclick="alert('Redirecting to product page...')">Add to Cart — $49</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy-section" id="philosophy">
+  <div class="section-tag reveal" style="justify-content:center;">The VeletSolo Way</div>
+  <blockquote class="philosophy-quote reveal reveal-delay-1">
+    "The most intimate thing you can do is <strong>be honest about what you want</strong> — in private, without apology, on your own skin."
+  </blockquote>
+  <p class="philosophy-attr reveal reveal-delay-2">— VeletSolo Founding Principles</p>
+  <div class="philosophy-pillars">
+    <div class="pillar reveal">
+      <span class="pillar-icon">🖤</span>
+      <div class="pillar-title">Latex. But Make It Velvet.</div>
+      <p class="pillar-text">Every latex piece is engineered for skin-close luxury — the warmth, the weight, the whisper of something that is only ever yours.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-1">
+      <span class="pillar-icon">🔒</span>
+      <div class="pillar-title">Radically Private</div>
+      <p class="pillar-text">Plain packaging. Discreet billing as "VS Commerce LLC". No judgment, no trace. What happens between you and your desires stays exactly there.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-2">
+      <span class="pillar-icon">🌹</span>
+      <div class="pillar-title">The Courage We Honor</div>
+      <p class="pillar-text">Knowing what you want — and choosing it — is brave. VeletSolo is built for that moment of honest self-recognition, and everything that follows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="trust">
+  <div class="section-header reveal" style="text-align:center;margin-bottom:4rem;">
+    <div class="section-tag" style="justify-content:center;">Verified Reviews</div>
+    <h2 class="section-title">Trusted by Our <em>Community</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The quality of the steel cage exceeded my expectations. Discreet shipping as promised — arrived in a plain brown box with no indication of contents. Will absolutely order again."</p>
+      <div class="t-author">
+        <div class="t-avatar">M</div>
+        <div>
+          <div class="t-name">Michael T.</div>
+          <div class="t-location">Austin, TX</div>
+        </div>
+        <div class="t-verified">✓ Verified</div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <p class="t-text">"I've tried several latex brands and VeletSolo is by far the most body-safe and well-crafted. The catsuit fits like a second skin. Their customer service answered all my questions with zero judgment."</p>
+      <div class="t-stars">★★★★★</div>
+      <div class="t-author">
+        <div class="t-avatar">A</div>
+        <div>
+          <div class="t-name">Alexandra R.</div>
+          <div class="t-location">Portland, OR</div>
+        </div>
+        <div class="t-verified">✓ Verified</div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The wax play candle set is beautifully packaged and smells incredible. The low-temperature formula is exactly what we needed for beginners. Fast shipping and very discreet."</p>
+      <div class="t-author">
+        <div class="t-avatar">J</div>
+        <div>
+          <div class="t-name">Jamie & Collin</div>
+          <div class="t-location">Chicago, IL</div>
+        </div>
+        <div class="t-verified">✓ Verified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST PILLARS -->
+<div class="trust-section">
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <span class="trust-icon-lg">📦</span>
+      <div class="trust-card-title">Discreet Packaging</div>
+      <p class="trust-card-text">Plain, unmarked boxes. Billing appears as "VS Commerce LLC". No external indication of contents.</p>
+    </div>
+    <div class="trust-card reveal reveal-delay-1">
+      <span class="trust-icon-lg">🧪</span>
+      <div class="trust-card-title">Body-Safe Guaranteed</div>
+      <p class="trust-card-text">All materials are FDA-compatible, phthalate-free, and dermatologically tested for extended skin contact.</p>
+    </div>
+    <div class="trust-card reveal reveal-delay-2">
+      <span class="trust-icon-lg">↩️</span>
+      <div class="trust-card-title">30-Day Returns</div>
+      <p class="trust-card-text">Not satisfied? Return unopened products within 30 days for a full refund — no questions asked.</p>
+    </div>
+    <div class="trust-card reveal reveal-delay-3">
+      <span class="trust-icon-lg">💬</span>
+      <div class="trust-card-title">Expert Support</div>
+      <p class="trust-card-text">Non-judgmental customer care available 7 days a week. We answer every question with respect.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="newsletter-content">
+    <div class="newsletter-eyebrow reveal">The Inner Circle</div>
+    <h2 class="newsletter-title reveal reveal-delay-1">Private Access.<br><em>Curated for You.</em></h2>
+    <p class="newsletter-sub reveal reveal-delay-2">New arrivals, members-only pricing, and guides on sensation, latex care, and the art of private exploration. Delivered with the same discretion we build into everything we do.</p>
+    <div class="newsletter-form reveal reveal-delay-3">
+      <input type="email" class="newsletter-input" placeholder="Your email address" />
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+    <p class="newsletter-disclaimer reveal">By subscribing you confirm you are 18+. We respect your privacy — unsubscribe anytime. No spam, ever.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">VeletSolo</span>
+      <p class="footer-tagline">"Named for latex that feels like velvet. Built for the private courage of knowing exactly who you are — and what you want."</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+        <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+        <a href="#" class="social-link" aria-label="Pinterest">PT</a>
+        <a href="#" class="social-link" aria-label="Reddit">RD</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Collections</div>
+      <ul class="footer-links">
+        <li><a href="#">Chastity Devices</a></li>
+        <li><a href="#">Latex Gear</a></li>
+        <li><a href="#">BDSM Tools</a></li>
+        <li><a href="#">Wax Play</a></li>
+        <li><a href="#">Femme & Sissy</a></li>
+        <li><a href="#">Bondage</a></li>
+        <li><a href="#">Body Art Pens</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <ul class="footer-links">
+        <li><a href="#">Shipping & Delivery</a></li>
+        <li><a href="#">Returns Policy</a></li>
+        <li><a href="#">Sizing Guides</a></li>
+        <li><a href="#">Safety Guides</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About VeletSolo</a></li>
+        <li><a href="#">Our Philosophy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Affiliates</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">
+      ⚠️ This website is intended exclusively for adults aged 18 years or older. All products are intended for use between consenting adults. VeletSolo complies with all applicable US federal and state laws. Billing appears as "VS Commerce LLC" on all statements. All imagery is artistic and non-explicit. We are not responsible for misuse of any product. Safe, sane, and consensual practices are always encouraged. veletsolo.com
+    </p>
+    <p class="footer-copy">© 2025 VeletSolo · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  // Age gate
+  function enterSite() {
+    document.getElementById('age-gate').style.opacity = '0';
+    document.getElementById('age-gate').style.transition = 'opacity 0.6s ease';
+    setTimeout(() => { document.getElementById('age-gate').style.display = 'none'; }, 600);
+  }
+  function exitSite() {
+    window.location.href = 'https://www.google.com';
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Spotlight cards interaction
+  const spCards = document.querySelectorAll('.spotlight-card');
+  const icons = ['🔑', '🕯️', '🖤', '⛓️'];
+  const names = ['Stainless Steel CB Series', 'Low-Temp Drip Candle Set', 'Full Latex Catsuit', 'Premium Leather Cuffs Set'];
+  const descs = [
+    'Medical-grade stainless steel construction. Adjustable sizing system. Hygienic, body-safe, and built for long-term wear. Available with optional urethral insert.',
+    'Hand-poured soy-blend candles. Low melt point (122°F) ensures safe, sensual drip play. Infused with therapeutic-grade aromatics for ambiance.',
+    'Premium latex sheeting, 0.4mm thickness. Available in 12 colors. Full-body form-fitting silhouette. Includes talc bag and care instructions.',
+    'Handcrafted vegetable-tanned leather. Reinforced D-rings. Adjustable wrist and ankle sizing. Smooth suede lining for prolonged comfort.'
+  ];
+  const prices = ['$49', '$34', '$189', '$65'];
+  const tags = [
+    ['Medical Grade', 'Body Safe', 'Adjustable Fit', '3 Sizes'],
+    ['Low-Temp', 'Aromatic', 'Beginner Safe', 'Set of 4'],
+    ['0.4mm Latex', '12 Colors', 'Full Body', 'Unisex'],
+    ['Handcrafted', 'Adjustable', 'Suede Lined', 'Set of 4']
+  ];
+
+  spCards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      spCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      document.querySelector('.sv-icon-main').textContent = icons[i];
+      document.querySelector('.si-name').textContent = names[i];
+      document.querySelector('.si-desc').textContent = descs[i];
+      document.querySelector('.sp-price').textContent = prices[i];
+      const tagsEl = document.querySelector('.si-tags');
+      tagsEl.innerHTML = tags[i].map(t => `<span class="si-tag">${t}</span>`).join('');
+      document.querySelector('.si-btn').textContent = `Add to Cart — ${prices[i]}`;
+    });
+  });
+</script>
+</body>
+</html>
