@@ -1709,6 +1709,177 @@
     text-transform: uppercase;
   }
 
+  /* ── FAQ SECTION ── */
+  .faq-section {
+    padding: 9rem 4vw;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .faq-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.25), transparent);
+  }
+  .faq-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,169,110,0.25), transparent);
+  }
+  .faq-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(201,169,110,0.1);
+    position: relative;
+  }
+  .faq-item:first-child {
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 2rem 3.5rem 2rem 0;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .faq-question:hover { background: rgba(201,169,110,0.03); }
+  .faq-q-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(201,169,110,0.3);
+    font-weight: 300;
+    line-height: 1.6;
+    min-width: 2rem;
+    flex-shrink: 0;
+    transition: color 0.3s;
+  }
+  .faq-item.open .faq-q-num {
+    color: var(--rose);
+  }
+  .faq-q-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.5;
+    flex: 1;
+    transition: color 0.3s;
+  }
+  .faq-item.open .faq-q-text {
+    color: var(--white);
+  }
+  .faq-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: var(--gold);
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+  .faq-item.open .faq-icon {
+    background: var(--crimson);
+    border-color: var(--crimson);
+    color: var(--white);
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .faq-item.open .faq-answer {
+    grid-template-rows: 1fr;
+  }
+  .faq-answer-inner {
+    overflow: hidden;
+  }
+  .faq-answer-content {
+    padding: 0 0 2rem 3.5rem;
+    font-size: 0.9rem;
+    color: rgba(240,232,218,0.65);
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+  .faq-answer-content strong {
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .faq-answer-content a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,169,110,0.3);
+    transition: border-color 0.25s;
+  }
+  .faq-answer-content a:hover {
+    border-color: var(--gold);
+  }
+  .faq-answer-content .answer-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 0.8rem;
+    margin-right: 0.4rem;
+  }
+  .faq-cats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .faq-cat-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .faq-cat-btn:hover,
+  .faq-cat-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,169,110,0.05);
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .story-section { grid-template-columns: 1fr; gap: 3rem; }
@@ -1765,6 +1936,7 @@
   <ul class="nav-links">
     <li><a href="#collections">Collections</a></li>
     <li><a href="#story">Our Story</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#trust">Why Us</a></li>
   </ul>
   <a href="#collections" class="nav-cta">Shop Now</a>
@@ -2154,6 +2326,305 @@
   </div>
 </div>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-header reveal">
+      <div class="section-tag" style="justify-content:center;">Got Questions</div>
+      <h2 class="section-title">Frequently <em>Asked</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Everything you need to know — answered with the same discretion we bring to everything we do.</p>
+    </div>
+
+    <!-- Category filter buttons -->
+    <div class="faq-cats reveal">
+      <button class="faq-cat-btn active" onclick="filterFAQ('all', this)">All</button>
+      <button class="faq-cat-btn" onclick="filterFAQ('shipping', this)">Shipping & Privacy</button>
+      <button class="faq-cat-btn" onclick="filterFAQ('products', this)">Products & Safety</button>
+      <button class="faq-cat-btn" onclick="filterFAQ('orders', this)">Orders & Returns</button>
+      <button class="faq-cat-btn" onclick="filterFAQ('bdsm', this)">BDSM & Lifestyle</button>
+    </div>
+
+    <div class="faq-list" id="faq-list">
+
+      <!-- ── SHIPPING & PRIVACY ── -->
+      <div class="faq-item reveal" data-cat="shipping">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">01</span>
+          <span class="faq-q-text">Will anyone know what I ordered? How discreet is your packaging?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Completely discreet — always. Every order ships in a plain, unmarked outer box with zero indication of the contents. Your billing statement will show <strong>"VS Commerce LLC"</strong> — never VeletSolo, never any adult-related description. The return address label is equally neutral. We've designed every step of our fulfilment process so that your purchase stays entirely your business.
+              <br/><br/>
+              <span class="answer-tag">Plain Box</span>
+              <span class="answer-tag">Neutral Billing</span>
+              <span class="answer-tag">Anonymous Return Address</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="shipping">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">02</span>
+          <span class="faq-q-text">Where do you ship? How long does delivery take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              VeletSolo ships to all 50 US states. Orders are processed within <strong>1–2 business days</strong> and typically arrive within <strong>3–7 business days</strong> via standard shipping. Expedited options are available at checkout. Free standard shipping on all orders over <strong>$79</strong>.
+              <br/><br/>
+              International shipping is not currently available, but we're working on it — join our newsletter to be notified when your region opens up.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="shipping">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">03</span>
+          <span class="faq-q-text">Do you sell or share my personal data?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Never. Your personal information is used solely to process and deliver your order. We do not sell, rent, or share customer data with any third party for marketing purposes. Our site uses SSL encryption and industry-standard security protocols. You can request deletion of your account data at any time by contacting our support team.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCTS & SAFETY ── -->
+      <div class="faq-item reveal" data-cat="products">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">04</span>
+          <span class="faq-q-text">Are your products body-safe? What materials do you use?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Body safety is non-negotiable for us. Every product in our catalogue is made from <strong>body-safe, phthalate-free materials</strong> — including medical-grade stainless steel, dermatologically tested latex, food-grade silicone, and non-toxic wax blends. We vet every supplier and material for extended skin contact before listing anything on the site.
+              <br/><br/>
+              Our chastity devices are made from <strong>surgical-grade 304 stainless steel</strong>. Our latex pieces undergo dermatological testing and are free from harmful accelerators where possible. Full material specs are listed on each individual product page.
+              <br/><br/>
+              <span class="answer-tag">Medical-Grade Steel</span>
+              <span class="answer-tag">Phthalate-Free</span>
+              <span class="answer-tag">Food-Grade Silicone</span>
+              <span class="answer-tag">Dermatologically Tested Latex</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="products">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">05</span>
+          <span class="faq-q-text">How do I choose the right size for a chastity device?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Sizing is the most important factor for comfort and safety in chastity wear. Each chastity product page includes a <strong>detailed sizing guide</strong> with measurement instructions. As a general rule:
+              <br/><br/>
+              <strong>Ring size</strong> — measure the circumference at the base in its resting state, then refer to our ring size chart. Most first-time wearers size up slightly for comfort.<br/>
+              <strong>Cage length</strong> — measure flaccid length. The cage should not be so long that it causes bunching, nor so short that it causes restriction when flaccid.<br/>
+              <strong>Cage diameter</strong> — measure flaccid girth and match to the interior cage diameter.
+              <br/><br/>
+              If you're between sizes, our support team is happy to advise — no judgment, just practical help.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="products">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">06</span>
+          <span class="faq-q-text">How do I care for and clean latex products?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Proper latex care extends the life of your garment significantly. Here's the VeletSolo care guide:
+              <br/><br/>
+              <strong>Before wearing:</strong> Lightly dust the interior with talc (unscented) or use a latex dressing aid for easier wear.<br/>
+              <strong>After wearing:</strong> Hand-wash with warm water and mild soap. Avoid dishwasher or washing machine.<br/>
+              <strong>Drying:</strong> Pat dry, never wring. Allow to air-dry fully away from direct sunlight and heat.<br/>
+              <strong>Storage:</strong> Store flat or loosely folded in a dark, cool place. Never fold tightly for long periods — it can crease permanently.<br/>
+              <strong>Polishing:</strong> Apply a small amount of latex shine spray to the exterior for that iconic high-gloss look.<br/>
+              <br/>
+              Avoid contact with oils, copper, and sharp objects. Each garment ships with a printed care card.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="products">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">07</span>
+          <span class="faq-q-text">Is wax play safe for beginners? What temperature are your candles?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Yes — our wax play candles are specifically formulated with <strong>beginner safety in mind</strong>. Standard paraffin candles can reach skin temperatures of 70–80°C, which carries real burn risk. Our low-temp candles use a proprietary soy-paraffin blend that melts at a significantly lower point — delivering the sensation of drip play at <strong>around 50–55°C skin contact temperature</strong>, well within the safe threshold for most skin types.
+              <br/><br/>
+              <strong>Beginner tips:</strong> Always start from height (12–18 inches above skin), begin on less sensitive areas (back, thighs), have a bowl of cool water nearby, and never use candles near eyes, face, or genitals without appropriate experience. Our product pages include a full safety guide.
+              <br/><br/>
+              <span class="answer-tag">Low-Temp Formula</span>
+              <span class="answer-tag">~50–55°C Contact Temp</span>
+              <span class="answer-tag">Beginner Safe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ORDERS & RETURNS ── -->
+      <div class="faq-item reveal" data-cat="orders">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">08</span>
+          <span class="faq-q-text">What is your return and refund policy?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              We offer a <strong>30-day satisfaction guarantee</strong> on all unopened, unused products in their original packaging. To initiate a return, contact our support team within 30 days of delivery. Once we receive and inspect the item, refunds are processed within 5–7 business days to your original payment method.
+              <br/><br/>
+              For hygiene reasons, we are unable to accept returns on <strong>opened or used items</strong>. Latex garments that have been worn are also non-returnable. If a product arrives damaged or defective, we will replace it at no charge — please contact us within 7 days with photos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="orders">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">09</span>
+          <span class="faq-q-text">What payment methods do you accept? Is my payment information secure?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              We accept all major credit and debit cards (Visa, Mastercard, Amex, Discover), as well as PayPal and select cryptocurrency payments. All transactions are processed through <strong>PCI-DSS compliant</strong> payment gateways — we never store your card details on our servers.
+              <br/><br/>
+              Your statement will show <strong>"VS Commerce LLC"</strong>. We do not charge additional fees beyond the order total and any applicable shipping.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="orders">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">10</span>
+          <span class="faq-q-text">Can I modify or cancel my order after placing it?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Orders can be modified or cancelled within <strong>2 hours of placement</strong> by contacting our support team. After that window, orders enter fulfilment processing and cannot be changed. If your order has already shipped, our standard return policy applies once it arrives.
+              <br/><br/>
+              For urgent changes, email us at <a href="mailto:support@veletsolo.com">support@veletsolo.com</a> with your order number and we'll do our best to assist.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BDSM & LIFESTYLE ── -->
+      <div class="faq-item reveal" data-cat="bdsm">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">11</span>
+          <span class="faq-q-text">I'm completely new to BDSM. Where do I start?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Welcome — you're in the right place. VeletSolo is built for explorers at every level. Here's a simple framework to begin:
+              <br/><br/>
+              <strong>1. Know your interests.</strong> Browse our categories without pressure. Notice what draws your curiosity — sensation play (wax, restraint), power exchange (D/s dynamics), aesthetic (latex, gear), or control devices (chastity). There's no wrong answer.<br/><br/>
+              <strong>2. Start soft.</strong> Beginner-friendly entry points include our wax play candle sets, soft cuffs, and body art pens — all low-commitment ways to explore sensation before committing to more advanced gear.<br/><br/>
+              <strong>3. Learn the language.</strong> Terms like SSC (Safe, Sane, Consensual) and RACK (Risk-Aware Consensual Kink) are the ethical foundations of the community. Our blog covers these in depth.<br/><br/>
+              <strong>4. Go at your pace.</strong> Whether you're exploring solo or with a partner, VeletSolo is designed for private, judgment-free discovery. That's the whole point of our name.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="bdsm">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">12</span>
+          <span class="faq-q-text">What does "The Fourth Love" mean? What is Dom/sub (D/s) dynamic?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              "The Fourth Love" refers to a specific power-exchange dynamic where a <strong>female Dominant (Dominatrix)</strong> and a <strong>male Submissive</strong> form the primary axis of the relationship — an inversion of traditional gender-role expectations that many find deeply liberating.
+              <br/><br/>
+              In D/s dynamics, <strong>the Dominant</strong> (Dom) holds consensual authority — directing scenes, setting boundaries, and leading the dynamic. <strong>The Submissive</strong> (Sub) chooses to yield that control, finding freedom and release in the act of surrender. Both roles require enormous trust, communication, and mutual respect.
+              <br/><br/>
+              At VeletSolo, we design for both sides of this dynamic — from commanding latex gear for the Dominatrix, to precision-engineered chastity devices for the Sub. The power exchange is always between equals who chose it.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="bdsm">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">13</span>
+          <span class="faq-q-text">What is "Sissy" / gender-fluid play? Who is it for?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Sissy and gender-fluid play refers to the erotic and identity-affirming practice of males or gender-fluid individuals adopting feminine presentation, mannerisms, and clothing — often within a power-exchange context.
+              <br/><br/>
+              It encompasses a wide spectrum: from <strong>feminine cosplay and role-play</strong> (dressing, behaving, and presenting as feminine) to specific control elements like fufu clips, vaginal chastity cages, or guided gender-role scenes with a Dominant partner.
+              <br/><br/>
+              It is for <strong>anyone</strong> who is curious about femininity, gender expression, submission, or simply the aesthetic of it — regardless of sexual orientation or gender identity. Our Femme & Sissy collection is curated with zero judgment and maximum choice.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="bdsm">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">14</span>
+          <span class="faq-q-text">Is it legal to purchase BDSM products in the United States?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Yes. The purchase and private use of adult BDSM products between consenting adults is legal across the United States under federal law. All products sold by VeletSolo are legal consumer goods intended for use between adults 18 years of age or older.
+              <br/><br/>
+              Some states may have specific regulations on certain device types — we recommend familiarizing yourself with your local laws. VeletSolo complies with all applicable federal and state regulations and does not ship to jurisdictions where specific products may be restricted.
+              <br/><br/>
+              <span class="answer-tag">Legal in All 50 States</span>
+              <span class="answer-tag">Consenting Adults Only</span>
+              <span class="answer-tag">18+ Required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end faq-list -->
+
+  </div>
+</section>
+
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
   <div class="newsletter-content">
@@ -2196,11 +2667,11 @@
     <div>
       <div class="footer-col-title">Support</div>
       <ul class="footer-links">
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#">Shipping & Delivery</a></li>
         <li><a href="#">Returns Policy</a></li>
         <li><a href="#">Sizing Guides</a></li>
         <li><a href="#">Safety Guides</a></li>
-        <li><a href="#">FAQ</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div>
@@ -2277,6 +2748,33 @@
       document.querySelector('.si-btn').textContent = `Add to Cart — ${prices[i]}`;
     });
   });
+
+  // ── FAQ ACCORDION ──
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── FAQ CATEGORY FILTER ──
+  function filterFAQ(cat, btn) {
+    document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    });
+    // Re-number visible items
+    let num = 1;
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item.style.display !== 'none') {
+        const numEl = item.querySelector('.faq-q-num');
+        if (numEl) numEl.textContent = String(num).padStart(2, '0');
+        num++;
+      }
+    });
+  }
 </script>
 </body>
 </html>
