@@ -876,14 +876,65 @@
     position: relative;
     overflow: hidden;
   }
+  /* Story section background image */
+  .story-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.85;
+    transition: opacity 0.5s ease, transform 0.7s ease;
+  }
+  .story-frame:hover .story-bg-image {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+  
   .story-frame-inner {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(135deg, rgba(61,26,74,0.5) 0%, rgba(107,21,53,0.3) 50%, transparent 100%),
-      linear-gradient(to bottom right, var(--surface2), var(--black));
+      /* Velvet sheen highlight overlays */
+      radial-gradient(ellipse 80% 40% at 30% 20%, rgba(201,169,110,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 70% 80%, rgba(196,104,138,0.15) 0%, transparent 55%),
+      /* Subtle vignette for depth */
+      radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(26,24,40,0.4) 100%);
+    pointer-events: none;
   }
-  /* Abstract silhouette composition */
+  
+  /* Latex/Velvet texture overlay */
+  .story-frame-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(201,169,110,0.02) 1px,
+        transparent 2px
+      );
+    pointer-events: none;
+  }
+  
+  /* Soft glow effect */
+  .story-frame-inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 50% 30%, rgba(201,169,110,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 20% 70%, rgba(139,26,42,0.1) 0%, transparent 35%);
+    animation: velvet-shimmer 8s ease-in-out infinite;
+  }
+  
+  @keyframes velvet-shimmer {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+  /* Abstract silhouette composition - Velvet/Latex aesthetic */
   .story-art {
     position: absolute;
     inset: 0;
@@ -894,12 +945,54 @@
   .art-line {
     position: absolute;
     background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    opacity: 0.15;
+    opacity: 0.2;
+    filter: blur(0.5px);
   }
   .art-circle {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(201,169,110,0.2);
+    border: 1px solid rgba(201,169,110,0.25);
+    box-shadow: 0 0 30px rgba(201,169,110,0.05), inset 0 0 30px rgba(201,169,110,0.02);
+  }
+  
+  /* Central elegant figure silhouette */
+  .story-art::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    background: linear-gradient(
+      180deg,
+      rgba(201,169,110,0.15) 0%,
+      rgba(196,104,138,0.1) 50%,
+      rgba(107,21,53,0.15) 100%
+    );
+    border-radius: 100px 100px 60px 60px;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: figure-breathe 6s ease-in-out infinite;
+  }
+  
+  @keyframes figure-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.03); opacity: 0.7; }
+  }
+  
+  /* Decorative corner ornaments */
+  .story-art::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(201,169,110,0.1);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+      0 0 0 20px rgba(201,169,110,0.02),
+      0 0 0 40px rgba(201,169,110,0.02),
+      0 0 0 60px rgba(201,169,110,0.01);
   }
   .story-frame-border {
     position: absolute;
@@ -909,31 +1002,54 @@
   }
   .story-frame-corner {
     position: absolute;
-    width: 24px; height: 24px;
+    width: 40px; height: 40px;
   }
   .story-frame-corner::before,
   .story-frame-corner::after {
     content: '';
     position: absolute;
-    background: var(--gold);
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
   }
-  .story-frame-corner::before { width: 100%; height: 1px; top: 0; left: 0; }
-  .story-frame-corner::after { width: 1px; height: 100%; top: 0; left: 0; }
-  .corner-tl { top: -1px; left: -1px; }
-  .corner-tr { top: -1px; right: -1px; transform: scaleX(-1); }
-  .corner-bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
-  .corner-br { bottom: -1px; right: -1px; transform: scale(-1); }
+  .story-frame-corner::before { 
+    width: 100%; height: 1px; top: 0; left: 0; 
+    box-shadow: 0 0 10px rgba(201,169,110,0.5);
+  }
+  .story-frame-corner::after { 
+    width: 1px; height: 100%; top: 0; left: 0; 
+    box-shadow: 0 0 10px rgba(201,169,110,0.5);
+  }
+  .corner-tl { top: 12px; left: 12px; }
+  .corner-tr { top: 12px; right: 12px; transform: scaleX(-1); }
+  .corner-bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+  .corner-br { bottom: 12px; right: 12px; transform: scale(-1); }
+  
+  /* Inner corner accent */
+  .story-frame-corner .corner-accent {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-light), transparent);
+    opacity: 0.6;
+    top: -4px;
+    left: -4px;
+  }
   .story-label {
     position: absolute;
     bottom: -1.4rem;
     right: -1.4rem;
-    background: var(--crimson);
-    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(107,21,53,0.95), rgba(139,26,42,0.9));
+    padding: 1.4rem 1.8rem;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--cream);
-    line-height: 1.5;
+    line-height: 1.6;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,169,110,0.15);
+    box-shadow: 
+      0 10px 40px rgba(0,0,0,0.3),
+      0 0 0 1px rgba(255,255,255,0.02) inset;
     max-width: 180px;
   }
   .story-text { }
@@ -2087,26 +2203,50 @@
   <div class="story-section">
     <div class="story-visual reveal">
       <div class="story-frame">
+        <!-- Story background image - 3:4 ratio, velvet/latex aesthetic -->
+        <img src="./images/image_ourstory.png" alt="VeletSolo - Velvet and Latex Luxury" class="story-bg-image">
         <div class="story-frame-inner"></div>
         <div class="story-art">
-          <!-- Abstract geometric art representing power dynamics -->
-          <div class="art-circle" style="width:240px;height:240px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div class="art-circle" style="width:160px;height:160px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(139,26,42,0.25);"></div>
+          <!-- Abstract geometric art representing velvet/latex luxury -->
+          <!-- Outer rings -->
+          <div class="art-circle" style="width:300px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(201,169,110,0.12);"></div>
+          <div class="art-circle" style="width:260px;height:260px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(139,26,42,0.15);"></div>
+          <div class="art-circle" style="width:200px;height:200px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(201,169,110,0.2);"></div>
+          <div class="art-circle" style="width:140px;height:140px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(196,104,138,0.25);"></div>
           <div class="art-circle" style="width:80px;height:80px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(201,169,110,0.4);"></div>
-          <div class="art-line" style="width:1px;height:60%;left:50%;top:20%;"></div>
-          <div class="art-line" style="width:60%;height:1px;top:50%;left:20%;background:linear-gradient(to right,transparent,rgba(201,169,110,0.12),transparent);"></div>
-          <!-- Stylized candle drip motif -->
-          <svg viewBox="0 0 200 280" style="position:absolute;width:180px;opacity:0.12;" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 20 C100 20 95 60 80 90 C65 120 60 140 60 160 C60 195 77 220 100 220 C123 220 140 195 140 160 C140 140 135 120 120 90 C105 60 100 20 100 20Z" stroke="#c9a96e" stroke-width="1.5"/>
-            <circle cx="100" cy="12" r="8" stroke="#c9a96e" stroke-width="1"/>
-            <path d="M85 160 Q100 140 115 160 Q125 175 100 185 Q75 175 85 160Z" stroke="#8b1a2a" stroke-width="1.5"/>
+          
+          <!-- Cross lines -->
+          <div class="art-line" style="width:1px;height:70%;left:50%;top:15%;"></div>
+          <div class="art-line" style="width:50%;height:1px;top:50%;left:25%;background:linear-gradient(to right,transparent,rgba(201,169,110,0.15),transparent);"></div>
+          
+          <!-- Diagonal accents -->
+          <div style="position:absolute;width:1px;height:40%;background:linear-gradient(to bottom,transparent,rgba(139,26,42,0.2),transparent);transform:rotate(45deg);top:30%;"></div>
+          <div style="position:absolute;width:1px;height:40%;background:linear-gradient(to bottom,transparent,rgba(139,26,42,0.2),transparent);transform:rotate(-45deg);top:30%;"></div>
+          
+          <!-- Elegant flame/candle motif -->
+          <svg viewBox="0 0 200 280" style="position:absolute;width:160px;opacity:0.15;" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Flame shape -->
+            <path d="M100 30 C100 30 90 70 75 100 C60 130 55 155 60 175 C65 200 80 215 100 215 C120 215 135 200 140 175 C145 155 140 130 125 100 C110 70 100 30 100 30Z" 
+                  stroke="#c9a96e" stroke-width="1.2" fill="rgba(201,169,110,0.03)"/>
+            <!-- Inner flame -->
+            <path d="M100 60 C100 60 95 90 85 110 C75 130 72 145 75 160 C78 175 88 185 100 185 C112 185 122 175 125 160 C128 145 125 130 115 110 C105 90 100 60 100 60Z" 
+                  stroke="#c9a96e" stroke-width="0.8" opacity="0.6"/>
+            <!-- Glow center -->
+            <circle cx="100" cy="22" r="10" stroke="#c9a96e" stroke-width="1" fill="rgba(201,169,110,0.1)"/>
+            <!-- Base reflection -->
+            <ellipse cx="100" cy="235" rx="25" ry="8" stroke="#8b1a2a" stroke-width="1" opacity="0.5"/>
           </svg>
+          
+          <!-- Small sparkle accents -->
+          <div style="position:absolute;top:25%;left:35%;width:4px;height:4px;background:rgba(201,169,110,0.6);border-radius:50%;box-shadow:0 0 10px rgba(201,169,110,0.4);"></div>
+          <div style="position:absolute;top:35%;right:30%;width:3px;height:3px;background:rgba(196,104,138,0.5);border-radius:50%;box-shadow:0 0 8px rgba(196,104,138,0.3);"></div>
+          <div style="position:absolute;bottom:30%;left:40%;width:2px;height:2px;background:rgba(201,169,110,0.4);border-radius:50%;"></div>
         </div>
         <div class="story-frame-border"></div>
-        <div class="story-frame-corner corner-tl"></div>
-        <div class="story-frame-corner corner-tr"></div>
-        <div class="story-frame-corner corner-bl"></div>
-        <div class="story-frame-corner corner-br"></div>
+        <div class="story-frame-corner corner-tl"><span class="corner-accent"></span></div>
+        <div class="story-frame-corner corner-tr"><span class="corner-accent"></span></div>
+        <div class="story-frame-corner corner-bl"><span class="corner-accent"></span></div>
+        <div class="story-frame-corner corner-br"><span class="corner-accent"></span></div>
       </div>
       <div class="story-label">"Latex that feels like velvet. Desire you finally stop hiding."<br><em style="font-size:0.7rem;color:rgba(240,232,218,0.5);">— VeletSolo</em></div>
     </div>
