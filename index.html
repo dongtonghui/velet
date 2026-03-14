@@ -195,6 +195,27 @@
       "name": "Femme & Sissy Collection",
       "description": "Gender-fluid cosplay, feminine accessories, fufu clips, vaginal chastity cages, and gender role-play collections.",
       "url": "https://veletsolo.com/collections/femme-sissy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Breath Play Ropes",
+      "description": "Premium Japanese silk and nylon ropes for consensual breath play and Shibari. Soft, strong, and designed for safe exploration.",
+      "url": "https://veletsolo.com/collections/breath-play-ropes"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Breath Play Hoods",
+      "description": "Full enclosure hoods with breathable panels. Latex and spandex options for sensory deprivation and control play.",
+      "url": "https://veletsolo.com/collections/breath-play-hoods"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Custom Latex & BDSM",
+      "description": "Bespoke latex catsuits and custom BDSM gear crafted to exact measurements. Made-to-measure with premium materials.",
+      "url": "https://veletsolo.com/collections/custom-latex-bdsm"
     }
   ]
 }
@@ -310,6 +331,21 @@
         "@type": "OfferCatalog",
         "name": "Femme & Sissy Collection",
         "url": "https://veletsolo.com/collections/femme-sissy"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Breath Play Ropes",
+        "url": "https://veletsolo.com/collections/breath-play-ropes"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Breath Play Hoods",
+        "url": "https://veletsolo.com/collections/breath-play-hoods"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Custom Latex & BDSM",
+        "url": "https://veletsolo.com/collections/custom-latex-bdsm"
       }
     ]
   }
@@ -1902,6 +1938,33 @@
     .footer-bottom { flex-direction: column; text-align: center; }
   }
 
+
+  /* ── PRODUCT IMAGES ── */
+  .product-image {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.9) contrast(1.1);
+    transition: transform 0.5s ease;
+  }
+  .spotlight-visual:hover .product-image img {
+    transform: scale(1.03);
+  }
+  .product-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(8,6,8,0.8) 100%);
+    pointer-events: none;
+  }
+
   /* Scroll reveal utility */
   .reveal {
     opacity: 0;
@@ -2143,6 +2206,68 @@
         <a href="#" class="cat-arrow">Explore <span>→</span></a>
       </div>
     </div>
+    <!-- Card 6 — Breath Play Ropes -->
+    <div class="cat-card reveal reveal-delay-1">
+      <div class="cat-card-bg cat-bg-3">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
+          <path d="M50 50 Q100 100 50 150 Q100 200 150 150" stroke="#c9a96e" stroke-width="1.5" fill="none"/>
+          <path d="M150 50 Q100 100 150 150 Q100 200 50 150" stroke="#8b1a2a" stroke-width="1" fill="none"/>
+          <circle cx="100" cy="100" r="25" stroke="#c9a96e" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">🪢</div>
+      <div class="cat-content">
+        <div class="cat-tag">Breath Play</div>
+        <h3 class="cat-name">Breath Play Ropes</h3>
+        <p class="cat-desc">Premium Japanese silk and nylon ropes for consensual breath play. Soft, strong, and designed for safe exploration.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 7 — Breath Play Hoods -->
+    <div class="cat-card reveal reveal-delay-2">
+      <div class="cat-card-bg cat-bg-4">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
+          <ellipse cx="100" cy="100" rx="45" ry="55" stroke="#c9a96e" stroke-width="1"/>
+          <ellipse cx="100" cy="100" rx="30" ry="40" stroke="#8b1a2a" stroke-width="0.75"/>
+          <circle cx="85" cy="90" r="8" stroke="#c9a96e" stroke-width="0.5"/>
+          <circle cx="115" cy="90" r="8" stroke="#c9a96e" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">🎭</div>
+      <div class="cat-content">
+        <div class="cat-tag">Sensory Control</div>
+        <h3 class="cat-name">Breath Play Hoods</h3>
+        <p class="cat-desc">Full enclosure hoods with breathable panels. Latex and spandex options for sensory deprivation and control play.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
+    <!-- Card 8 — Custom Latex (wide) -->
+    <div class="cat-card reveal" style="grid-column: span 2; aspect-ratio: 2/1.2;">
+      <div class="cat-card-bg cat-bg-1">
+        <div class="cat-pattern"></div>
+        <svg viewBox="0 0 400 220" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 110 C100 70 140 50 200 50 C260 50 300 70 300 110 C300 150 260 170 200 170 C140 170 100 150 100 110Z" stroke="#c9a96e" stroke-width="1.5"/>
+          <path d="M130 110 C130 85 160 75 200 75 C240 75 270 85 270 110 C270 135 240 145 200 145 C160 145 130 135 130 110Z" stroke="#8b1a2a" stroke-width="1"/>
+          <line x1="200" y1="50" x2="200" y2="30" stroke="#c9a96e" stroke-width="1"/>
+          <line x1="185" y1="35" x2="215" y2="35" stroke="#c9a96e" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-deco"></div>
+      <div class="cat-icon">✂️</div>
+      <div class="cat-content">
+        <div class="cat-tag">Made-to-Measure</div>
+        <h3 class="cat-name">Custom Latex & BDSM Tools</h3>
+        <p class="cat-desc">Bespoke latex catsuits and custom BDSM gear crafted to your exact measurements. From concept to creation — your vision, our craftsmanship. Body-specific fitting with premium materials.</p>
+        <a href="#" class="cat-arrow">Explore <span>→</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2185,6 +2310,38 @@
           </div>
           <div class="sp-badge">Trending</div>
         </div>
+        <div class="spotlight-card reveal reveal-delay-1">
+          <div class="sp-num">05</div>
+          <div class="sp-info">
+            <div class="sp-title">Silk Breath Play Rope Set</div>
+            <div class="sp-sub">Breath Play · 10m Japanese Silk</div>
+          </div>
+          <div class="sp-badge">New</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-2">
+          <div class="sp-num">06</div>
+          <div class="sp-info">
+            <div class="sp-title">Latex Breath Play Hood</div>
+            <div class="sp-sub">Sensory · Full Enclosure</div>
+          </div>
+          <div class="sp-badge">Hot</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-3">
+          <div class="sp-num">07</div>
+          <div class="sp-info">
+            <div class="sp-title">Custom Latex Catsuit</div>
+            <div class="sp-sub">Made-to-Measure · Mirror Finish</div>
+          </div>
+          <div class="sp-badge">Custom</div>
+        </div>
+        <div class="spotlight-card reveal reveal-delay-1">
+          <div class="sp-num">08</div>
+          <div class="sp-info">
+            <div class="sp-title">Bespoke BDSM 8-Piece Set</div>
+            <div class="sp-sub">Custom Design · Premium Leather</div>
+          </div>
+          <div class="sp-badge">Bespoke</div>
+        </div>
       </div>
     </div>
     <div class="spotlight-detail reveal reveal-delay-2">
@@ -2195,21 +2352,25 @@
           <div class="sv-line" style="top:50%"></div>
           <div class="sv-line" style="top:80%"></div>
         </div>
-        <div class="sv-center-art">
+        <div class="sv-center-art" id="product-art">
           <div class="sv-ring" style="width:200px;height:200px;"></div>
           <div class="sv-ring" style="width:140px;height:140px;animation-duration:14s;border-color:rgba(139,26,42,0.2);animation-direction:reverse;"></div>
-          <div class="sv-icon-main">🔑</div>
+          <div class="sv-icon-main" id="product-icon">🔑</div>
           <!-- Stylized lock SVG -->
-          <svg viewBox="0 0 120 160" style="width:90px;opacity:0.15;position:absolute;" fill="none">
+          <svg id="product-svg" viewBox="0 0 120 160" style="width:90px;opacity:0.15;position:absolute;" fill="none">
             <rect x="15" y="70" width="90" height="75" rx="6" stroke="#c9a96e" stroke-width="2"/>
             <path d="M35 70 V48 C35 28 85 28 85 48 V70" stroke="#c9a96e" stroke-width="2"/>
             <circle cx="60" cy="107" r="12" stroke="#8b1a2a" stroke-width="1.5"/>
             <line x1="60" y1="119" x2="60" y2="133" stroke="#8b1a2a" stroke-width="1.5"/>
           </svg>
         </div>
+        <div class="product-image" id="product-image-container" style="display:none;">
+          <img id="product-img" src="" alt="Product Image">
+          <div class="product-image-overlay"></div>
+        </div>
         <div class="spotlight-price-tag">
           <span class="sp-price-from">Starting From</span>
-          <span class="sp-price">$49</span>
+          <span class="sp-price" id="product-price">$49</span>
         </div>
       </div>
       <div class="spotlight-info">
@@ -2343,6 +2504,7 @@
       <button class="faq-cat-btn" onclick="filterFAQ('products', this)">Products & Safety</button>
       <button class="faq-cat-btn" onclick="filterFAQ('orders', this)">Orders & Returns</button>
       <button class="faq-cat-btn" onclick="filterFAQ('bdsm', this)">BDSM & Lifestyle</button>
+      <button class="faq-cat-btn" onclick="filterFAQ('custom', this)">Custom Orders</button>
     </div>
 
     <div class="faq-list" id="faq-list">
@@ -2619,6 +2781,65 @@
         </div>
       </div>
 
+      <!-- ── BREATH PLAY & CUSTOM PRODUCTS ── -->
+      <div class="faq-item reveal" data-cat="products bdsm">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">15</span>
+          <span class="faq-q-text">What is breath play and is it safe?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Breath play (also known as erotic asphyxiation or breath control) is a form of edge play that involves restricting airflow for heightened sensation. At VeletSolo, we prioritize <strong>safety above all else</strong>.
+              <br/><br/>
+              Our breath play products are designed for <strong>consensual, controlled exploration</strong>:
+              <br/>
+              <strong>• Breath Play Ropes:</strong> Soft Japanese silk ropes designed for gentle pressure, not constriction. Always keep safety shears nearby.
+              <br/>
+              <strong>• Breath Play Hoods:</strong> Feature breathable panels and emergency quick-release designs. Never use alone.
+              <br/><br/>
+              <strong>Critical Safety Guidelines:</strong> Never practice breath play alone. Establish clear signals (verbal and non-verbal). Keep safety shears accessible. Avoid pressure on the front of the neck. Stop immediately if dizziness occurs.
+              <br/><br/>
+              <span class="answer-tag">Advanced Play</span>
+              <span class="answer-tag">Safety First</span>
+              <span class="answer-tag">Never Solo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" data-cat="products custom">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-q-num">16</span>
+          <span class="faq-q-text">How does the custom latex and BDSM tool ordering process work?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <div class="faq-answer-content">
+              Our <strong>made-to-measure service</strong> ensures your gear fits perfectly and matches your exact vision:
+              <br/><br/>
+              <strong>1. Submit Measurements:</strong> Use our detailed measurement guide to provide your exact dimensions. For latex, we need 12+ body measurements.
+              <br/>
+              <strong>2. Choose Your Design:</strong> Select from our catalog or submit your own design concepts. Our team will review feasibility.
+              <br/>
+              <strong>3. Material Selection:</strong> Choose thickness (0.4mm-0.6mm for latex), finish (mirror or matte), colors, and hardware options.
+              <br/>
+              <strong>4. Production:</strong> Custom latex takes 2 weeks; bespoke BDSM sets take 3 weeks. You'll receive progress updates.
+              <br/>
+              <strong>5. Delivery:</strong> Shipped in our signature discreet packaging with care instructions.
+              <br/><br/>
+              <strong>Pricing:</strong> Custom latex catsuits start at $299. Bespoke 8-piece BDSM sets start at $399. A 50% deposit is required to begin production.
+              <br/><br/>
+              <span class="answer-tag">Made-to-Measure</span>
+              <span class="answer-tag">2-3 Week Production</span>
+              <span class="answer-tag">50% Deposit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- end faq-list -->
 
@@ -2660,8 +2881,10 @@
         <li><a href="#">BDSM Tools</a></li>
         <li><a href="#">Wax Play</a></li>
         <li><a href="#">Femme & Sissy</a></li>
+        <li><a href="#">Breath Play Ropes</a></li>
+        <li><a href="#">Breath Play Hoods</a></li>
+        <li><a href="#">Custom Latex</a></li>
         <li><a href="#">Bondage</a></li>
-        <li><a href="#">Body Art Pens</a></li>
       </ul>
     </div>
     <div>
@@ -2719,33 +2942,72 @@
 
   // Spotlight cards interaction
   const spCards = document.querySelectorAll('.spotlight-card');
-  const icons = ['🔑', '🕯️', '🖤', '⛓️'];
-  const names = ['Stainless Steel CB Series', 'Low-Temp Drip Candle Set', 'Full Latex Catsuit', 'Premium Leather Cuffs Set'];
+  const icons = ['🔑', '🕯️', '🖤', '⛓️', '🪢', '🎭', '✂️', '✨'];
+  const names = ['Stainless Steel CB Series', 'Low-Temp Drip Candle Set', 'Full Latex Catsuit', 'Premium Leather Cuffs Set', 'Silk Breath Play Rope Set', 'Latex Breath Play Hood', 'Custom Latex Catsuit', 'Bespoke BDSM 8-Piece Set'];
   const descs = [
     'Medical-grade stainless steel construction. Adjustable sizing system. Hygienic, body-safe, and built for long-term wear. Available with optional urethral insert.',
     'Hand-poured soy-blend candles. Low melt point (122°F) ensures safe, sensual drip play. Infused with therapeutic-grade aromatics for ambiance.',
     'Premium latex sheeting, 0.4mm thickness. Available in 12 colors. Full-body form-fitting silhouette. Includes talc bag and care instructions.',
-    'Handcrafted vegetable-tanned leather. Reinforced D-rings. Adjustable wrist and ankle sizing. Smooth suede lining for prolonged comfort.'
+    'Handcrafted vegetable-tanned leather. Reinforced D-rings. Adjustable wrist and ankle sizing. Smooth suede lining for prolonged comfort.',
+    'Premium Japanese silk rope, 10 meters per coil. Soft yet strong with excellent grip. Available in black, burgundy, and rose. Perfect for Shibari and breath play scenes.',
+    'Full enclosure latex hood with breathable nasal panels. 0.6mm thickness for durability. Available with eye, mouth, or full coverage options. Sensory deprivation perfected.',
+    'Made-to-measure latex catsuit crafted to your exact body measurements. Mirror finish or matte options. 0.4mm-0.6mm thickness. 2-week production time.',
+    'Fully customizable 8-piece BDSM set including cuffs, collar, paddle, and more. Design your own hardware, leather color, and engraving. 3-week bespoke production.'
   ];
-  const prices = ['$49', '$34', '$189', '$65'];
+  const prices = ['$49', '$34', '$189', '$65', '$29', '$59', '$299', '$399'];
   const tags = [
     ['Medical Grade', 'Body Safe', 'Adjustable Fit', '3 Sizes'],
     ['Low-Temp', 'Aromatic', 'Beginner Safe', 'Set of 4'],
     ['0.4mm Latex', '12 Colors', 'Full Body', 'Unisex'],
-    ['Handcrafted', 'Adjustable', 'Suede Lined', 'Set of 4']
+    ['Handcrafted', 'Adjustable', 'Suede Lined', 'Set of 4'],
+    ['Japanese Silk', '10m Length', '3 Colors', 'Soft Touch'],
+    ['Latex Hood', 'Breathable', 'Full Coverage', '0.6mm'],
+    ['Custom Fit', 'Mirror Finish', 'Made-to-Measure', '2 Weeks'],
+    ['Bespoke', '8-Piece Set', 'Custom Design', '3 Weeks']
+  ];
+
+  // Product images for each item
+  const productImages = [
+    '', // CB Series - uses SVG
+    '', // Candle Set - uses SVG
+    '', // Latex Catsuit - uses SVG
+    '', // Leather Cuffs - uses SVG
+    'images/breath_rope.jpg',
+    'images/breath_hood.jpg',
+    'images/latex_suit.jpg',
+    'images/bdsm_tools.jpg'
   ];
 
   spCards.forEach((card, i) => {
     card.addEventListener('click', () => {
       spCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
-      document.querySelector('.sv-icon-main').textContent = icons[i];
+
+      // Update text content
+      document.getElementById('product-icon').textContent = icons[i];
       document.querySelector('.si-name').textContent = names[i];
       document.querySelector('.si-desc').textContent = descs[i];
-      document.querySelector('.sp-price').textContent = prices[i];
+      document.getElementById('product-price').textContent = prices[i];
       const tagsEl = document.querySelector('.si-tags');
       tagsEl.innerHTML = tags[i].map(t => `<span class="si-tag">${t}</span>`).join('');
       document.querySelector('.si-btn').textContent = `Add to Cart — ${prices[i]}`;
+
+      // Handle product image display
+      const artContainer = document.getElementById('product-art');
+      const imgContainer = document.getElementById('product-image-container');
+      const imgElement = document.getElementById('product-img');
+
+      if (productImages[i]) {
+        // Show image
+        artContainer.style.display = 'none';
+        imgContainer.style.display = 'flex';
+        imgElement.src = productImages[i];
+        imgElement.alt = names[i];
+      } else {
+        // Show SVG art
+        artContainer.style.display = 'flex';
+        imgContainer.style.display = 'none';
+      }
     });
   });
 
