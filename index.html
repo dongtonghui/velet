@@ -1939,6 +1939,37 @@
   }
 
 
+
+  /* Category card background images */
+  .cat-card-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    transition: opacity 0.5s ease, transform 0.7s ease;
+  }
+  .cat-card:hover .cat-card-bg-img {
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+  .cat-card-bg-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,6,8,0.9) 0%, rgba(8,6,8,0.5) 50%, rgba(8,6,8,0.3) 100%);
+  }
+
+  /* Category specific backgrounds */
+  .cat-bg-chastity { background-image: url('./images/chastity_cage.jpg'); }
+  .cat-bg-latex { background-image: url('./images/latex_full.jpg'); }
+  .cat-bg-wax { background-image: url('./images/wax_candles.jpg'); }
+  .cat-bg-bdsm { background-image: url('./images/leather_cuffs.jpg'); }
+  .cat-bg-femme { background-image: url('./images/breath_hood.jpg'); }
+  .cat-bg-rope { background-image: url('./images/breath_rope.jpg'); }
+  .cat-bg-hood { background-image: url('./images/breath_hood.jpg'); }
+  .cat-bg-custom { background-image: url('./images/latex_suit.jpg'); }
+
   /* ── PRODUCT IMAGES ── */
   .product-image {
     position: absolute;
@@ -2103,6 +2134,7 @@
     <!-- Card 1 — wide, Chastity Devices -->
     <div class="cat-card reveal">
       <div class="cat-card-bg cat-bg-1">
+        <div class="cat-card-bg-img cat-bg-chastity"></div>
         <div class="cat-pattern"></div>
         <!-- Decorative key SVG motif -->
         <svg viewBox="0 0 400 220" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2127,6 +2159,7 @@
     <!-- Card 2 — Latex Gear -->
     <div class="cat-card reveal reveal-delay-1">
       <div class="cat-card-bg cat-bg-2">
+        <div class="cat-card-bg-img cat-bg-latex"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
           <ellipse cx="100" cy="100" rx="55" ry="75" stroke="#c9a96e" stroke-width="1"/>
@@ -2148,6 +2181,7 @@
     <!-- Card 3 — Wax Play -->
     <div class="cat-card reveal reveal-delay-2">
       <div class="cat-card-bg cat-bg-3">
+        <div class="cat-card-bg-img cat-bg-wax"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.09;" fill="none">
           <path d="M100 30 C100 30 90 80 75 110 C60 140 55 165 60 185 C65 205 80 218 100 218 C120 218 135 205 140 185 C145 165 140 140 125 110 C110 80 100 30 100 30Z" stroke="#8b1a2a" stroke-width="1.2"/>
@@ -2168,6 +2202,7 @@
     <!-- Card 4 — BDSM Tools -->
     <div class="cat-card reveal reveal-delay-1">
       <div class="cat-card-bg cat-bg-4">
+        <div class="cat-card-bg-img cat-bg-bdsm"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none">
           <line x1="40" y1="40" x2="160" y2="200" stroke="#c9a96e" stroke-width="1.5"/>
@@ -2188,6 +2223,7 @@
     <!-- Card 5 — Sissy / Femme -->
     <div class="cat-card reveal reveal-delay-2">
       <div class="cat-card-bg cat-bg-5">
+        <div class="cat-card-bg-img cat-bg-femme"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
           <circle cx="100" cy="80" r="40" stroke="#c9a96e" stroke-width="1"/>
@@ -2209,6 +2245,7 @@
     <!-- Card 6 — Breath Play Ropes -->
     <div class="cat-card reveal reveal-delay-1">
       <div class="cat-card-bg cat-bg-3">
+        <div class="cat-card-bg-img cat-bg-rope"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
           <path d="M50 50 Q100 100 50 150 Q100 200 150 150" stroke="#c9a96e" stroke-width="1.5" fill="none"/>
@@ -2229,6 +2266,7 @@
     <!-- Card 7 — Breath Play Hoods -->
     <div class="cat-card reveal reveal-delay-2">
       <div class="cat-card-bg cat-bg-4">
+        <div class="cat-card-bg-img cat-bg-hood"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 200 250" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" fill="none">
           <ellipse cx="100" cy="100" rx="45" ry="55" stroke="#c9a96e" stroke-width="1"/>
@@ -2250,6 +2288,7 @@
     <!-- Card 8 — Custom Latex (wide) -->
     <div class="cat-card reveal" style="grid-column: span 2; aspect-ratio: 2/1.2;">
       <div class="cat-card-bg cat-bg-1">
+        <div class="cat-card-bg-img cat-bg-custom"></div>
         <div class="cat-pattern"></div>
         <svg viewBox="0 0 400 220" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M100 110 C100 70 140 50 200 50 C260 50 300 70 300 110 C300 150 260 170 200 170 C140 170 100 150 100 110Z" stroke="#c9a96e" stroke-width="1.5"/>
@@ -2968,14 +3007,14 @@
 
   // Product images for each item
   const productImages = [
-    '', // CB Series - uses SVG
-    '', // Candle Set - uses SVG
-    '', // Latex Catsuit - uses SVG
-    '', // Leather Cuffs - uses SVG
-    'images/breath_rope.jpg',
-    'images/breath_hood.jpg',
-    'images/latex_suit.jpg',
-    'images/bdsm_tools.jpg'
+    './images/chastity_cage.jpg',
+    './images/wax_candles.jpg',
+    './images/latex_full.jpg',
+    './images/leather_cuffs.jpg',
+    './images/breath_rope.jpg',
+    './images/breath_hood.jpg',
+    './images/latex_suit.jpg',
+    './images/bdsm_tools.jpg'
   ];
 
   spCards.forEach((card, i) => {
