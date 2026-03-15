@@ -1,0 +1,30 @@
+# VeletSolo Robots.txt
+# https://veletsolo.com/robots.txt
+
+# Allow all search engines
+User-agent: *
+
+# Allow main pages
+Allow: /$
+Allow: /index.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /shipping.html
+
+# Allow images
+Allow: /images/
+
+# Disallow potential敏感 paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /test-
+Disallow: /*.json$
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://veletsolo.com/sitemap.xml

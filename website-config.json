@@ -1,0 +1,493 @@
+{
+  "_comment": "VeletSolo 网站配置文件 - 修改此文件即可更新网站内容，无需修改代码",
+  
+  "global": {
+    "_comment": "全局配置 - 影响整个网站",
+    
+    "company": {
+      "name": "VeletSolo",
+      "alternateName": "Velet Solo",
+      "tagline": "Where Latex Becomes Velvet",
+      "description": "Premium BDSM, latex gear, chastity devices, wax play accessories, and power-exchange collections for consenting adults.",
+      "foundingDate": "2023",
+      "url": "https://veletsolo.com",
+      "logo": "https://veletsolo.com/logo.png"
+    },
+    
+    "contact": {
+      "email": "support@veletsolo.com",
+      "billingName": "VS Commerce LLC",
+      "supportHours": "7 days a week"
+    },
+    
+    "social": {
+      "instagram": "https://www.instagram.com/veletsolo",
+      "twitter": "https://twitter.com/veletsolo",
+      "pinterest": "https://www.pinterest.com/veletsolo",
+      "reddit": "https://www.reddit.com/r/veletsolo"
+    },
+    
+    "seo": {
+      "defaultTitle": "VeletSolo — Premium BDSM & Latex Gear | Chastity Devices, Wax Play & More",
+      "defaultDescription": "VeletSolo offers premium BDSM, latex gear, chastity devices, wax play candles, and power-exchange collections for consenting US adults. Discreet shipping, body-safe materials, 30-day returns.",
+      "keywords": "BDSM gear, latex catsuit, chastity cage, chastity device, wax play candles, dominatrix gear, submissive accessories, bondage cuffs, latex fetish, stainless steel chastity cage, sissy clothing, gender play, body-safe BDSM, discreet adult toys, VeletSolo",
+      "ogImage": "https://veletsolo.com/og-image.jpg",
+      "themeColor": "#1a1828"
+    },
+    
+    "trust": {
+      "customerCount": "40,000+",
+      "rating": "4.9",
+      "reviewCount": "1240",
+      "freeShippingThreshold": "$79"
+    },
+    
+    "policies": {
+      "returnWindow": "30-day",
+      "shippingTime": "3-7 business days",
+      "processingTime": "1-2 business days"
+    }
+  },
+
+  "navigation": {
+    "logo": "VeletSolo",
+    "links": [
+      { "label": "Collections", "href": "#collections" },
+      { "label": "Our Story", "href": "#story" },
+      { "label": "FAQ", "href": "#faq" },
+      { "label": "Why Us", "href": "#trust" }
+    ],
+    "cta": { "label": "Shop Now", "href": "#collections" }
+  },
+
+  "ageGate": {
+    "logo": "VeletSolo",
+    "title": "This website contains adult content.",
+    "description": "VeletSolo is an adult platform intended for individuals 18 years of age or older. By entering, you confirm you are of legal age in your jurisdiction to view mature content.",
+    "confirmButton": "I Am 18+ — Enter",
+    "declineButton": "I Am Under 18 — Exit",
+    "legalText": "By entering this site you agree to our Terms of Service and Privacy Policy. All products are intended for consenting adults. VeletSolo does not collect data from minors. © 2025 VeletSolo. All rights reserved."
+  },
+
+  "home": {
+    "_comment": "首页配置",
+    
+    "hero": {
+      "eyebrow": "The Courage to Know Yourself · The Grace to Feel Everything",
+      "title": "Where Latex",
+      "titleEmphasis": "Becomes",
+      "titleEnd": "Velvet.",
+      "subtitle": "Intimacy that begins from within — private, fearless, yours alone.",
+      "description": "VeletSolo is named for latex that feels like velvet against skin — and for the quiet courage it takes to face your deepest desires in private. Premium power-exchange collections, trusted by {customerCount} adults across the United States.",
+      "primaryCta": { "label": "Explore Collections", "href": "#collections" },
+      "secondaryCta": { "label": "Our Philosophy", "href": "#story" },
+      "scrollIndicator": "Discover"
+    },
+
+    "trustBar": {
+      "items": [
+        { "icon": "🔒", "text": "Discreet Billing & Packaging" },
+        { "icon": "🇺🇸", "text": "Ships Across the US" },
+        { "icon": "⭐", "text": "{customerCount} Satisfied Customers" },
+        { "icon": "✓", "text": "Body-Safe Materials Only" },
+        { "icon": "↩", "text": "30-Day Satisfaction Guarantee" },
+        { "icon": "🔐", "text": "SSL Encrypted & Secure" },
+        { "icon": "📦", "text": "Free Shipping Over $79" },
+        { "icon": "🌙", "text": "Adult 18+ Platform" }
+      ]
+    },
+
+    "story": {
+      "tag": "Our Story",
+      "heading": "The Name That",
+      "headingEmphasis": "Holds the Secret",
+      "paragraphs": [
+        {
+          "strong": "Velet",
+          "text": " — a deliberate echo of velvet. Because the finest latex, worn close, feels exactly like that: impossibly smooth, second-skin warm, a luxury that exists only between you and yourself."
+        },
+        {
+          "strong": "Solo",
+          "text": " — because the truest act of desire is a private one. It takes courage to look inward, to name what you want, to stop apologizing for the textures that move you."
+        }
+      ],
+      "quote": "VeletSolo exists for the moment before anyone else is in the room — the moment you decide to be honest with yourself.",
+      "closingText": "We build for that courage. Every piece is crafted for sensation, safety, and the quiet luxury of knowing yourself completely.",
+      "cta": { "label": "View All Collections", "href": "#collections" },
+      "labelQuote": "\"Latex that feels like velvet. Desire you finally stop hiding.\"",
+      "image": "./images/image_ourstory.png",
+      "imageAlt": "VeletSolo - Velvet and Latex Luxury"
+    },
+
+    "collections": {
+      "tag": "Curated Collections",
+      "title": "Our Most",
+      "titleEmphasis": "Coveted",
+      "titleEnd": "Categories",
+      "subtitle": "Explore our most-loved collections, each thoughtfully crafted for safety, sensation, and style.",
+      "items": [
+        {
+          "id": "chastity",
+          "tag": "Bestseller",
+          "name": "Chastity Devices",
+          "description": "Stainless steel cages, adjustable belts, electronic locks, and custom-fit devices. Premium materials with surgical precision.",
+          "icon": "🔑",
+          "image": "./images/chastity_cage.jpg",
+          "href": "#"
+        },
+        {
+          "id": "latex",
+          "tag": "Trending",
+          "name": "Latex Gear",
+          "description": "Catsuits, hoods, gloves, and full ensembles. Skin-tight, form-fitting latex for the Dominatrix and Rubberdoll aesthetic.",
+          "icon": "🖤",
+          "image": "./images/latex_full.jpg",
+          "href": "#"
+        },
+        {
+          "id": "wax",
+          "tag": "Sensory",
+          "name": "Wax Play Candles",
+          "description": "Low-temp aromatic candles for safe, sensuous drip play. Curated collections for every mood and skill level.",
+          "icon": "🕯️",
+          "image": "./images/wax_candles.jpg",
+          "href": "#"
+        },
+        {
+          "id": "bdsm",
+          "tag": "Classic",
+          "name": "BDSM Tools",
+          "description": "Whips, cuffs, restraints, swings, and specialty furniture. Responsibly sourced and expertly crafted.",
+          "icon": "⛓️",
+          "image": "./images/leather_cuffs.jpg",
+          "href": "#"
+        },
+        {
+          "id": "femme",
+          "tag": "Gender Play",
+          "name": "Femme & Sissy",
+          "description": "Gender-fluid cosplay, feminine accessories, and role-play collections. Celebrating fluidity with style and zero judgment.",
+          "icon": "✨",
+          "image": "./images/breath_hood.jpg",
+          "href": "#"
+        },
+        {
+          "id": "rope",
+          "tag": "Breath Play",
+          "name": "Breath Play Ropes",
+          "description": "Premium Japanese silk and nylon ropes for consensual breath play. Soft, strong, and designed for safe exploration.",
+          "icon": "🪢",
+          "image": "./images/breath_rope.jpg",
+          "href": "#"
+        },
+        {
+          "id": "hood",
+          "tag": "Sensory Control",
+          "name": "Breath Play Hoods",
+          "description": "Full enclosure hoods with breathable panels. Latex and spandex options for sensory deprivation and control play.",
+          "icon": "🎭",
+          "image": "./images/breath_hood.jpg",
+          "href": "#"
+        },
+        {
+          "id": "custom",
+          "tag": "Made-to-Measure",
+          "name": "Custom Latex & BDSM Tools",
+          "description": "Bespoke latex catsuits and custom BDSM gear crafted to your exact measurements. From concept to creation — your vision, our craftsmanship. Body-specific fitting with premium materials.",
+          "icon": "✂️",
+          "image": "./images/latex_suit.jpg",
+          "href": "#",
+          "wide": true
+        }
+      ]
+    },
+
+    "spotlight": {
+      "tag": "Featured Products",
+      "title": "Our",
+      "titleEmphasis": "Most Loved",
+      "titleEnd": "This Season",
+      "products": [
+        {
+          "id": 1,
+          "name": "Stainless Steel CB Series",
+          "subtitle": "Chastity Cage · Medical Grade Steel",
+          "badge": "Top Seller",
+          "description": "Medical-grade stainless steel construction. Adjustable sizing system. Hygienic, body-safe, and built for long-term wear. Available with optional urethral insert.",
+          "price": "$49",
+          "tags": ["Medical Grade", "Body Safe", "Adjustable Fit", "3 Sizes"],
+          "icon": "🔑",
+          "image": "./images/chastity_cage.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Low-Temp Drip Candle Set",
+          "subtitle": "Wax Play · Aromatic Collection",
+          "badge": "New",
+          "description": "Hand-poured soy-blend candles. Low melt point (122°F) ensures safe, sensual drip play. Infused with therapeutic-grade aromatics for ambiance.",
+          "price": "$34",
+          "tags": ["Low-Temp", "Aromatic", "Beginner Safe", "Set of 4"],
+          "icon": "🕯️",
+          "image": "./images/wax_candles.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Full Latex Catsuit",
+          "subtitle": "Latex Gear · Form-Fitting",
+          "badge": "Popular",
+          "description": "Premium latex sheeting, 0.4mm thickness. Available in 12 colors. Full-body form-fitting silhouette. Includes talc bag and care instructions.",
+          "price": "$189",
+          "tags": ["0.4mm Latex", "12 Colors", "Full Body", "Unisex"],
+          "icon": "🖤",
+          "image": "./images/latex_full.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Premium Leather Cuffs Set",
+          "subtitle": "BDSM Tools · Handcrafted",
+          "badge": "Trending",
+          "description": "Handcrafted vegetable-tanned leather. Reinforced D-rings. Adjustable wrist and ankle sizing. Smooth suede lining for prolonged comfort.",
+          "price": "$65",
+          "tags": ["Handcrafted", "Adjustable", "Suede Lined", "Set of 4"],
+          "icon": "⛓️",
+          "image": "./images/leather_cuffs.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Silk Breath Play Rope Set",
+          "subtitle": "Breath Play · 10m Japanese Silk",
+          "badge": "New",
+          "description": "Premium Japanese silk rope, 10 meters per coil. Soft yet strong with excellent grip. Available in black, burgundy, and rose. Perfect for Shibari and breath play scenes.",
+          "price": "$29",
+          "tags": ["Japanese Silk", "10m Length", "3 Colors", "Soft Touch"],
+          "icon": "🪢",
+          "image": "./images/breath_rope.jpg"
+        },
+        {
+          "id": 6,
+          "name": "Latex Breath Play Hood",
+          "subtitle": "Sensory · Full Enclosure",
+          "badge": "Hot",
+          "description": "Full enclosure latex hood with breathable nasal panels. 0.6mm thickness for durability. Available with eye, mouth, or full coverage options. Sensory deprivation perfected.",
+          "price": "$59",
+          "tags": ["Latex Hood", "Breathable", "Full Coverage", "0.6mm"],
+          "icon": "🎭",
+          "image": "./images/breath_hood.jpg"
+        },
+        {
+          "id": 7,
+          "name": "Custom Latex Catsuit",
+          "subtitle": "Made-to-Measure · Mirror Finish",
+          "badge": "Custom",
+          "description": "Made-to-measure latex catsuit crafted to your exact body measurements. Mirror finish or matte options. 0.4mm-0.6mm thickness. 2-week production time.",
+          "price": "$299",
+          "tags": ["Custom Fit", "Mirror Finish", "Made-to-Measure", "2 Weeks"],
+          "icon": "✂️",
+          "image": "./images/latex_suit.jpg"
+        },
+        {
+          "id": 8,
+          "name": "Bespoke BDSM 8-Piece Set",
+          "subtitle": "Custom Design · Premium Leather",
+          "badge": "Bespoke",
+          "description": "Fully customizable 8-piece BDSM set including cuffs, collar, paddle, and more. Design your own hardware, leather color, and engraving. 3-week bespoke production.",
+          "price": "$399",
+          "tags": ["Bespoke", "8-Piece Set", "Custom Design", "3 Weeks"],
+          "icon": "✨",
+          "image": "./images/bdsm_tools.jpg"
+        }
+      ]
+    },
+
+    "philosophy": {
+      "tag": "The VeletSolo Way",
+      "quote": "The most intimate thing you can do is {emphasis} — in private, without apology, on your own skin.",
+      "quoteEmphasis": "be honest about what you want",
+      "attribution": "VeletSolo Founding Principles",
+      "pillars": [
+        {
+          "icon": "🖤",
+          "title": "Latex. But Make It Velvet.",
+          "text": "Every latex piece is engineered for skin-close luxury — the warmth, the weight, the whisper of something that is only ever yours."
+        },
+        {
+          "icon": "🔒",
+          "title": "Radically Private",
+          "text": "Plain packaging. Discreet billing as \"VS Commerce LLC\". No judgment, no trace. What happens between you and your desires stays exactly there."
+        },
+        {
+          "icon": "🌹",
+          "title": "The Courage We Honor",
+          "text": "Knowing what you want — and choosing it — is brave. VeletSolo is built for that moment of honest self-recognition, and everything that follows."
+        }
+      ]
+    },
+
+    "testimonials": {
+      "tag": "Verified Reviews",
+      "title": "Trusted by Our",
+      "titleEmphasis": "Community",
+      "items": [
+        {
+          "stars": 5,
+          "text": "The quality of the steel cage exceeded my expectations. Discreet shipping as promised — arrived in a plain brown box with no indication of contents. Will absolutely order again.",
+          "author": "Michael T.",
+          "location": "Austin, TX",
+          "initial": "M",
+          "verified": true
+        },
+        {
+          "stars": 5,
+          "text": "I've tried several latex brands and VeletSolo is by far the most body-safe and well-crafted. The catsuit fits like a second skin. Their customer service answered all my questions with zero judgment.",
+          "author": "Alexandra R.",
+          "location": "Portland, OR",
+          "initial": "A",
+          "verified": true
+        },
+        {
+          "stars": 5,
+          "text": "The wax play candle set is beautifully packaged and smells incredible. The low-temperature formula is exactly what we needed for beginners. Fast shipping and very discreet.",
+          "author": "Jamie & Collin",
+          "location": "Chicago, IL",
+          "initial": "J",
+          "verified": true
+        }
+      ]
+    },
+
+    "trustPillars": {
+      "items": [
+        {
+          "icon": "📦",
+          "title": "Discreet Packaging",
+          "text": "Plain, unmarked boxes. Billing appears as \"VS Commerce LLC\". No external indication of contents."
+        },
+        {
+          "icon": "🧪",
+          "title": "Body-Safe Guaranteed",
+          "text": "All materials are FDA-compatible, phthalate-free, and dermatologically tested for extended skin contact."
+        },
+        {
+          "icon": "↩️",
+          "title": "30-Day Returns",
+          "text": "Not satisfied? Return unopened products within 30 days for a full refund — no questions asked."
+        },
+        {
+          "icon": "💬",
+          "title": "Expert Support",
+          "text": "Non-judgmental customer care available 7 days a week. We answer every question with respect."
+        }
+      ]
+    },
+
+    "faq": {
+      "tag": "Got Questions",
+      "title": "Frequently",
+      "titleEmphasis": "Asked",
+      "subtitle": "Everything you need to know — answered with the same discretion we bring to everything we do.",
+      "categories": [
+        { "id": "all", "label": "All" },
+        { "id": "shipping", "label": "Shipping & Privacy" },
+        { "id": "products", "label": "Products & Safety" },
+        { "id": "orders", "label": "Orders & Returns" },
+        { "id": "bdsm", "label": "BDSM & Lifestyle" },
+        { "id": "custom", "label": "Custom Orders" }
+      ],
+      "items": [
+        {
+          "category": "shipping",
+          "question": "Will anyone know what I ordered? How discreet is your packaging?",
+          "answer": "Completely discreet — always. Every order ships in a plain, unmarked outer box with zero indication of the contents. Your billing statement will show <strong>\"VS Commerce LLC\"</strong> — never VeletSolo, never any adult-related description. The return address label is equally neutral. We've designed every step of our fulfilment process so that your purchase stays entirely your business.",
+          "tags": ["Plain Box", "Neutral Billing", "Anonymous Return Address"]
+        },
+        {
+          "category": "shipping",
+          "question": "Where do you ship? How long does delivery take?",
+          "answer": "VeletSolo ships to all 50 US states. Orders are processed within <strong>1–2 business days</strong> and typically arrive within <strong>3–7 business days</strong> via standard shipping. Expedited options are available at checkout. Free standard shipping on all orders over <strong>$79</strong>.<br/><br/>International shipping is not currently available, but we're working on it — join our newsletter to be notified when your region opens up."
+        },
+        {
+          "category": "shipping",
+          "question": "Do you sell or share my personal data?",
+          "answer": "Never. Your personal information is used solely to process and deliver your order. We do not sell, rent, or share customer data with any third party for marketing purposes. Our site uses SSL encryption and industry-standard security protocols. You can request deletion of your account data at any time by contacting our support team."
+        },
+        {
+          "category": "products",
+          "question": "Are your products body-safe? What materials do you use?",
+          "answer": "Body safety is non-negotiable for us. Every product in our catalogue is made from <strong>body-safe, phthalate-free materials</strong> — including medical-grade stainless steel, dermatologically tested latex, food-grade silicone, and non-toxic wax blends. We vet every supplier and material for extended skin contact before listing anything on the site.<br/><br/>Our chastity devices are made from <strong>surgical-grade 304 stainless steel</strong>. Our latex pieces undergo dermatological testing and are free from harmful accelerators where possible. Full material specs are listed on each individual product page.",
+          "tags": ["Medical-Grade Steel", "Phthalate-Free", "Food-Grade Silicone", "Dermatologically Tested Latex"]
+        },
+        {
+          "category": "products",
+          "question": "How do I choose the right size for a chastity device?",
+          "answer": "Sizing is the most important factor for comfort and safety in chastity wear. Each chastity product page includes a <strong>detailed sizing guide</strong> with measurement instructions. As a general rule:<br/><br/><strong>Ring size</strong> — measure the circumference at the base in its resting state, then refer to our ring size chart. Most first-time wearers size up slightly for comfort.<br/><strong>Cage length</strong> — measure flaccid length. The cage should not be so long that it causes bunching, nor so short that it causes restriction when flaccid.<br/><strong>Cage diameter</strong> — measure flaccid girth and match to the interior cage diameter.<br/><br/>If you're between sizes, our support team is happy to advise — no judgment, just practical help."
+        },
+        {
+          "category": "orders",
+          "question": "What is your return and refund policy?",
+          "answer": "We offer a <strong>30-day satisfaction guarantee</strong> on all unopened, unused products in their original packaging. To initiate a return, contact our support team within 30 days of delivery. Once we receive and inspect the item, refunds are processed within 5–7 business days to your original payment method.<br/><br/>For hygiene reasons, we are unable to accept returns on <strong>opened or used items</strong>. Latex garments that have been worn are also non-returnable. If a product arrives damaged or defective, we will replace it at no charge — please contact us within 7 days with photos."
+        }
+      ]
+    },
+
+    "newsletter": {
+      "eyebrow": "The Inner Circle",
+      "title": "Private Access.",
+      "titleEmphasis": "Curated for You.",
+      "subtitle": "New arrivals, members-only pricing, and guides on sensation, latex care, and the art of private exploration. Delivered with the same discretion we build into everything we do.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "disclaimer": "By subscribing you confirm you are 18+. We respect your privacy — unsubscribe anytime. No spam, ever."
+    }
+  },
+
+  "footer": {
+    "logo": "VeletSolo",
+    "tagline": "\"Named for latex that feels like velvet. Built for the private courage of knowing exactly who you are — and what you want.\"",
+    "socials": [
+      { "label": "IG", "href": "#", "ariaLabel": "Instagram" },
+      { "label": "𝕏", "href": "#", "ariaLabel": "Twitter/X" },
+      { "label": "PT", "href": "#", "ariaLabel": "Pinterest" },
+      { "label": "RD", "href": "#", "ariaLabel": "Reddit" }
+    ],
+    "columns": [
+      {
+        "title": "Collections",
+        "links": [
+          { "label": "Chastity Devices", "href": "#" },
+          { "label": "Latex Gear", "href": "#" },
+          { "label": "BDSM Tools", "href": "#" },
+          { "label": "Wax Play", "href": "#" },
+          { "label": "Femme & Sissy", "href": "#" },
+          { "label": "Breath Play Ropes", "href": "#" },
+          { "label": "Breath Play Hoods", "href": "#" },
+          { "label": "Custom Latex", "href": "#" },
+          { "label": "Bondage", "href": "#" }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          { "label": "FAQ", "href": "#faq" },
+          { "label": "Shipping & Delivery", "href": "shipping.html" },
+          { "label": "Returns Policy", "href": "shipping.html#returns" },
+          { "label": "Sizing Guides", "href": "#" },
+          { "label": "Safety Guides", "href": "#" },
+          { "label": "Contact Us", "href": "mailto:support@veletsolo.com" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About VeletSolo", "href": "#story" },
+          { "label": "Our Philosophy", "href": "#philosophy" },
+          { "label": "Privacy Policy", "href": "privacy.html" },
+          { "label": "Terms of Service", "href": "terms.html" },
+          { "label": "Cookie Policy", "href": "#" },
+          { "label": "Affiliates", "href": "#" }
+        ]
+      }
+    ],
+    "legal": "⚠️ This website is intended exclusively for adults aged 18 years or older. All products are intended for use between consenting adults. VeletSolo complies with all applicable US federal and state laws. Billing appears as \"VS Commerce LLC\" on all statements. All imagery is artistic and non-explicit. We are not responsible for misuse of any product. Safe, sane, and consensual practices are always encouraged. veletsolo.com",
+    "copyright": "© 2025 VeletSolo · All Rights Reserved"
+  }
+}

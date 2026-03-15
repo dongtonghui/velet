@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | VeletSolo</title>
+<meta name="description" content="Terms of Service for VeletSolo. Please read these terms carefully before using our website and services.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a1828">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&family=Cinzel:wght@400;600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #1a1828;
+  --deep: #232136;
+  --surface: #2e2b42;
+  --surface2: #3a3650;
+  --crimson: #6b1535;
+  --crimson-bright: #9e2050;
+  --gold: #c9a96e;
+  --gold-light: #e8cc97;
+  --rose: #c4688a;
+  --cream: #f2eae0;
+  --muted: #7a6f82;
+  --white: #faf6f2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.25;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 1.4rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(26,24,40,0.98) 0%, rgba(26,24,40,0.8) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 40%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links { display: flex; gap: 2.4rem; list-style: none; }
+.nav-links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+.back-link {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.25s;
+}
+.back-link:hover { color: var(--gold); }
+
+.page-header {
+  padding: 10rem 4vw 5rem;
+  text-align: center;
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(61,26,74,0.3), transparent 60%);
+}
+.page-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--crimson-bright);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+}
+.page-subtitle {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  position: relative;
+}
+
+.content-section {
+  padding: 5rem 4vw;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.policy-section {
+  margin-bottom: 4rem;
+}
+
+.policy-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+}
+
+.policy-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 2rem 0 1rem;
+}
+
+.policy-section p {
+  margin-bottom: 1.2rem;
+  color: rgba(240,232,218,0.8);
+}
+
+.policy-section ul, .policy-section ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: rgba(240,232,218,0.8);
+}
+
+.policy-section li {
+  margin-bottom: 0.75rem;
+}
+
+.warning-box {
+  background: rgba(107,21,53,0.15);
+  border: 1px solid var(--crimson);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0;
+}
+
+.warning-box strong {
+  color: var(--crimson-bright);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+}
+
+.highlight-box {
+  background: var(--surface);
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.highlight-box p {
+  margin: 0;
+}
+
+.terms-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+footer {
+  background: var(--deep);
+  border-top: 1px solid rgba(201,169,110,0.1);
+  padding: 3rem 4vw;
+  text-align: center;
+}
+.footer-simple {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(122,111,128,0.5);
+  margin-top: 1.5rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--surface);
+  border: 1px solid rgba(201,169,110,0.2);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+  font-size: 1.2rem;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .page-header { padding: 8rem 4vw 4rem; }
+  .content-section { padding: 3rem 4vw; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">VeletSolo</a>
+  <ul class="nav-links">
+    <li><a href="index.html#collections">Collections</a></li>
+    <li><a href="index.html#story">Our Story</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<header class="page-header">
+  <div class="page-tag">Legal</div>
+  <h1 class="page-title">Terms of Service</h1>
+  <p class="page-subtitle">Please read these terms carefully before using our website and services. By accessing VeletSolo, you agree to be bound by these terms.</p>
+</header>
+
+<main class="content-section">
+
+  <div class="terms-icon">📜</div>
+
+  <div class="warning-box">
+    <strong>Age Restriction</strong>
+    <p>You must be at least 18 years of age (or the legal age of majority in your jurisdiction) to use this website. By accessing VeletSolo, you represent and warrant that you meet this age requirement.</p>
+  </div>
+
+  <section class="policy-section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using VeletSolo's website, mobile application, and services (collectively, the "Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not access or use the Services.</p>
+    <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the updated Terms on this page with a new "Last Updated" date. Your continued use of the Services after such changes constitutes your acceptance of the new Terms.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>2. Eligibility</h2>
+    <p>To use our Services, you must:</p>
+    <ul>
+      <li>Be at least 18 years of age or the legal age of majority in your jurisdiction</li>
+      <li>Have the legal capacity to enter into a binding contract</li>
+      <li>Not be prohibited from using the Services under applicable law</li>
+      <li>Comply with all applicable laws and regulations regarding adult products in your jurisdiction</li>
+    </ul>
+    <p>We reserve the right to refuse service, terminate accounts, or cancel orders at our sole discretion, including if we believe you do not meet these eligibility requirements.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>3. Account Registration</h2>
+    
+    <h3>3.1 Account Creation</h3>
+    <p>To access certain features, you may need to create an account. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete.</p>
+
+    <h3>3.2 Account Security</h3>
+    <p>You are responsible for:</p>
+    <ul>
+      <li>Maintaining the confidentiality of your account password</li>
+      <li>Restricting access to your account</li>
+      <li>All activities that occur under your account</li>
+    </ul>
+    <p>You agree to notify us immediately of any unauthorized use of your account or any other breach of security.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>4. Products and Orders</h2>
+    
+    <h3>4.1 Product Information</h3>
+    <p>We strive to display our products and their colors accurately. However, we cannot guarantee that your computer monitor's display of any color will be accurate. Product descriptions, pricing, and availability are subject to change without notice.</p>
+
+    <h3>4.2 Order Acceptance</h3>
+    <p>Your receipt of an order confirmation does not constitute our acceptance of your order. We reserve the right to accept or decline your order for any reason, including:</p>
+    <ul>
+      <li>Product unavailability</li>
+      <li>Errors in product or pricing information</li>
+      <li>Suspected fraudulent activity</li>
+      <li>Shipping restrictions to your location</li>
+    </ul>
+
+    <h3>4.3 Pricing and Payment</h3>
+    <p>All prices are listed in US Dollars unless otherwise noted. We reserve the right to change prices at any time. Payment must be received before we accept an order. We accept major credit cards and other payment methods as indicated at checkout.</p>
+    <p><strong>Billing Discretion:</strong> For your privacy, charges will appear as "VS Commerce LLC" on your billing statement.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>5. Shipping and Delivery</h2>
+    <p>Please refer to our <a href="shipping.html" style="color: var(--gold);">Shipping Policy</a> for detailed information about shipping methods, timeframes, and costs.</p>
+    <p>Risk of loss and title for items purchased pass to you upon delivery to the carrier. We are not responsible for delays caused by customs, weather, or other circumstances beyond our control.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>6. Returns and Refunds</h2>
+    
+    <h3>6.1 Return Policy</h3>
+    <p>We offer a 30-day satisfaction guarantee on unopened, unused products in their original packaging. Due to the intimate nature of our products, we cannot accept returns on:</p>
+    <ul>
+      <li>Opened or used items</li>
+      <li>Latex garments that have been worn</li>
+      <li>Items without original packaging</li>
+      <li>Clearance or final sale items</li>
+    </ul>
+
+    <h3>6.2 Defective Products</h3>
+    <p>If you receive a damaged or defective product, please contact us within 7 days of delivery with photos. We will replace defective items at no charge.</p>
+
+    <h3>6.3 Refund Processing</h3>
+    <p>Refunds are processed within 5-7 business days of receiving your returned item. Refunds will be issued to the original payment method.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>7. Prohibited Uses</h2>
+    <p>You agree not to use the Services:</p>
+    <ul>
+      <li>For any unlawful purpose or in violation of any applicable law</li>
+      <li>To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate</li>
+      <li>To submit false or misleading information</li>
+      <li>To upload or transmit viruses or malicious code</li>
+      <li>To interfere with or circumvent the security features of the Services</li>
+      <li>To collect or track personal information of others without consent</li>
+      <li>To spam, phish, pharm, pretext, spider, crawl, or scrape</li>
+    </ul>
+  </section>
+
+  <section class="policy-section">
+    <h2>8. Intellectual Property</h2>
+    
+    <h3>8.1 Ownership</h3>
+    <p>The Services and all content, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio) are owned by VeletSolo, its licensors, or other providers and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+
+    <h3>8.2 Limited License</h3>
+    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Services for personal, non-commercial purposes. This license does not include:</p>
+    <ul>
+      <li>Modifying or copying our materials</li>
+      <li>Using materials for any commercial purpose</li>
+      <li>Attempting to decompile or reverse engineer any software</li>
+      <li>Removing any copyright or proprietary notations</li>
+      <li>Transferring materials to another person or "mirroring" them on another server</li>
+    </ul>
+  </section>
+
+  <section class="policy-section">
+    <h2>9. Disclaimer of Warranties</h2>
+    
+    <div class="warning-box">
+      <strong>Important Legal Notice</strong>
+      <p>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    </div>
+
+    <p>We do not warrant that:</p>
+    <ul>
+      <li>The Services will be uninterrupted, timely, secure, or error-free</li>
+      <li>The results from using the Services will be accurate or reliable</li>
+      <li>Any errors in the Services will be corrected</li>
+    </ul>
+    <p>You assume all risk for your use of the Services and any products purchased through them.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>10. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, VELETSOLO SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
+    <ul>
+      <li>Your access to or use of (or inability to access or use) the Services</li>
+      <li>Any conduct or content of any third party on the Services</li>
+      <li>Any content obtained from the Services</li>
+      <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+    </ul>
+    <p>IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED THE AMOUNT YOU PAID TO US IN THE SIX (6) MONTHS PRIOR TO THE EVENT GIVING RISE TO LIABILITY, OR ONE HUNDRED US DOLLARS ($100), WHICHEVER IS LESS.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>11. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless VeletSolo, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the Services.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>12. Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions. You agree to submit to the personal and exclusive jurisdiction of the courts located in Delaware.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>13. Dispute Resolution</h2>
+    <p>Any dispute arising from or relating to these Terms or the Services shall first be addressed through good faith negotiations. If the dispute cannot be resolved through negotiation, you agree to submit to binding arbitration in accordance with the rules of the American Arbitration Association. The arbitration shall be conducted in Delaware.</p>
+    <p><strong>Class Action Waiver:</strong> You agree that any proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>14. Severability</h2>
+    <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent possible, and the remaining provisions shall continue in full force and effect.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>15. Entire Agreement</h2>
+    <p>These Terms, together with our Privacy Policy and Shipping Policy, constitute the entire agreement between you and VeletSolo regarding the Services and supersede all prior agreements and understandings.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>16. Contact Information</h2>
+    
+    <div class="highlight-box">
+      <p><strong>Questions about these Terms?</strong></p>
+      <p style="margin-top: 1rem;">VeletSolo Legal Department<br>
+      Email: <a href="mailto:legal@veletsolo.com" style="color: var(--gold);">legal@veletsolo.com</a><br>
+      Address: VS Commerce LLC, 123 Privacy Lane, Dover, DE 19901</p>
+    </div>
+    
+    <p style="margin-top: 2rem;"><strong>Last Updated:</strong> March 15, 2025</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-simple">
+    <span class="footer-logo">VeletSolo</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="shipping.html">Shipping</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 VeletSolo · All Rights Reserved</p>
+  </div>
+</footer>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+</script>
+
+</body>
+</html>

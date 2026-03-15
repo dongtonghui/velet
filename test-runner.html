@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeletSolo Config Test Runner</title>
+  <style>
+    :root {
+      --bg: #1a1828;
+      --surface: #2e2b42;
+      --text: #f2eae0;
+      --muted: #7a6f82;
+      --success: #4ade80;
+      --danger: #f87171;
+      --warning: #fbbf24;
+      --info: #60a5fa;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--surface);
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    .controls {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    button {
+      padding: 0.75rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--muted);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    
+    button:hover {
+      border-color: var(--info);
+      background: rgba(96, 165, 250, 0.1);
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    button.primary {
+      background: var(--info);
+      border-color: var(--info);
+      color: var(--bg);
+    }
+    
+    button.primary:hover {
+      opacity: 0.9;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    
+    .stat-card:hover {
+      border-color: var(--muted);
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .stat-card.passed { border-color: var(--success); }
+    .stat-card.failed { border-color: var(--danger); }
+    .stat-card.skipped { border-color: var(--warning); }
+    
+    .stat-card.passed .stat-value { color: var(--success); }
+    .stat-card.failed .stat-value { color: var(--danger); }
+    .stat-card.skipped .stat-value { color: var(--warning); }
+    
+    .progress {
+      background: var(--surface);
+      height: 4px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: var(--info);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    
+    .results {
+      background: var(--surface);
+      min-height: 400px;
+      max-height: 600px;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    
+    .test-result {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid transparent;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .test-result:last-child {
+      margin-bottom: 0;
+    }
+    
+    .test-result.pass {
+      border-left-color: var(--success);
+      background: rgba(74, 222, 128, 0.05);
+    }
+    
+    .test-result.fail {
+      border-left-color: var(--danger);
+      background: rgba(248, 113, 113, 0.05);
+    }
+    
+    .test-result.skip {
+      border-left-color: var(--warning);
+      background: rgba(251, 191, 36, 0.05);
+      opacity: 0.7;
+    }
+    
+    .test-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .test-content {
+      flex: 1;
+    }
+    
+    .test-name {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .test-error {
+      color: var(--danger);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(248, 113, 113, 0.1);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    
+    .test-time {
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-left: auto;
+    }
+    
+    .summary {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      text-align: center;
+    }
+    
+    .summary.success {
+      border: 1px solid var(--success);
+    }
+    
+    .summary.failure {
+      border: 1px solid var(--danger);
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--muted);
+    }
+    
+    .empty-state svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+    
+    .filters {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      background: transparent;
+    }
+    
+    .filter-btn.active {
+      background: var(--surface);
+      border-color: var(--info);
+    }
+    
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .stat-value { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧪 Config Test Runner</h1>
+      <p class="subtitle">VeletSolo 动态配置系统自动化测试</p>
+    </header>
+    
+    <div class="controls">
+      <button class="primary" id="run-all" onclick="runAllTests()">
+        ▶ Run All Tests
+      </button>
+      <button id="run-config" onclick="runConfigTests()">
+        ⚙ Config Tests
+      </button>
+      <button id="run-dom" onclick="runDOMTests()">
+        🌐 DOM Tests
+      </button>
+      <button onclick="clearResults()">
+        🗑 Clear
+      </button>
+      <button onclick="exportResults()">
+        📥 Export
+      </button>
+    </div>
+    
+    <div class="stats" id="stats" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-total">0</div>
+        <div class="stat-label">Total</div>
+      </div>
+      <div class="stat-card passed">
+        <div class="stat-value" id="stat-passed">0</div>
+        <div class="stat-label">Passed</div>
+      </div>
+      <div class="stat-card failed">
+        <div class="stat-value" id="stat-failed">0</div>
+        <div class="stat-label">Failed</div>
+      </div>
+      <div class="stat-card skipped">
+        <div class="stat-value" id="stat-skipped">0</div>
+        <div class="stat-label">Skipped</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-time">0ms</div>
+        <div class="stat-label">Duration</div>
+      </div>
+    </div>
+    
+    <div class="progress" id="progress" style="display: none;">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <div class="filters" id="filters" style="display: none;">
+      <button class="filter-btn active" onclick="filterResults('all')">All</button>
+      <button class="filter-btn" onclick="filterResults('pass')">Passed</button>
+      <button class="filter-btn" onclick="filterResults('fail')">Failed</button>
+      <button class="filter-btn" onclick="filterResults('skip')">Skipped</button>
+    </div>
+    
+    <div class="results" id="results">
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+        <p>Click "Run All Tests" to start testing</p>
+      </div>
+    </div>
+    
+    <div class="summary" id="summary" style="display: none;">
+      <p id="summary-text"></p>
+    </div>
+  </div>
+
+  <!-- Test Framework -->
+  <script src="config-tester.js"></script>
+  <!-- Test Suite -->
+  <script src="config-tests.js"></script>
+  
+  <script>
+    let currentFilter = 'all';
+    let testResults = [];
+    
+    // 重定向 console 输出到页面
+    const originalConsole = {
+      log: console.log,
+      error: console.error
+    };
+    
+    function captureConsole() {
+      const logs = [];
+      console.log = (...args) => {
+        logs.push({ type: 'log', message: args.join(' ') });
+        originalConsole.log.apply(console, args);
+      };
+      console.error = (...args) => {
+        logs.push({ type: 'error', message: args.join(' ') });
+        originalConsole.error.apply(console, args);
+      };
+      return logs;
+    }
+    
+    function restoreConsole() {
+      console.log = originalConsole.log;
+      console.error = originalConsole.error;
+    }
+    
+    // 显示测试结果
+    function displayResult(test, result, error = null) {
+      const resultsDiv = document.getElementById('results');
+      const resultDiv = document.createElement('div');
+      resultDiv.className = `test-result ${result}`;
+      resultDiv.dataset.status = result;
+      
+      const icon = result === 'pass' ? '✅' : result === 'fail' ? '❌' : '⏭️';
+      const time = new Date().toLocaleTimeString();
+      
+      let errorHtml = '';
+      if (error) {
+        errorHtml = `<div class="test-error">${escapeHtml(error.message || error)}</div>`;
+      }
+      
+      resultDiv.innerHTML = `
+        <span class="test-icon">${icon}</span>
+        <div class="test-content">
+          <div class="test-name">${escapeHtml(test)}</div>
+          ${errorHtml}
+        </div>
+        <span class="test-time">${time}</span>
+      `;
+      
+      resultsDiv.appendChild(resultDiv);
+      testResults.push({ test, result, error, time });
+      
+      // 自动滚动到底部
+      resultsDiv.scrollTop = resultsDiv.scrollHeight;
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // 更新统计
+    function updateStats(results) {
+      document.getElementById('stat-total').textContent = results.total;
+      document.getElementById('stat-passed').textContent = results.passed;
+      document.getElementById('stat-failed').textContent = results.failed;
+      document.getElementById('stat-skipped').textContent = results.skipped;
+      
+      const stats = document.getElementById('stats');
+      stats.style.display = 'grid';
+    }
+    
+    // 更新进度条
+    function updateProgress(current, total) {
+      const progress = document.getElementById('progress');
+      const progressBar = document.getElementById('progress-bar');
+      progress.style.display = 'block';
+      progressBar.style.width = `${(current / total) * 100}%`;
+    }
+    
+    // 显示摘要
+    function showSummary(results, duration) {
+      const summary = document.getElementById('summary');
+      const summaryText = document.getElementById('summary-text');
+      
+      summary.style.display = 'block';
+      document.getElementById('stat-time').textContent = `${duration}ms`;
+      
+      if (results.failed === 0) {
+        summary.className = 'summary success';
+        summaryText.innerHTML = `✅ All tests passed! <span style="color: var(--muted)">(${results.passed} tests in ${duration}ms)</span>`;
+      } else {
+        summary.className = 'summary failure';
+        summaryText.innerHTML = `❌ ${results.failed} test(s) failed <span style="color: var(--muted)">(${results.passed} passed, ${results.skipped} skipped)</span>`;
+      }
+    }
+    
+    // 运行所有测试
+    async function runAllTests() {
+      clearResults();
+      document.getElementById('run-all').disabled = true;
+      
+      const startTime = performance.now();
+      const logs = captureConsole();
+      
+      // 创建自定义测试运行器以捕获结果
+      const Tester = ConfigTester;
+      const suite = Tester.createSuite();
+      
+      // 重新加载测试用例
+      await loadTestSuite(suite);
+      
+      // 拦截测试结果
+      const originalTest = suite.test.bind(suite);
+      const tests = [];
+      suite.test = (name, fn) => {
+        tests.push({ name, fn });
+      };
+      
+      // 重新收集测试
+      await loadTestSuite(suite);
+      
+      let current = 0;
+      const total = tests.length;
+      
+      // 显示过滤器
+      document.getElementById('filters').style.display = 'flex';
+      
+      // 运行每个测试
+      for (const test of tests) {
+        current++;
+        updateProgress(current, total);
+        
+        try {
+          await test.fn(suite);
+          displayResult(test.name, 'pass');
+        } catch (e) {
+          displayResult(test.name, 'fail', e);
+        }
+      }
+      
+      restoreConsole();
+      
+      const duration = Math.round(performance.now() - startTime);
+      const results = {
+        total: tests.length,
+        passed: testResults.filter(r => r.result === 'pass').length,
+        failed: testResults.filter(r => r.result === 'fail').length,
+        skipped: 0
+      };
+      
+      updateStats(results);
+      showSummary(results, duration);
+      
+      document.getElementById('run-all').disabled = false;
+      document.getElementById('progress').style.display = 'none';
+    }
+    
+    // 加载测试套件
+    async function loadTestSuite(suite) {
+      // 这里需要重新执行测试定义
+      // 在实际实现中，我们使用已经加载的 ConfigTestSuite
+      const config = await suite.loadTestConfig();
+      
+      // 基本配置测试
+      suite.test('配置加载 - 应成功加载 website-config.json', async (t) => {
+        t.assertNotNull(config);
+      });
+      
+      suite.test('全局配置 - 公司信息应完整', (t) => {
+        suite.validateGlobalConfig(config.global);
+      });
+      
+      suite.test('导航配置 - 应包含 logo 和链接', (t) => {
+        suite.validateNavigationConfig(config.navigation);
+      });
+      
+      suite.test('产品分类 - 应包含有效的产品数据', (t) => {
+        suite.validateProducts(config.home.collections.items);
+      });
+      
+      suite.test('精选产品 - 产品数据应完整有效', (t) => {
+        suite.validateProducts(config.home.spotlight.products);
+      });
+      
+      suite.test('FAQ - 配置应完整有效', (t) => {
+        suite.validateFAQ(config.home.faq);
+      });
+      
+      // DOM 测试
+      suite.test('集成测试 - DOM 应包含必要元素', (t) => {
+        const domTester = new Tester.DOMTester();
+        t.assertTrue(domTester.elementExists('nav'));
+        t.assertTrue(domTester.elementExists('#hero'));
+        t.assertTrue(domTester.elementExists('#collections'));
+      });
+    }
+    
+    // 运行配置测试
+    function runConfigTests() {
+      // 筛选配置相关测试
+      filterTestType('config');
+    }
+    
+    // 运行 DOM 测试
+    function runDOMTests() {
+      // 筛选 DOM 相关测试
+      filterTestType('dom');
+    }
+    
+    // 筛选测试类型
+    function filterTestType(type) {
+      const allResults = document.querySelectorAll('.test-result');
+      allResults.forEach(result => {
+        const name = result.querySelector('.test-name').textContent.toLowerCase();
+        const isMatch = type === 'dom' 
+          ? name.includes('dom') || name.includes('集成')
+          : !name.includes('dom') && !name.includes('集成');
+        result.style.display = isMatch ? 'flex' : 'none';
+      });
+    }
+    
+    // 筛选结果
+    function filterResults(status) {
+      currentFilter = status;
+      
+      // 更新按钮状态
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      // 筛选显示
+      const allResults = document.querySelectorAll('.test-result');
+      allResults.forEach(result => {
+        if (status === 'all') {
+          result.style.display = 'flex';
+        } else {
+          result.style.display = result.dataset.status === status ? 'flex' : 'none';
+        }
+      });
+    }
+    
+    // 清除结果
+    function clearResults() {
+      document.getElementById('results').innerHTML = `
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+          <p>Click "Run All Tests" to start testing</p>
+        </div>
+      `;
+      document.getElementById('stats').style.display = 'none';
+      document.getElementById('summary').style.display = 'none';
+      document.getElementById('progress').style.display = 'none';
+      document.getElementById('filters').style.display = 'none';
+      testResults = [];
+    }
+    
+    // 导出结果
+    function exportResults() {
+      if (testResults.length === 0) {
+        alert('No test results to export');
+        return;
+      }
+      
+      const data = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        results: testResults,
+        summary: {
+          total: testResults.length,
+          passed: testResults.filter(r => r.result === 'pass').length,
+          failed: testResults.filter(r => r.result === 'fail').length
+        }
+      };
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `test-results-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    
+    // 页面加载完成后自动运行（如果URL包含autorun参数）
+    if (window.location.search.includes('autorun')) {
+      window.addEventListener('load', runAllTests);
+    }
+  </script>
+</body>
+</html>

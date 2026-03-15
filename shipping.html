@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping & Returns | VeletSolo</title>
+<meta name="description" content="Shipping, delivery, and return policies for VeletSolo. Discreet packaging, free shipping over $79, and 30-day satisfaction guarantee.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a1828">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&family=Cinzel:wght@400;600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #1a1828;
+  --deep: #232136;
+  --surface: #2e2b42;
+  --surface2: #3a3650;
+  --crimson: #6b1535;
+  --crimson-bright: #9e2050;
+  --gold: #c9a96e;
+  --gold-light: #e8cc97;
+  --rose: #c4688a;
+  --cream: #f2eae0;
+  --muted: #7a6f82;
+  --white: #faf6f2;
+  --success: #4ade80;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.25;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 1.4rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(26,24,40,0.98) 0%, rgba(26,24,40,0.8) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 40%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links { display: flex; gap: 2.4rem; list-style: none; }
+.nav-links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+.back-link {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.25s;
+}
+.back-link:hover { color: var(--gold); }
+
+.page-header {
+  padding: 10rem 4vw 5rem;
+  text-align: center;
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(61,26,74,0.3), transparent 60%);
+}
+.page-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--crimson-bright);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+}
+.page-subtitle {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  position: relative;
+}
+
+.content-section {
+  padding: 5rem 4vw;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Feature Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: var(--surface);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(201,169,110,0.1);
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(201,169,110,0.3);
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.feature-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.feature-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Policy Sections */
+.policy-section {
+  margin-bottom: 4rem;
+}
+
+.policy-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+}
+
+.policy-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 2rem 0 1rem;
+}
+
+.policy-section p {
+  margin-bottom: 1.2rem;
+  color: rgba(240,232,218,0.8);
+}
+
+.policy-section ul, .policy-section ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: rgba(240,232,218,0.8);
+}
+
+.policy-section li {
+  margin-bottom: 0.75rem;
+}
+
+/* Shipping Options Table */
+.shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.shipping-table th,
+.shipping-table td {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+}
+
+.shipping-table th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--surface);
+}
+
+.shipping-table td {
+  color: rgba(240,232,218,0.9);
+}
+
+.shipping-table tr:hover td {
+  background: rgba(201,169,110,0.03);
+}
+
+.price-tag {
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* Timeline */
+.timeline {
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(201,169,110,0.2);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--surface);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-text {
+  color: rgba(240,232,218,0.8);
+}
+
+/* Highlight Boxes */
+.highlight-box {
+  background: var(--surface);
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.highlight-box.success {
+  border-left-color: var(--success);
+}
+
+.highlight-box p {
+  margin: 0;
+}
+
+.guarantee-box {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.05));
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  padding: 2.5rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.guarantee-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.guarantee-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--success);
+  margin-bottom: 1rem;
+}
+
+.guarantee-text {
+  color: rgba(240,232,218,0.8);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* FAQ Style */
+.faq-item {
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.faq-answer {
+  color: var(--muted);
+  padding-left: 1rem;
+  border-left: 2px solid var(--surface);
+}
+
+/* Contact Box */
+.contact-box {
+  background: linear-gradient(135deg, rgba(107,21,53,0.2), rgba(61,26,74,0.2));
+  border: 1px solid rgba(201,169,110,0.15);
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.contact-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.contact-email {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--crimson);
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.contact-email:hover {
+  background: var(--crimson-bright);
+}
+
+.shipping-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+footer {
+  background: var(--deep);
+  border-top: 1px solid rgba(201,169,110,0.1);
+  padding: 3rem 4vw;
+  text-align: center;
+}
+
+.footer-simple {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(122,111,128,0.5);
+  margin-top: 1.5rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--surface);
+  border: 1px solid rgba(201,169,110,0.2);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+  font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .page-header { padding: 8rem 4vw 4rem; }
+  .content-section { padding: 3rem 4vw; }
+  .features-grid { grid-template-columns: 1fr; }
+  .shipping-table { font-size: 0.85rem; }
+  .shipping-table th, .shipping-table td { padding: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">VeletSolo</a>
+  <ul class="nav-links">
+    <li><a href="index.html#collections">Collections</a></li>
+    <li><a href="index.html#story">Our Story</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</nav>
+
+<header class="page-header">
+  <div class="page-tag">Customer Care</div>
+  <h1 class="page-title">Shipping & Returns</h1>
+  <p class="page-subtitle">Discreet delivery, free shipping on orders over $79, and our 30-day satisfaction guarantee.</p>
+</header>
+
+<main class="content-section">
+
+  <div class="shipping-icon">📦</div>
+
+  <!-- Quick Features -->
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">Discreet Packaging</div>
+      <div class="feature-text">Plain, unmarked boxes with no indication of contents</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-title">Free Shipping</div>
+      <div class="feature-text">On all orders over $79 within the continental US</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">↩️</div>
+      <div class="feature-title">30-Day Returns</div>
+      <div class="feature-text">Satisfaction guarantee on unopened products</div>
+    </div>
+  </div>
+
+  <!-- Shipping Options -->
+  <section class="policy-section">
+    <h2>Shipping Options</h2>
+    
+    <table class="shipping-table">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Cost</th>
+          <th>Delivery Time</th>
+          <th>Tracking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Standard Shipping</strong><br><span style="font-size: 0.85rem; color: var(--muted);">Orders over $79</span></td>
+          <td class="price-tag">FREE</td>
+          <td>5-7 business days</td>
+          <td>✓ Included</td>
+        </tr>
+        <tr>
+          <td><strong>Standard Shipping</strong><br><span style="font-size: 0.85rem; color: var(--muted);">Orders under $79</span></td>
+          <td>$6.95</td>
+          <td>5-7 business days</td>
+          <td>✓ Included</td>
+        </tr>
+        <tr>
+          <td><strong>Expedited Shipping</strong></td>
+          <td>$14.95</td>
+          <td>3-5 business days</td>
+          <td>✓ Included</td>
+        </tr>
+        <tr>
+          <td><strong>Express Shipping</strong></td>
+          <td>$24.95</td>
+          <td>2-3 business days</td>
+          <td>✓ Included</td>
+        </tr>
+        <tr>
+          <td><strong>Overnight Shipping</strong><br><span style="font-size: 0.85rem; color: var(--muted);">Select areas only</span></td>
+          <td>$39.95</td>
+          <td>1-2 business days</td>
+          <td>✓ Included + Signature</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <p><strong>📍 Shipping Coverage:</strong> We currently ship to all 50 US states. Unfortunately, we do not ship to PO Boxes, APO/FPO addresses, or international destinations at this time.</p>
+    </div>
+  </section>
+
+  <!-- Order Processing -->
+  <section class="policy-section">
+    <h2>Order Processing</h2>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-title">Order Placed</div>
+        <div class="timeline-text">You receive an order confirmation email immediately after purchase.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Processing</div>
+        <div class="timeline-text">Orders are processed within 1-2 business days. Custom orders may take 2-3 weeks.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Shipped</div>
+        <div class="timeline-text">You receive a shipping confirmation email with tracking information.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Delivered</div>
+        <div class="timeline-text">Your order arrives in discreet packaging. Signature may be required for high-value orders.</div>
+      </div>
+    </div>
+
+    <h3>Processing Times</h3>
+    <ul>
+      <li><strong>In-stock items:</strong> 1-2 business days</li>
+      <li><strong>Pre-order items:</strong> As specified on product page</li>
+      <li><strong>Custom orders:</strong> 2-3 weeks for production</li>
+      <li><strong>Orders placed on weekends/holidays:</strong> Processed next business day</li>
+    </ul>
+  </section>
+
+  <!-- Discreet Packaging -->
+  <section class="policy-section">
+    <h2>Discreet Packaging Guarantee</h2>
+    
+    <p>We understand the importance of privacy. Every order is packaged with the utmost discretion:</p>
+    
+    <ul>
+      <li><strong>Plain exterior boxes</strong> with no branding or product indications</li>
+      <li><strong>Neutral return address</strong> (VS Commerce LLC)</li>
+      <li><strong>Secure internal packaging</strong> to prevent damage and maintain privacy</li>
+      <li><strong>No descriptive labels</strong> on the outside of the package</li>
+      <li><strong>Discreet billing</strong> appears as "VS Commerce LLC" on your statement</li>
+    </ul>
+
+    <div class="highlight-box success">
+      <p><strong>💡 Pro Tip:</strong> If you have specific delivery instructions (e.g., "leave at back door"), please include them in the order notes during checkout or contact our support team immediately after placing your order.</p>
+    </div>
+  </section>
+
+  <!-- Returns Policy -->
+  <section class="policy-section">
+    <h2>Returns & Exchanges</h2>
+    
+    <div class="guarantee-box">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-title">30-Day Satisfaction Guarantee</div>
+      <div class="guarantee-text">We stand behind our products. If you're not completely satisfied with your purchase, you may return unopened items within 30 days for a full refund.</div>
+    </div>
+
+    <h3>Return Eligibility</h3>
+    <table class="shipping-table">
+      <thead>
+        <tr>
+          <th>Item Condition</th>
+          <th>Returnable</th>
+          <th>Refund Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unopened, original packaging</td>
+          <td style="color: var(--success);">✓ Yes</td>
+          <td>Full refund</td>
+        </tr>
+        <tr>
+          <td>Opened but unused</td>
+          <td style="color: var(--gold);">⚠ Case by case</td>
+          <td>Store credit</td>
+        </tr>
+        <tr>
+          <td>Used items</td>
+          <td style="color: var(--crimson-bright);">✗ No</td>
+          <td>N/A (hygiene reasons)</td>
+        </tr>
+        <tr>
+          <td>Latex garments (worn)</td>
+          <td style="color: var(--crimson-bright);">✗ No</td>
+          <td>N/A (hygiene reasons)</td>
+        </tr>
+        <tr>
+          <td>Clearance/Final sale</td>
+          <td style="color: var(--crimson-bright);">✗ No</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Defective/Damaged</td>
+          <td style="color: var(--success);">✓ Yes</td>
+          <td>Replacement or full refund</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>How to Return</h3>
+    <ol>
+      <li><strong>Contact us:</strong> Email <a href="mailto:returns@veletsolo.com" style="color: var(--gold);">returns@veletsolo.com</a> within 30 days of delivery with your order number and reason for return.</li>
+      <li><strong>Receive authorization:</strong> We'll email you a Return Authorization (RA) number and return instructions.</li>
+      <li><strong>Package your return:</strong> Securely pack items in original packaging if possible. Include the RA number inside the package.</li>
+      <li><strong>Ship it back:</strong> Use a trackable shipping method. We recommend USPS Priority Mail or UPS.</li>
+      <li><strong>Receive refund:</strong> Once we receive and inspect your return, we'll process your refund within 5-7 business days.</li>
+    </ol>
+
+    <div class="highlight-box">
+      <p><strong>⚠️ Important:</strong> Return shipping costs are the responsibility of the customer unless the item was defective or incorrectly shipped. We recommend using a trackable shipping method as we cannot be responsible for lost return packages.</p>
+    </div>
+  </section>
+
+  <!-- Common Questions -->
+  <section class="policy-section">
+    <h2>Common Shipping Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">Can I change my shipping address after ordering?</div>
+      <div class="faq-answer">
+        <p>Address changes can be made within 2 hours of placing your order. Contact our support team immediately with your order number and the new address. After this window, we cannot guarantee changes as orders enter fulfillment processing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What if my package is lost or stolen?</div>
+      <div class="faq-answer">
+        <p>If your tracking shows delivered but you haven't received your package, first check with neighbors and any secure delivery locations. If still missing, contact us within 5 days of the delivery date. We'll work with the carrier to locate your package or provide a replacement/resolution.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you ship to hotels or vacation rentals?</div>
+      <div class="faq-answer">
+        <p>Yes, we can ship to hotels and temporary accommodations. We recommend confirming with the property that they can accept packages on your behalf, and include your reservation details in the address. Note that signature confirmation is recommended for these addresses.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Will customs see what's in my international order?</div>
+      <div class="faq-answer">
+        <p>We currently only ship within the United States, so customs declarations are not applicable. If we expand internationally in the future, we will describe contents in a discreet manner as required by customs regulations while maintaining your privacy to the extent possible.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I request expedited processing?</div>
+      <div class="faq-answer">
+        <p>Expedited processing is available for in-stock items. Please contact us immediately after placing your order with your request. Additional fees may apply. Custom and made-to-order items cannot be expedited due to production time requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Damaged Items -->
+  <section class="policy-section">
+    <h2>Damaged or Defective Items</h2>
+    
+    <p>If you receive a damaged or defective product:</p>
+    <ul>
+      <li>Take photos of the damage and packaging immediately</li>
+      <li>Contact us within 7 days of delivery at <a href="mailto:support@veletsolo.com" style="color: var(--gold);">support@veletsolo.com</a></li>
+      <li>Include your order number and photos</li>
+      <li>We will provide a prepaid return label for defective items</li>
+      <li>Choose between a replacement (if available) or full refund</li>
+    </ul>
+
+    <div class="highlight-box success">
+      <p><strong>✅ Our Promise:</strong> We stand behind the quality of our products. If something arrives damaged or defective, we will make it right at no cost to you.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="policy-section">
+    <h2>Need Help?</h2>
+    
+    <div class="contact-box">
+      <h3>Shipping & Returns Support</h3>
+      <p>Our customer care team is available 7 days a week to help with any shipping or return questions.</p>
+      <a href="mailto:support@veletsolo.com" class="contact-email">Contact Support</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-simple">
+    <span class="footer-logo">VeletSolo</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="shipping.html">Shipping</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 VeletSolo · Discreet · Secure · Yours</p>
+  </div>
+</footer>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://veletsolo.com/</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://veletsolo.com/images/chastity_cage.jpg</image:loc>
+      <image:title>Stainless Steel Chastity Cage</image:title>
+      <image:caption>Premium chastity devices collection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://veletsolo.com/images/latex_full.jpg</image:loc>
+      <image:title>Latex Catsuit Collection</image:title>
+      <image:caption>Premium latex gear</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://veletsolo.com/privacy.html</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://veletsolo.com/terms.html</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Shipping & Returns -->
+  <url>
+    <loc>https://veletsolo.com/shipping.html</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
