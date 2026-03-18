@@ -226,6 +226,25 @@
     transition: all 0.3s;
   }
   .nav-cta:hover { background: var(--gold); color: var(--black); }
+  
+  .nav-cta-custom {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    padding: 0.55rem 1.4rem;
+    background: linear-gradient(135deg, #FF6A00, #FF9500);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    margin-left: 0.8rem;
+    border: none;
+  }
+  .nav-cta-custom:hover { 
+    background: linear-gradient(135deg, #FF9500, #FF6A00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,106,0,0.3);
+  }
 
   /* ── HERO ── */
   #hero {
@@ -1605,6 +1624,8 @@
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .philosophy-pillars { grid-template-columns: 1fr; gap: 1.5rem; max-width: 400px; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-cta-custom { margin-left: 0; }
   }
   @media (max-width: 600px) {
     .cat-grid { grid-template-columns: 1fr; }
@@ -1905,7 +1926,10 @@
     <li><a href="#trust">Why Us</a></li>
     <li><a href="#inquiry" class="inquiry-link" onclick="openInquiryModal(event)">Contact</a></li>
   </ul>
-  <a href="#collections" class="nav-cta">Shop Now</a>
+  <div style="display:flex;align-items:center;">
+    <a href="#collections" class="nav-cta">Shop Now</a>
+    <a href="custom.html" class="nav-cta-custom">Custom Order</a>
+  </div>
 </nav>
 
 <!-- HERO -->
