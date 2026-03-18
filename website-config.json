@@ -479,6 +479,72 @@
     }
   },
 
+  "custom": {
+    "_comment": "定制服务落地页配置 - 用于子域名 custom.veletsolo.com",
+    "seo": {
+      "title": "Custom Orders — VeletSolo Bespoke Design",
+      "description": "Custom latex catsuits, bespoke BDSM tools, and made-to-measure chastity devices. Premium craftsmanship tailored to your exact specifications."
+    },
+    "theme": {
+      "primaryColor": "#FF6A00",
+      "secondaryColor": "#FF9500",
+      "accentColor": "#ffb74d"
+    },
+    "hero": {
+      "badge": "Made-to-Measure Services",
+      "title": "Your Vision. Our Craftsmanship.",
+      "subtitle": "Bespoke latex catsuits, custom BDSM tools, and made-to-measure designs.",
+      "description": "Every body is unique. Every desire is personal. Our master craftsmen create one-of-a-kind pieces tailored to your exact measurements, specifications, and aesthetic preferences.",
+      "features": [
+        { "icon": "📏", "text": "Exact Measurements" },
+        { "icon": "✨", "text": "Premium Materials" },
+        { "icon": "🔒", "text": "Private & Discreet" },
+        { "icon": "🚚", "text": "Global Shipping" }
+      ],
+      "cta": { "label": "Start Your Custom Order", "href": "#inquiry" }
+    },
+    "process": {
+      "tag": "How It Works",
+      "title": "From Concept to Creation",
+      "subtitle": "A streamlined process designed for your convenience and peace of mind.",
+      "steps": [
+        { "number": "01", "icon": "📝", "title": "Submit Inquiry", "text": "Tell us about your vision, requirements, and timeline through our custom form." },
+        { "number": "02", "icon": "💬", "title": "Consultation", "text": "Our design team reviews your request and schedules a private consultation." },
+        { "number": "03", "icon": "✏️", "title": "Design & Quote", "text": "Receive detailed designs, material options, and a transparent pricing quote." },
+        { "number": "04", "icon": "🎨", "title": "Craftsmanship", "text": "Master artisans bring your design to life with meticulous attention to detail." }
+      ]
+    },
+    "categories": {
+      "tag": "What We Create",
+      "title": "Custom Categories",
+      "subtitle": "Specialized craftsmanship across our entire product range.",
+      "items": [
+        { "tag": "Signature Service", "name": "Custom Latex Catsuits", "description": "Made-to-measure latex sheeting in your choice of thickness, color, and finish.", "image": "./images/latex_suit.jpg" },
+        { "tag": "Precision Engineering", "name": "Custom Chastity Devices", "description": "Bespoke sizing, custom ring configurations, and personalized engraving options.", "image": "./images/chastity_cage.jpg" },
+        { "tag": "Handcrafted", "name": "Bespoke BDSM Tools", "description": "Custom leatherwork, personalized hardware, and matching sets.", "image": "./images/leather_cuffs.jpg" },
+        { "tag": "Sensory Design", "name": "Custom Breath Play Gear", "description": "Specialized hoods and restraints with custom breathing configurations.", "image": "./images/breath_hood.jpg" },
+        { "tag": "White Glove", "name": "Complete Custom Solutions", "description": "Full wardrobe design, private label manufacturing, and wholesale partnerships.", "image": "" }
+      ]
+    },
+    "benefits": {
+      "tag": "The Difference",
+      "title": "Why Go Custom?",
+      "items": [
+        { "icon": "🎯", "title": "Perfect Fit Guarantee", "text": "Every piece is crafted to your exact body measurements. No compromises on comfort or aesthetics." },
+        { "icon": "🎨", "title": "Unique Design", "text": "Choose colors, materials, hardware, and details that express your individual style." },
+        { "icon": "🏆", "title": "Premium Quality", "text": "Handcrafted by master artisans using the finest materials. Built to last a lifetime." }
+      ]
+    },
+    "form": {
+      "tag": "Start Your Project",
+      "title": "Request a Custom Quote",
+      "subtitle": "Tell us about your custom requirements. Our team typically responds within 24 hours.",
+      "successTitle": "Request Received!",
+      "successText": "Thank you for your custom order inquiry. Our design team will review your requirements and contact you within 24 hours with next steps and pricing.",
+      "privacyNote": "Your information is confidential. We respect your privacy and never share your data."
+    }
+  },
+
   "footer": {
     "logo": "VeletSolo",
     "tagline": "\"Named for latex that feels like velvet. Built for the private courage of knowing exactly who you are — and what you want.\"",

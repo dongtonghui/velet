@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+<!-- ══════════════════════════════════════════
+     SEO META TAGS
+══════════════════════════════════════════ -->
+<title>Custom Orders — VeletSolo Bespoke Design</title>
+<meta name="description" content="Custom latex catsuits, bespoke BDSM tools, and made-to-measure chastity devices. Premium craftsmanship tailored to your exact specifications." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="VeletSolo" />
+<link rel="canonical" href="https://custom.veletsolo.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VeletSolo Custom" />
+<meta property="og:title" content="VeletSolo — Custom Orders & Bespoke Design" />
+<meta property="og:description" content="Custom latex catsuits, bespoke BDSM tools, and made-to-measure designs. Your vision, our craftsmanship." />
+<meta property="og:url" content="https://custom.veletsolo.com/" />
+<meta property="og:image" content="https://veletsolo.com/og-image.jpg" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Theme Color - Alibaba Orange -->
+<meta name="theme-color" content="#FF6A00" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;800&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+
+<style>
+  /* ════════════════════════════════════════════════
+     ALIBABA ORANGE COLOR PALETTE
+     Primary: #FF6A00 (Alibaba Orange)
+     Secondary: #FF9500 (Light Orange)
+     Dark: #E65100 (Dark Orange)
+     Background: #1a1512 (Warm Dark)
+  ════════════════════════════════════════════════ */
+  :root {
+    --black: #1a1512;
+    --deep: #241e1a;
+    --surface: #2d2520;
+    --surface2: #3a3028;
+    --orange: #FF6A00;
+    --orange-light: #FF9500;
+    --orange-dark: #E65100;
+    --orange-muted: #BF360C;
+    --gold: #ffb74d;
+    --gold-light: #ffe0b2;
+    --cream: #f5ebe4;
+    --muted: #8d7b6f;
+    --white: #faf6f2;
+    --success: #4CAF50;
+    --error: #f44336;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.25;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 1.2rem 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(26,21,18,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(2px);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.35em;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 50%, var(--orange-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-tagline {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(255,106,0,0.3);
+  }
+  .nav-cta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    padding: 0.6rem 1.6rem;
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-cta:hover { background: var(--orange-light); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 4vw 4rem;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 35%, rgba(255,106,0,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 15% 75%, rgba(255,149,0,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 50% at 85% 20%, rgba(255,183,77,0.1) 0%, transparent 50%),
+      linear-gradient(160deg, #1e1914 0%, #1a1512 45%, #241e1a 100%);
+  }
+  .hero-deco {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-deco::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border: 1px solid rgba(255,106,0,0.12);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 6s ease-in-out infinite;
+  }
+  @keyframes pulse-ring {
+    0%,100% { transform: translate(-50%,-50%) scale(1); opacity: .5; }
+    50% { transform: translate(-50%,-50%) scale(1.08); opacity: 1; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--orange);
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(255,106,0,0.4);
+    margin-bottom: 2rem;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 0.5em;
+  }
+  .hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .hero-desc {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: rgba(245,235,228,0.7);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-features {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .hero-feature-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,106,0,0.1);
+    border: 1px solid rgba(255,106,0,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: 0.9rem;
+  }
+  .btn-primary {
+    padding: 1.1rem 3rem;
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+
+  /* ── SECTION STYLES ── */
+  .section-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-tag::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--orange);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+  .section-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── CUSTOM PROCESS ── */
+  .process-section {
+    padding: 8rem 4vw;
+    background: var(--deep);
+    position: relative;
+  }
+  .process-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--orange), transparent);
+    opacity: 0.3;
+  }
+  .process-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .process-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(255,106,0,0.1);
+    position: relative;
+    transition: all 0.3s;
+  }
+  .process-card:hover {
+    border-color: rgba(255,106,0,0.3);
+    background: rgba(255,106,0,0.03);
+  }
+  .process-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--orange);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .process-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .process-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .process-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── CUSTOM CATEGORIES ── */
+  .categories-section {
+    padding: 8rem 4vw;
+    background: var(--black);
+  }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .cat-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(255,106,0,0.1);
+    transition: all 0.4s;
+  }
+  .cat-card:hover {
+    border-color: rgba(255,106,0,0.4);
+    transform: translateY(-4px);
+  }
+  .cat-card:nth-child(1) { grid-column: span 2; aspect-ratio: 2/1; }
+  .cat-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    transition: all 0.5s;
+  }
+  .cat-card:hover .cat-bg { opacity: 0.7; transform: scale(1.05); }
+  .cat-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,21,18,0.95) 0%, rgba(26,21,18,0.6) 50%, transparent 100%);
+  }
+  .cat-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2rem;
+  }
+  .cat-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .cat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .cat-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── WHY CUSTOM ── */
+  .why-section {
+    padding: 8rem 4vw;
+    background: var(--surface);
+    position: relative;
+  }
+  .why-grid {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .why-card {
+    text-align: center;
+    padding: 2rem;
+  }
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(255,106,0,0.1);
+    border: 1px solid rgba(255,106,0,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: var(--orange);
+  }
+  .why-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .why-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── INQUIRY FORM SECTION ── */
+  .inquiry-section {
+    padding: 8rem 4vw;
+    background: var(--deep);
+    position: relative;
+  }
+  .inquiry-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255,106,0,0.15), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(255,149,0,0.1), transparent 55%);
+  }
+  .inquiry-container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .inquiry-box {
+    background: var(--surface);
+    border: 1px solid rgba(255,106,0,0.2);
+    padding: 3rem;
+  }
+  .inquiry-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .inquiry-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .inquiry-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .inquiry-form-group.full-width { grid-column: span 2; }
+  .inquiry-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .inquiry-label .required { color: var(--orange); margin-left: 0.2rem; }
+  .inquiry-input,
+  .inquiry-select,
+  .inquiry-textarea {
+    padding: 0.9rem 1.2rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,106,0,0.2);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+  .inquiry-input:focus,
+  .inquiry-select:focus,
+  .inquiry-textarea:focus {
+    border-color: var(--orange);
+    background: rgba(255,106,0,0.05);
+  }
+  .inquiry-input::placeholder,
+  .inquiry-textarea::placeholder { color: var(--muted); }
+  .inquiry-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FF6A00' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .inquiry-select option {
+    background: var(--deep);
+    color: var(--cream);
+  }
+  .inquiry-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .inquiry-submit {
+    grid-column: span 2;
+    padding: 1.1rem;
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+  .inquiry-submit:hover { background: var(--orange-light); }
+  .inquiry-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .inquiry-privacy {
+    grid-column: span 2;
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(255,106,0,0.1);
+    margin-top: 1rem;
+  }
+  .form-error {
+    color: var(--orange-light);
+    font-size: 0.75rem;
+    display: none;
+  }
+  .inquiry-form-group.has-error .form-error { display: block; }
+  .inquiry-form-group.has-error .inquiry-input,
+  .inquiry-form-group.has-error .inquiry-select,
+  .inquiry-form-group.has-error .inquiry-textarea {
+    border-color: var(--orange-light);
+  }
+
+  /* ── SUCCESS MESSAGE ── */
+  .inquiry-success {
+    text-align: center;
+    padding: 3rem 2rem;
+    display: none;
+  }
+  .inquiry-success.active { display: block; }
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    animation: success-pop 0.5s ease;
+  }
+  @keyframes success-pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .success-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,106,0,0.1);
+    padding: 4rem 4vw 2rem;
+  }
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.35em;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--orange); }
+  .footer-copy {
+    font-size: 0.65rem;
+    color: rgba(141,123,111,0.5);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .cat-card:nth-child(1) { grid-column: span 2; }
+    .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .inquiry-form-grid { grid-template-columns: 1fr; }
+    .inquiry-form-group.full-width,
+    .inquiry-submit,
+    .inquiry-privacy { grid-column: span 1; }
+    .nav-tagline { display: none; }
+  }
+  @media (max-width: 600px) {
+    .hero-features { gap: 1rem; }
+    .process-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .cat-card:nth-child(1) { grid-column: span 1; aspect-ratio: 3/2; }
+    .inquiry-box { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div style="display:flex;align-items:center;">
+    <a href="/" class="nav-logo">VeletSolo</a>
+    <span class="nav-tagline">BESPOKE DESIGN STUDIO</span>
+  </div>
+  <a href="#inquiry" class="nav-cta">Request Custom Quote</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Made-to-Measure Services</div>
+    <h1 class="hero-title">Your Vision.<br><em>Our Craftsmanship.</em></h1>
+    <p class="hero-subtitle">Bespoke latex catsuits, custom BDSM tools, and made-to-measure designs.</p>
+    <p class="hero-desc">Every body is unique. Every desire is personal. Our master craftsmen create one-of-a-kind pieces tailored to your exact measurements, specifications, and aesthetic preferences.</p>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="hero-feature-icon">📏</div>
+        <span>Exact Measurements</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">✨</div>
+        <span>Premium Materials</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">🔒</div>
+        <span>Private & Discreet</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">🚚</div>
+        <span>Global Shipping</span>
+      </div>
+    </div>
+    <a href="#inquiry" class="btn-primary">Start Your Custom Order</a>
+  </div>
+</section>
+
+<!-- CUSTOM PROCESS -->
+<section class="process-section">
+  <div class="section-header" style="text-align:center;max-width:600px;margin:0 auto;">
+    <div class="section-tag" style="justify-content:center;">How It Works</div>
+    <h2 class="section-title">From Concept to <em>Creation</em></h2>
+    <p style="color:var(--muted);font-size:0.9rem;">A streamlined process designed for your convenience and peace of mind.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-number">01</div>
+      <div class="process-icon">📝</div>
+      <div class="process-title">Submit Inquiry</div>
+      <p class="process-text">Tell us about your vision, requirements, and timeline through our custom form.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-number">02</div>
+      <div class="process-icon">💬</div>
+      <div class="process-title">Consultation</div>
+      <p class="process-text">Our design team reviews your request and schedules a private consultation.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-number">03</div>
+      <div class="process-icon">✏️</div>
+      <div class="process-title">Design & Quote</div>
+      <p class="process-text">Receive detailed designs, material options, and a transparent pricing quote.</p>
+    </n>
+    <div class="process-card">
+      <div class="process-number">04</div>
+      <div class="process-icon">🎨</div>
+      <div class="process-title">Craftsmanship</div>
+      <p class="process-text">Master artisans bring your design to life with meticulous attention to detail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM CATEGORIES -->
+<section class="categories-section">
+  <div class="section-header">
+    <div class="section-tag" style="justify-content:center;">What We Create</div>
+    <h2 class="section-title">Custom <em>Categories</em></h2>
+    <p style="color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;">Specialized craftsmanship across our entire product range.</p>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('./images/latex_suit.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-tag">Signature Service</div>
+        <h3 class="cat-name">Custom Latex Catsuits</h3>
+        <p class="cat-desc">Made-to-measure latex sheeting in your choice of thickness, color, and finish. From concept sketch to final fitting.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('./images/chastity_cage.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-tag">Precision Engineering</div>
+        <h3 class="cat-name">Custom Chastity Devices</h3>
+        <p class="cat-desc">Bespoke sizing, custom ring configurations, and personalized engraving options.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('./images/leather_cuffs.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-tag">Handcrafted</div>
+        <h3 class="cat-name">Bespoke BDSM Tools</h3>
+        <p class="cat-desc">Custom leatherwork, personalized hardware, and matching sets designed to your specifications.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background-image: url('./images/breath_hood.jpg');"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-tag">Sensory Design</div>
+        <h3 class="cat-name">Custom Breath Play Gear</h3>
+        <p class="cat-desc">Specialized hoods and restraints with custom breathing configurations and sensory options.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-bg" style="background: linear-gradient(135deg, rgba(255,106,0,0.3), rgba(36,30,26,0.8));"></div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-tag">White Glove</div>
+        <h3 class="cat-name">Complete Custom Solutions</h3>
+        <p class="cat-desc">Full wardrobe design, private label manufacturing, and wholesale partnerships available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CUSTOM -->
+<section class="why-section">
+  <div class="section-header" style="text-align:center;max-width:600px;margin:0 auto;">
+    <div class="section-tag" style="justify-content:center;">The Difference</div>
+    <h2 class="section-title">Why Go <em>Custom?</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Perfect Fit Guarantee</div>
+      <p class="why-text">Every piece is crafted to your exact body measurements. No compromises on comfort or aesthetics.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎨</div>
+      <div class="why-title">Unique Design</div>
+      <p class="why-text">Choose colors, materials, hardware, and details that express your individual style.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <div class="why-title">Premium Quality</div>
+      <p class="why-text">Handcrafted by master artisans using the finest materials. Built to last a lifetime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY FORM -->
+<section class="inquiry-section" id="inquiry">
+  <div class="inquiry-container">
+    <div class="inquiry-box">
+      <div class="inquiry-header">
+        <div class="section-tag" style="justify-content:center;">Start Your Project</div>
+        <h2 class="section-title">Request a <em>Custom Quote</em></h2>
+        <p style="color:var(--muted);font-size:0.9rem;">Tell us about your custom requirements. Our team typically responds within 24 hours.</p>
+      </div>
+      
+      <form class="inquiry-form-grid" id="customInquiryForm" onsubmit="submitCustomInquiry(event)">
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Full Name <span class="required">*</span></label>
+          <input type="text" class="inquiry-input" name="name" placeholder="Your full name" required>
+          <span class="form-error">Please enter your name</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Email Address <span class="required">*</span></label>
+          <input type="email" class="inquiry-input" name="email" placeholder="your@email.com" required>
+          <span class="form-error">Please enter a valid email</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Phone / WhatsApp</label>
+          <input type="tel" class="inquiry-input" name="phone" placeholder="+1 (optional)">
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Product Category <span class="required">*</span></label>
+          <select class="inquiry-select" name="category" required>
+            <option value="">Select category</option>
+            <option value="latex-catsuit">Custom Latex Catsuit</option>
+            <option value="latex-hood">Custom Latex Hood</option>
+            <option value="chastity">Custom Chastity Device</option>
+            <option value="bdsm-set">Bespoke BDSM Set</option>
+            <option value="leather">Custom Leather Goods</option>
+            <option value="bulk">Bulk/Business Order</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+          <span class="form-error">Please select a category</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Estimated Quantity</label>
+          <select class="inquiry-select" name="quantity">
+            <option value="">Select quantity</option>
+            <option value="1">1 piece</option>
+            <option value="2-5">2-5 pieces</option>
+            <option value="6-10">6-10 pieces</option>
+            <option value="11-50">11-50 pieces</option>
+            <option value="50+">50+ pieces</option>
+          </select>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-label">Timeline</label>
+          <select class="inquiry-select" name="timeline">
+            <option value="">When do you need it?</option>
+            <option value="urgent">ASAP (Rush Order)</option>
+            <option value="2weeks">Within 2 weeks</option>
+            <option value="1month">Within 1 month</option>
+            <option value="2months">Within 2 months</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        
+        <div class="inquiry-form-group full-width">
+          <label class="inquiry-label">Customization Details <span class="required">*</span></label>
+          <textarea class="inquiry-textarea" name="details" rows="5" placeholder="Describe your vision: colors, materials, special features, measurements, or any specific requirements..." required></textarea>
+          <span class="form-error">Please describe your customization needs</span>
+        </div>
+        
+        <div class="inquiry-form-group full-width">
+          <label class="inquiry-label">Reference Images (Optional)</label>
+          <input type="file" class="inquiry-input" name="attachments" accept="image/*" multiple style="padding:0.6rem 1rem;">
+          <span style="font-size:0.7rem;color:var(--muted);margin-top:0.3rem;">Upload sketches, reference photos, or inspiration images</span>
+        </div>
+        
+        <button type="submit" class="inquiry-submit" id="submitBtn">Submit Custom Request</button>
+        
+        <div class="inquiry-privacy">
+          🔒 Your information is confidential. We respect your privacy and never share your data.
+        </div>
+      </form>
+      
+      <div class="inquiry-success" id="successMessage">
+        <div class="success-icon">✓</div>
+        <h3 class="success-title">Request Received!</h3>
+        <p class="success-text">Thank you for your custom order inquiry. Our design team will review your requirements and contact you within 24 hours with next steps and pricing.</p>
+        <button class="btn-primary" onclick="resetForm()" style="margin-top:1rem;">Submit Another Request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <span class="footer-logo">VeletSolo</span>
+    <p class="footer-tagline">Premium custom designs for discerning individuals.<br>Crafted with precision. Delivered with discretion.</p>
+    <div class="footer-links">
+      <a href="https://veletsolo.com">Main Store</a>
+      <a href="mailto:support@veletsolo.com">Contact Support</a>
+      <a href="https://veletsolo.com/privacy.html">Privacy Policy</a>
+      <a href="https://veletsolo.com/terms.html">Terms of Service</a>
+    </div>
+    <p class="footer-copy">© 2025 VeletSolo · Custom Design Studio · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+// Form Handling
+const InquiryForm = {
+  form: document.getElementById('customInquiryForm'),
+  successMsg: document.getElementById('successMessage'),
+  submitBtn: document.getElementById('submitBtn'),
+  
+  validate() {
+    let isValid = true;
+    this.form.querySelectorAll('.inquiry-form-group').forEach(group => {
+      group.classList.remove('has-error');
+    });
+    
+    const required = this.form.querySelectorAll('[required]');
+    required.forEach(field => {
+      if (!field.value.trim()) {
+        field.closest('.inquiry-form-group').classList.add('has-error');
+        isValid = false;
+      }
+    });
+    
+    const email = this.form.querySelector('input[type="email"]');
+    if (email && email.value) {
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!pattern.test(email.value)) {
+        email.closest('.inquiry-form-group').classList.add('has-error');
+        isValid = false;
+      }
+    }
+    
+    return isValid;
+  },
+  
+  async submit(formData) {
+    this.submitBtn.disabled = true;
+    this.submitBtn.textContent = 'Sending...';
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Store locally for demo
+      const inquiries = JSON.parse(localStorage.getItem('veletsolo_custom_inquiries') || '[]');
+      inquiries.push({
+        ...formData,
+        id: 'CUS-' + Date.now(),
+        timestamp: new Date().toISOString(),
+        status: 'pending'
+      });
+      localStorage.setItem('veletsolo_custom_inquiries', JSON.stringify(inquiries));
+      
+      // Show success
+      this.form.style.display = 'none';
+      this.successMsg.classList.add('active');
+      
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong. Please try again or email us directly.');
+    } finally {
+      this.submitBtn.disabled = false;
+      this.submitBtn.textContent = 'Submit Custom Request';
+    }
+  }
+};
+
+window.submitCustomInquiry = function(e) {
+  e.preventDefault();
+  
+  if (!InquiryForm.validate()) return;
+  
+  const formData = {
+    name: InquiryForm.form.querySelector('[name="name"]').value,
+    email: InquiryForm.form.querySelector('[name="email"]').value,
+    phone: InquiryForm.form.querySelector('[name="phone"]').value,
+    category: InquiryForm.form.querySelector('[name="category"]').value,
+    quantity: InquiryForm.form.querySelector('[name="quantity"]').value,
+    timeline: InquiryForm.form.querySelector('[name="timeline"]').value,
+    details: InquiryForm.form.querySelector('[name="details"]').value
+  };
+  
+  InquiryForm.submit(formData);
+};
+
+window.resetForm = function() {
+  InquiryForm.form.reset();
+  InquiryForm.form.style.display = 'grid';
+  InquiryForm.successMsg.classList.remove('active');
+};
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
