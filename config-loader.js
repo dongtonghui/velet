@@ -186,9 +186,12 @@
     // 导航链接 - 需要在HTML中保留结构，这里可以动态更新
     const navLinks = document.querySelector('.nav-links');
     if (navLinks && navConfig.links) {
-      navLinks.innerHTML = navConfig.links.map(link => 
-        `<li><a href="${link.href}">${link.label}</a></li>`
-      ).join('');
+      navLinks.innerHTML = navConfig.links.map(link => {
+        const isInquiry = link.isInquiry || link.href === '#inquiry';
+        const className = isInquiry ? 'inquiry-link' : '';
+        const onClick = isInquiry ? ' onclick="openInquiryModal(event)"' : '';
+        return `<li><a href="${link.href}" class="${className}"${onClick}>${link.label}</a></li>`;
+      }).join('');
     }
 
     // CTA 按钮
@@ -618,6 +621,46 @@
   }
 
   /**
+   * 渲染询盘表单
+   */
+  function renderInquiryForm(inquiryConfig) {
+    if (!inquiryConfig) return;
+
+    // 更新标题和副标题
+    const titleEl = document.querySelector('.inquiry-modal-title');
+    if (titleEl) titleEl.textContent = inquiryConfig.title;
+
+    const subtitleEl = document.querySelector('.inquiry-modal-subtitle');
+    if (subtitleEl) subtitleEl.textContent = inquiryConfig.subtitle;
+
+    // 更新隐私提示
+    const privacyEl = document.querySelector('.inquiry-form-privacy');
+    if (privacyEl) privacyEl.textContent = inquiryConfig.privacyNote;
+
+    // 更新成功消息
+    const successTitle = document.querySelector('.inquiry-success-title');
+    const successText = document.querySelector('.inquiry-success-text');
+    if (successTitle) successTitle.textContent = inquiryConfig.successMessage?.title;
+    if (successText) successText.textContent = inquiryConfig.successMessage?.text;
+
+    // 更新按钮文本
+    const submitBtn = document.getElementById('inquirySubmitBtn');
+    const cancelBtn = document.querySelector('.inquiry-btn-secondary');
+    if (submitBtn) submitBtn.textContent = inquiryConfig.submitButton;
+    if (cancelBtn) cancelBtn.textContent = inquiryConfig.cancelButton;
+
+    // 如果配置中有选项，更新 select 元素
+    if (inquiryConfig.fields?.category?.options) {
+      const selectEl = document.querySelector('.inquiry-form-select[name="category"]');
+      if (selectEl) {
+        selectEl.innerHTML = inquiryConfig.fields.category.options.map(opt => 
+          `<option value="${opt.value}">${opt.label}</option>`
+        ).join('');
+      }
+    }
+  }
+
+  /**
    * 渲染 Footer
    */
   function renderFooter(footerConfig) {
@@ -651,7 +694,11 @@
           colDiv.innerHTML = `
             <div class="footer-col-title">${col.title}</div>
             <ul class="footer-links">
-              ${col.links.map(link => `<li><a href="${link.href}">${link.label}</a></li>`).join('')}
+              ${col.links.map(link => {
+                const isInquiry = link.isInquiry || link.href === '#inquiry';
+                const onClick = isInquiry ? ' onclick="openInquiryModal(event)"' : '';
+                return `<li><a href="${link.href}"${onClick}>${link.label}</a></li>`;
+              }).join('')}
             </ul>
           `;
           footerGrid.appendChild(colDiv);
@@ -692,6 +739,7 @@
     renderTrustPillars(home.trustPillars);
     renderFAQ(home.faq);
     renderNewsletter(home.newsletter);
+    renderInquiryForm(configData?.inquiryForm);
     renderFooter(footer);
 
     // 重新初始化滚动动画

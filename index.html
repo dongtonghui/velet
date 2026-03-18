@@ -198,6 +198,22 @@
     transition: color 0.25s;
   }
   .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a.inquiry-link {
+    color: var(--gold);
+    position: relative;
+  }
+  .nav-links a.inquiry-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .nav-links a.inquiry-link:hover::after { opacity: 1; }
   .nav-cta {
     font-family: 'Cinzel', serif;
     font-size: 0.65rem;
@@ -1599,6 +1615,269 @@
     .newsletter-input { border-right: 1px solid rgba(201,169,110,0.2); border-bottom: none; }
     .footer-bottom { flex-direction: column; text-align: center; }
   }
+
+  /* ── INQUIRY FORM MODAL ── */
+  .inquiry-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(26,24,40,0.92);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  .inquiry-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .inquiry-modal-inner {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--deep);
+    border: 1px solid rgba(201,169,110,0.2);
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+  }
+  .inquiry-modal.active .inquiry-modal-inner {
+    transform: translateY(0);
+  }
+  .inquiry-modal-header {
+    padding: 2.5rem 2.5rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,169,110,0.1);
+    position: relative;
+  }
+  .inquiry-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid rgba(201,169,110,0.2);
+    color: var(--muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .inquiry-modal-close:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .inquiry-modal-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--crimson-bright);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .inquiry-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .inquiry-modal-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .inquiry-form {
+    padding: 2rem 2.5rem 2.5rem;
+  }
+  .inquiry-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .inquiry-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .inquiry-form-group.full-width {
+    grid-column: span 2;
+  }
+  .inquiry-form-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .inquiry-form-label .required {
+    color: var(--crimson-bright);
+    margin-left: 0.2rem;
+  }
+  .inquiry-form-input,
+  .inquiry-form-select,
+  .inquiry-form-textarea {
+    padding: 0.9rem 1.2rem;
+    background: var(--surface);
+    border: 1px solid rgba(201,169,110,0.15);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+  .inquiry-form-input:focus,
+  .inquiry-form-select:focus,
+  .inquiry-form-textarea:focus {
+    border-color: rgba(201,169,110,0.4);
+    background: var(--surface2);
+  }
+  .inquiry-form-input::placeholder,
+  .inquiry-form-textarea::placeholder {
+    color: rgba(122,111,128,0.6);
+  }
+  .inquiry-form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a96e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .inquiry-form-select option {
+    background: var(--deep);
+    color: var(--cream);
+  }
+  .inquiry-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+  .inquiry-form-privacy {
+    grid-column: span 2;
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(201,169,110,0.1);
+    background: rgba(201,169,110,0.02);
+  }
+  .inquiry-form-privacy::before {
+    content: '🔒 ';
+  }
+  .inquiry-form-actions {
+    grid-column: span 2;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .inquiry-btn {
+    padding: 1rem 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.35s;
+    border: 1px solid;
+  }
+  .inquiry-btn-primary {
+    background: var(--crimson);
+    border-color: var(--crimson);
+    color: var(--white);
+  }
+  .inquiry-btn-primary:hover {
+    background: var(--crimson-bright);
+    border-color: var(--crimson-bright);
+  }
+  .inquiry-btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .inquiry-btn-secondary {
+    background: transparent;
+    border-color: rgba(201,169,110,0.3);
+    color: var(--muted);
+  }
+  .inquiry-btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .inquiry-success {
+    padding: 3rem 2.5rem;
+    text-align: center;
+    display: none;
+  }
+  .inquiry-success.active {
+    display: block;
+  }
+  .inquiry-success-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--crimson), var(--velvet));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    animation: success-pop 0.5s ease;
+  }
+  @keyframes success-pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .inquiry-success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .inquiry-success-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 380px;
+    margin: 0 auto 1.5rem;
+  }
+  .inquiry-form-error {
+    color: var(--crimson-bright);
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    display: none;
+  }
+  .inquiry-form-group.has-error .inquiry-form-input,
+  .inquiry-form-group.has-error .inquiry-form-select,
+  .inquiry-form-group.has-error .inquiry-form-textarea {
+    border-color: var(--crimson-bright);
+  }
+  .inquiry-form-group.has-error .inquiry-form-error {
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .inquiry-modal { padding: 1rem; }
+    .inquiry-modal-header { padding: 2rem 1.5rem 1rem; }
+    .inquiry-form { padding: 1.5rem; }
+    .inquiry-form-grid { grid-template-columns: 1fr; }
+    .inquiry-form-group.full-width,
+    .inquiry-form-privacy,
+    .inquiry-form-actions { grid-column: span 1; }
+    .inquiry-form-actions { flex-direction: column; }
+    .inquiry-btn { width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -1624,6 +1903,7 @@
     <li><a href="#story">Our Story</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#trust">Why Us</a></li>
+    <li><a href="#inquiry" class="inquiry-link" onclick="openInquiryModal(event)">Contact</a></li>
   </ul>
   <a href="#collections" class="nav-cta">Shop Now</a>
 </nav>
@@ -1734,7 +2014,10 @@
           <span class="si-tag">Medical Grade</span>
           <span class="si-tag">Body Safe</span>
         </div>
-        <button class="si-btn" onclick="alert('Redirecting to product page...')">Add to Cart — $49</button>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <button class="si-btn" onclick="alert('Redirecting to product page...')">Add to Cart — $49</button>
+          <button class="si-btn" style="background:transparent;border:1px solid var(--gold);color:var(--gold);" onclick="openProductInquiry()">Request Quote</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2016,6 +2299,191 @@
   if (cartBtn) {
     cartBtn.addEventListener('click', () => Cart.openCart());
   }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // INQUIRY FORM MODAL
+  // ═══════════════════════════════════════════════════════════════════════════
+  const InquiryModal = {
+    modal: document.getElementById('inquiryModal'),
+    form: document.getElementById('inquiryForm'),
+    success: document.getElementById('inquirySuccess'),
+    submitBtn: document.getElementById('inquirySubmitBtn'),
+    
+    open() {
+      if (this.modal) {
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Reset form state
+        this.form.style.display = 'block';
+        this.success.classList.remove('active');
+        this.form.reset();
+        this.clearErrors();
+      }
+    },
+    
+    close() {
+      if (this.modal) {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    },
+    
+    clearErrors() {
+      this.form.querySelectorAll('.inquiry-form-group').forEach(group => {
+        group.classList.remove('has-error');
+      });
+    },
+    
+    showSuccess() {
+      this.form.style.display = 'none';
+      this.success.classList.add('active');
+    },
+    
+    validateForm() {
+      this.clearErrors();
+      let isValid = true;
+      
+      const requiredFields = this.form.querySelectorAll('[required]');
+      requiredFields.forEach(field => {
+        const group = field.closest('.inquiry-form-group');
+        if (!field.value.trim()) {
+          group.classList.add('has-error');
+          isValid = false;
+        }
+      });
+      
+      // Email validation
+      const emailField = this.form.querySelector('input[type="email"]');
+      if (emailField && emailField.value) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailField.value)) {
+          emailField.closest('.inquiry-form-group').classList.add('has-error');
+          isValid = false;
+        }
+      }
+      
+      return isValid;
+    },
+    
+    async submit(formData) {
+      // Disable submit button
+      this.submitBtn.disabled = true;
+      this.submitBtn.textContent = 'Sending...';
+      
+      try {
+        // Simulate API call - in production, replace with actual endpoint
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Store inquiry in localStorage for demo purposes
+        const inquiries = JSON.parse(localStorage.getItem('veletsolo_inquiries') || '[]');
+        inquiries.push({
+          ...formData,
+          id: Date.now().toString(),
+          timestamp: new Date().toISOString(),
+          status: 'pending'
+        });
+        localStorage.setItem('veletsolo_inquiries', JSON.stringify(inquiries));
+        
+        // Show success state
+        this.showSuccess();
+        
+        // Optional: Send to actual backend
+        // await fetch('/api/inquiry', { method: 'POST', body: JSON.stringify(formData) });
+        
+      } catch (error) {
+        console.error('Inquiry submission error:', error);
+        alert('Something went wrong. Please try again or contact us directly at support@veletsolo.com');
+      } finally {
+        this.submitBtn.disabled = false;
+        this.submitBtn.textContent = 'Send Inquiry';
+      }
+    }
+  };
+
+  // Global functions for onclick handlers
+  window.openInquiryModal = function(e) {
+    if (e) e.preventDefault();
+    InquiryModal.open();
+  };
+  
+  window.closeInquiryModal = function() {
+    InquiryModal.close();
+  };
+  
+  window.closeInquiryModalOnOverlay = function(e) {
+    if (e.target === e.currentTarget) {
+      InquiryModal.close();
+    }
+  };
+  
+  window.submitInquiry = function(e) {
+    e.preventDefault();
+    
+    if (!InquiryModal.validateForm()) {
+      return;
+    }
+    
+    const formData = {
+      name: InquiryModal.form.querySelector('[name="name"]').value,
+      email: InquiryModal.form.querySelector('[name="email"]').value,
+      phone: InquiryModal.form.querySelector('[name="phone"]').value,
+      category: InquiryModal.form.querySelector('[name="category"]').value,
+      quantity: InquiryModal.form.querySelector('[name="quantity"]').value,
+      message: InquiryModal.form.querySelector('[name="message"]').value
+    };
+    
+    InquiryModal.submit(formData);
+  };
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && InquiryModal.modal.classList.contains('active')) {
+      InquiryModal.close();
+    }
+  });
+
+  // Open inquiry modal for current product
+  window.openProductInquiry = function() {
+    const productName = document.querySelector('.si-name')?.textContent || '';
+    const categoryMap = {
+      'chastity': 'chastity',
+      'cage': 'chastity',
+      'latex': 'latex',
+      'wax': 'wax',
+      'candle': 'wax',
+      'bdsm': 'bdsm',
+      'cuff': 'bdsm',
+      'rope': 'rope',
+      'hood': 'hood',
+      'custom': 'custom'
+    };
+    
+    // Try to detect category from product name
+    let detectedCategory = '';
+    const nameLower = productName.toLowerCase();
+    for (const [keyword, cat] of Object.entries(categoryMap)) {
+      if (nameLower.includes(keyword)) {
+        detectedCategory = cat;
+        break;
+      }
+    }
+    
+    InquiryModal.open();
+    
+    // Pre-fill the message with product info
+    const messageField = InquiryModal.form.querySelector('[name="message"]');
+    if (messageField && productName) {
+      messageField.value = `I'm interested in: ${productName}\n\nPlease provide more information about pricing and availability.`;
+    }
+    
+    // Select category if detected
+    if (detectedCategory) {
+      const categorySelect = InquiryModal.form.querySelector('[name="category"]');
+      if (categorySelect) {
+        categorySelect.value = detectedCategory;
+      }
+    }
+  };
 </script>
 
 <!-- Floating Buttons -->
@@ -2024,6 +2492,84 @@
   🛒
   <span class="cart-count" data-count="0">0</span>
 </button>
+
+<!-- INQUIRY FORM MODAL -->
+<div class="inquiry-modal" id="inquiryModal" onclick="closeInquiryModalOnOverlay(event)">
+  <div class="inquiry-modal-inner" onclick="event.stopPropagation()">
+    <div class="inquiry-modal-header">
+      <button class="inquiry-modal-close" onclick="closeInquiryModal()" aria-label="Close">×</button>
+      <div class="inquiry-modal-tag">Private Inquiry</div>
+      <h2 class="inquiry-modal-title">Request a Quote</h2>
+      <p class="inquiry-modal-subtitle">Interested in custom orders or bulk purchases? Send us your inquiry.</p>
+    </div>
+    
+    <form class="inquiry-form" id="inquiryForm" onsubmit="submitInquiry(event)">
+      <div class="inquiry-form-grid">
+        <div class="inquiry-form-group">
+          <label class="inquiry-form-label">Your Name <span class="required">*</span></label>
+          <input type="text" class="inquiry-form-input" name="name" placeholder="Enter your full name" required>
+          <span class="inquiry-form-error">Please enter your name</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-form-label">Email Address <span class="required">*</span></label>
+          <input type="email" class="inquiry-form-input" name="email" placeholder="your@email.com" required>
+          <span class="inquiry-form-error">Please enter a valid email address</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-form-label">Phone Number</label>
+          <input type="tel" class="inquiry-form-input" name="phone" placeholder="+1 (optional)">
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-form-label">Product Category <span class="required">*</span></label>
+          <select class="inquiry-form-select" name="category" required>
+            <option value="">Select a category</option>
+            <option value="chastity">Chastity Devices</option>
+            <option value="latex">Latex Gear</option>
+            <option value="wax">Wax Play Candles</option>
+            <option value="bdsm">BDSM Tools</option>
+            <option value="femme">Femme & Sissy</option>
+            <option value="rope">Breath Play Ropes</option>
+            <option value="hood">Breath Play Hoods</option>
+            <option value="custom">Custom Latex & BDSM</option>
+            <option value="bulk">Bulk/Business Order</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="inquiry-form-error">Please select a category</span>
+        </div>
+        
+        <div class="inquiry-form-group">
+          <label class="inquiry-form-label">Quantity Needed</label>
+          <input type="text" class="inquiry-form-input" name="quantity" placeholder="e.g., 10 pieces">
+        </div>
+        
+        <div class="inquiry-form-group full-width">
+          <label class="inquiry-form-label">Your Inquiry <span class="required">*</span></label>
+          <textarea class="inquiry-form-textarea" name="message" rows="5" placeholder="Tell us about your requirements, customization needs, timeline..." required></textarea>
+          <span class="inquiry-form-error">Please describe your inquiry</span>
+        </div>
+        
+        <div class="inquiry-form-privacy">
+          Your information is kept strictly confidential. We never share your data with third parties.
+        </div>
+        
+        <div class="inquiry-form-actions">
+          <button type="button" class="inquiry-btn inquiry-btn-secondary" onclick="closeInquiryModal()">Cancel</button>
+          <button type="submit" class="inquiry-btn inquiry-btn-primary" id="inquirySubmitBtn">Send Inquiry</button>
+        </div>
+      </div>
+    </form>
+    
+    <div class="inquiry-success" id="inquirySuccess">
+      <div class="inquiry-success-icon">✓</div>
+      <h3 class="inquiry-success-title">Inquiry Sent Successfully</h3>
+      <p class="inquiry-success-text">Thank you for your interest. Our team will review your inquiry and respond within 24 hours. Check your email for confirmation.</p>
+      <button class="inquiry-btn inquiry-btn-primary" onclick="closeInquiryModal()">Close</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

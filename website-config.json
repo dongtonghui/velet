@@ -55,9 +55,48 @@
       { "label": "Collections", "href": "#collections" },
       { "label": "Our Story", "href": "#story" },
       { "label": "FAQ", "href": "#faq" },
-      { "label": "Why Us", "href": "#trust" }
+      { "label": "Why Us", "href": "#trust" },
+      { "label": "Contact", "href": "#inquiry", "isInquiry": true }
     ],
     "cta": { "label": "Shop Now", "href": "#collections" }
+  },
+
+  "inquiryForm": {
+    "_comment": "询盘表单配置",
+    "title": "Request a Quote",
+    "subtitle": "Interested in custom orders or bulk purchases? Send us your inquiry.",
+    "fields": {
+      "name": { "label": "Your Name", "placeholder": "Enter your full name", "required": true },
+      "email": { "label": "Email Address", "placeholder": "your@email.com", "required": true },
+      "phone": { "label": "Phone Number", "placeholder": "+1 (optional)", "required": false },
+      "category": { 
+        "label": "Product Category of Interest", 
+        "placeholder": "Select a category",
+        "required": true,
+        "options": [
+          { "value": "", "label": "Select a category" },
+          { "value": "chastity", "label": "Chastity Devices" },
+          { "value": "latex", "label": "Latex Gear" },
+          { "value": "wax", "label": "Wax Play Candles" },
+          { "value": "bdsm", "label": "BDSM Tools" },
+          { "value": "femme", "label": "Femme & Sissy" },
+          { "value": "rope", "label": "Breath Play Ropes" },
+          { "value": "hood", "label": "Breath Play Hoods" },
+          { "value": "custom", "label": "Custom Latex & BDSM" },
+          { "value": "bulk", "label": "Bulk/Business Order" },
+          { "value": "other", "label": "Other" }
+        ]
+      },
+      "quantity": { "label": "Quantity Needed", "placeholder": "e.g., 10 pieces", "required": false },
+      "message": { "label": "Your Inquiry", "placeholder": "Tell us about your requirements, customization needs, timeline...", "required": true, "rows": 5 }
+    },
+    "submitButton": "Send Inquiry",
+    "cancelButton": "Cancel",
+    "successMessage": {
+      "title": "Inquiry Sent Successfully",
+      "text": "Thank you for your interest. Our team will review your inquiry and respond within 24 hours. Check your email for confirmation."
+    },
+    "privacyNote": "Your information is kept strictly confidential. We never share your data with third parties."
   },
 
   "ageGate": {
@@ -472,7 +511,7 @@
           { "label": "Returns Policy", "href": "shipping.html#returns" },
           { "label": "Sizing Guides", "href": "#" },
           { "label": "Safety Guides", "href": "#" },
-          { "label": "Contact Us", "href": "mailto:support@veletsolo.com" }
+          { "label": "Contact Us", "href": "#inquiry", "isInquiry": true }
         ]
       },
       {
