@@ -138,7 +138,15 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 6rem 4vw 4rem;
+    padding: 8rem 4vw 4rem;
+  }
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    width: 100%;
+    align-items: center;
   }
   .hero-bg {
     position: absolute;
@@ -173,8 +181,7 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    max-width: 900px;
+    text-align: left;
   }
   .hero-badge {
     display: inline-block;
@@ -185,7 +192,7 @@
     text-transform: uppercase;
     padding: 0.5rem 1.2rem;
     border: 1px solid rgba(255,106,0,0.4);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
@@ -218,10 +225,9 @@
   }
   .hero-features {
     display: flex;
-    gap: 3rem;
-    justify-content: center;
+    gap: 2rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   .hero-feature {
     display: flex;
@@ -257,6 +263,110 @@
     display: inline-block;
   }
   .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+
+  /* ── HERO FORM ── */
+  .hero-form-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-form-box {
+    background: rgba(36, 30, 26, 0.95);
+    border: 1px solid rgba(255,106,0,0.25);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .hero-form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .hero-form-subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .hero-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .hero-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .hero-form-group.full-width {
+    grid-column: span 2;
+  }
+  .hero-form-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .hero-form-label .required { color: var(--orange); margin-left: 0.2rem; }
+  .hero-form-input,
+  .hero-form-select,
+  .hero-form-textarea {
+    padding: 0.7rem 1rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,106,0,0.2);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+  .hero-form-input:focus,
+  .hero-form-select:focus,
+  .hero-form-textarea:focus {
+    border-color: var(--orange);
+    background: rgba(255,106,0,0.05);
+  }
+  .hero-form-input::placeholder,
+  .hero-form-textarea::placeholder { color: var(--muted); }
+  .hero-form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FF6A00' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    padding-right: 2rem;
+  }
+  .hero-form-select option {
+    background: var(--deep);
+    color: var(--cream);
+  }
+  .hero-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .hero-form-submit {
+    grid-column: span 2;
+    padding: 0.9rem;
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+  .hero-form-submit:hover { background: var(--orange-light); }
+  .hero-form-privacy {
+    grid-column: span 2;
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 0.8rem;
+  }
 
   /* ── SECTION STYLES ── */
   .section-tag {
@@ -417,10 +527,129 @@
     line-height: 1.6;
   }
 
+  /* ── CASE STUDY ── */
+  .case-section {
+    padding: 8rem 4vw;
+    background: var(--surface);
+    position: relative;
+  }
+  .case-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--orange), transparent);
+    opacity: 0.3;
+  }
+  .case-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .case-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    background: var(--deep);
+    border: 1px solid rgba(255,106,0,0.15);
+    overflow: hidden;
+  }
+  .case-image {
+    position: relative;
+    min-height: 400px;
+    background: linear-gradient(135deg, rgba(255,106,0,0.2), rgba(36,30,26,0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .case-image-icon {
+    font-size: 5rem;
+    opacity: 0.6;
+  }
+  .case-quote-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(26,21,18,0.9);
+    border-left: 3px solid var(--orange);
+    padding: 1rem 1.2rem;
+  }
+  .case-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .case-quote-author {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .case-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .case-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .case-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  .case-problem, .case-solution {
+    margin-bottom: 1.5rem;
+  }
+  .case-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .case-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .case-result {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,106,0,0.15);
+  }
+  .case-result-item {
+    text-align: center;
+  }
+  .case-result-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--orange);
+    font-weight: 300;
+    line-height: 1;
+  }
+  .case-result-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
   /* ── WHY CUSTOM ── */
   .why-section {
     padding: 8rem 4vw;
-    background: var(--surface);
+    background: var(--deep);
     position: relative;
   }
   .why-grid {
@@ -675,6 +904,22 @@
   }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .hero-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-features {
+      justify-content: center;
+    }
+    .hero-form-box {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
   @media (max-width: 900px) {
     .process-grid { grid-template-columns: 1fr 1fr; }
     .cat-grid { grid-template-columns: 1fr 1fr; }
@@ -685,6 +930,13 @@
     .inquiry-submit,
     .inquiry-privacy { grid-column: span 1; }
     .nav-tagline { display: none; }
+    .hero-form-grid { grid-template-columns: 1fr; }
+    .hero-form-group.full-width,
+    .hero-form-submit,
+    .hero-form-privacy { grid-column: span 1; }
+    .case-card { grid-template-columns: 1fr; }
+    .case-image { min-height: 250px; }
+    .case-content { padding: 2rem; }
   }
   @media (max-width: 600px) {
     .hero-features { gap: 1rem; }
@@ -703,37 +955,88 @@
     <a href="/" class="nav-logo">VeletSolo</a>
     <span class="nav-tagline">BESPOKE DESIGN STUDIO</span>
   </div>
-  <a href="#inquiry" class="nav-cta">Request Custom Quote</a>
+  <a href="index.html" class="nav-cta">Shop Ready-Made</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-deco"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Made-to-Measure Services</div>
-    <h1 class="hero-title">Your Vision.<br><em>Our Craftsmanship.</em></h1>
-    <p class="hero-subtitle">Bespoke latex catsuits, custom BDSM tools, and made-to-measure designs.</p>
-    <p class="hero-desc">Every body is unique. Every desire is personal. Our master craftsmen create one-of-a-kind pieces tailored to your exact measurements, specifications, and aesthetic preferences.</p>
-    <div class="hero-features">
-      <div class="hero-feature">
-        <div class="hero-feature-icon">📏</div>
-        <span>Exact Measurements</span>
-      </div>
-      <div class="hero-feature">
-        <div class="hero-feature-icon">✨</div>
-        <span>Premium Materials</span>
-      </div>
-      <div class="hero-feature">
-        <div class="hero-feature-icon">🔒</div>
-        <span>Private & Discreet</span>
-      </div>
-      <div class="hero-feature">
-        <div class="hero-feature-icon">🚚</div>
-        <span>Global Shipping</span>
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <div class="hero-badge">Made-to-Measure Services</div>
+      <h1 class="hero-title">Your Vision.<br><em>Our Craftsmanship.</em></h1>
+      <p class="hero-subtitle">Bespoke latex catsuits, custom BDSM tools, and made-to-measure designs.</p>
+      <p class="hero-desc">Every body is unique. Every desire is personal. Our master craftsmen create one-of-a-kind pieces tailored to your exact measurements, specifications, and aesthetic preferences.</p>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="hero-feature-icon">📏</div>
+          <span>Exact Measurements</span>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">✨</div>
+          <span>Premium Materials</span>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">🔒</div>
+          <span>Private & Discreet</span>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">🚚</div>
+          <span>Global Shipping</span>
+        </div>
       </div>
     </div>
-    <a href="#inquiry" class="btn-primary">Start Your Custom Order</a>
+    
+    <!-- Hero Form -->
+    <div class="hero-form-wrapper">
+      <div class="hero-form-box">
+        <h3 class="hero-form-title">Request a Custom Quote</h3>
+        <p class="hero-form-subtitle">Get a personalized quote within 24 hours</p>
+        <form class="hero-form-grid" id="heroInquiryForm" onsubmit="submitHeroInquiry(event)">
+          <div class="hero-form-group">
+            <label class="hero-form-label">Name <span class="required">*</span></label>
+            <input type="text" class="hero-form-input" name="name" placeholder="Your name" required>
+          </div>
+          <div class="hero-form-group">
+            <label class="hero-form-label">Email <span class="required">*</span></label>
+            <input type="email" class="hero-form-input" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="hero-form-group">
+            <label class="hero-form-label">Category <span class="required">*</span></label>
+            <select class="hero-form-select" name="category" required>
+              <option value="">Select</option>
+              <option value="latex-catsuit">Latex Catsuit</option>
+              <option value="chastity">Chastity Device</option>
+              <option value="bdsm-set">BDSM Set</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="hero-form-group">
+            <label class="hero-form-label">Quantity</label>
+            <select class="hero-form-select" name="quantity">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2-5">2-5</option>
+              <option value="6+">6+</option>
+            </select>
+          </div>
+          <div class="hero-form-group full-width">
+            <label class="hero-form-label">Details <span class="required">*</span></label>
+            <textarea class="hero-form-textarea" name="details" rows="3" placeholder="Tell us about your requirements..." required></textarea>
+          </div>
+          <button type="submit" class="hero-form-submit" id="heroSubmitBtn">Get My Quote</button>
+          <p class="hero-form-privacy">🔒 Your information is confidential</p>
+        </form>
+        
+        <!-- Success Message -->
+        <div class="inquiry-success" id="heroSuccessMessage" style="display:none; padding:2rem;">
+          <div class="success-icon">✓</div>
+          <h3 class="success-title">Request Received!</h3>
+          <p class="success-text">We'll contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -762,7 +1065,7 @@
       <div class="process-icon">✏️</div>
       <div class="process-title">Design & Quote</div>
       <p class="process-text">Receive detailed designs, material options, and a transparent pricing quote.</p>
-    </n>
+    </div>
     <div class="process-card">
       <div class="process-number">04</div>
       <div class="process-icon">🎨</div>
@@ -828,6 +1131,54 @@
   </div>
 </section>
 
+<!-- CASE STUDY -->
+<section class="case-section">
+  <div class="section-header" style="text-align:center;max-width:600px;margin:0 auto 3rem;">
+    <div class="section-tag" style="justify-content:center;">Client Story</div>
+    <h2 class="section-title">How Custom Solved <em>a Real Problem</em></h2>
+  </div>
+  <div class="case-container">
+    <div class="case-card">
+      <div class="case-image">
+        <div class="case-image-icon">🎭</div>
+        <div class="case-quote-badge">
+          <p class="case-quote-text">"For the first time, I have a catsuit that fits like a second skin. No more compromising."</p>
+          <p class="case-quote-author">— Alex M., Professional Performer</p>
+        </div>
+      </div>
+      <div class="case-content">
+        <div class="case-label">Case Study</div>
+        <h3 class="case-title">The Performer's Dilemma: Finding the Perfect Fit</h3>
+        
+        <div class="case-problem">
+          <div class="case-subtitle">The Challenge</div>
+          <p class="case-text">Alex, a professional fetish performer, had spent thousands on off-the-rack latex catsuits that never quite fit right. Standard sizes were too tight in the shoulders, too loose in the waist, and restricted movement during performances. After trying 5 different brands, they were ready to give up on latex entirely.</p>
+        </div>
+        
+        <div class="case-solution">
+          <div class="case-subtitle">Our Solution</div>
+          <p class="case-text">We took 28 precise measurements and created a custom pattern specifically for Alex's body. Using 0.4mm latex in their signature purple with a high-visibility reflective stripe for stage presence, we crafted a catsuit with reinforced seams at stress points and a unique back zipper design for quick changes.</p>
+        </div>
+        
+        <div class="case-result">
+          <div class="case-result-item">
+            <div class="case-result-number">100%</div>
+            <div class="case-result-label">Perfect Fit</div>
+          </div>
+          <div class="case-result-item">
+            <div class="case-result-number">3</div>
+            <div class="case-result-label">Repeat Orders</div>
+          </div>
+          <div class="case-result-item">
+            <div class="case-result-number">2yr</div>
+            <div class="case-result-label">Ongoing Partnership</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY CUSTOM -->
 <section class="why-section">
   <div class="section-header" style="text-align:center;max-width:600px;margin:0 auto;">
@@ -853,102 +1204,6 @@
   </div>
 </section>
 
-<!-- INQUIRY FORM -->
-<section class="inquiry-section" id="inquiry">
-  <div class="inquiry-container">
-    <div class="inquiry-box">
-      <div class="inquiry-header">
-        <div class="section-tag" style="justify-content:center;">Start Your Project</div>
-        <h2 class="section-title">Request a <em>Custom Quote</em></h2>
-        <p style="color:var(--muted);font-size:0.9rem;">Tell us about your custom requirements. Our team typically responds within 24 hours.</p>
-      </div>
-      
-      <form class="inquiry-form-grid" id="customInquiryForm" onsubmit="submitCustomInquiry(event)">
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Full Name <span class="required">*</span></label>
-          <input type="text" class="inquiry-input" name="name" placeholder="Your full name" required>
-          <span class="form-error">Please enter your name</span>
-        </div>
-        
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Email Address <span class="required">*</span></label>
-          <input type="email" class="inquiry-input" name="email" placeholder="your@email.com" required>
-          <span class="form-error">Please enter a valid email</span>
-        </div>
-        
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Phone / WhatsApp</label>
-          <input type="tel" class="inquiry-input" name="phone" placeholder="+1 (optional)">
-        </div>
-        
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Product Category <span class="required">*</span></label>
-          <select class="inquiry-select" name="category" required>
-            <option value="">Select category</option>
-            <option value="latex-catsuit">Custom Latex Catsuit</option>
-            <option value="latex-hood">Custom Latex Hood</option>
-            <option value="chastity">Custom Chastity Device</option>
-            <option value="bdsm-set">Bespoke BDSM Set</option>
-            <option value="leather">Custom Leather Goods</option>
-            <option value="bulk">Bulk/Business Order</option>
-            <option value="other">Other / Not Sure</option>
-          </select>
-          <span class="form-error">Please select a category</span>
-        </div>
-        
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Estimated Quantity</label>
-          <select class="inquiry-select" name="quantity">
-            <option value="">Select quantity</option>
-            <option value="1">1 piece</option>
-            <option value="2-5">2-5 pieces</option>
-            <option value="6-10">6-10 pieces</option>
-            <option value="11-50">11-50 pieces</option>
-            <option value="50+">50+ pieces</option>
-          </select>
-        </div>
-        
-        <div class="inquiry-form-group">
-          <label class="inquiry-label">Timeline</label>
-          <select class="inquiry-select" name="timeline">
-            <option value="">When do you need it?</option>
-            <option value="urgent">ASAP (Rush Order)</option>
-            <option value="2weeks">Within 2 weeks</option>
-            <option value="1month">Within 1 month</option>
-            <option value="2months">Within 2 months</option>
-            <option value="flexible">Flexible</option>
-          </select>
-        </div>
-        
-        <div class="inquiry-form-group full-width">
-          <label class="inquiry-label">Customization Details <span class="required">*</span></label>
-          <textarea class="inquiry-textarea" name="details" rows="5" placeholder="Describe your vision: colors, materials, special features, measurements, or any specific requirements..." required></textarea>
-          <span class="form-error">Please describe your customization needs</span>
-        </div>
-        
-        <div class="inquiry-form-group full-width">
-          <label class="inquiry-label">Reference Images (Optional)</label>
-          <input type="file" class="inquiry-input" name="attachments" accept="image/*" multiple style="padding:0.6rem 1rem;">
-          <span style="font-size:0.7rem;color:var(--muted);margin-top:0.3rem;">Upload sketches, reference photos, or inspiration images</span>
-        </div>
-        
-        <button type="submit" class="inquiry-submit" id="submitBtn">Submit Custom Request</button>
-        
-        <div class="inquiry-privacy">
-          🔒 Your information is confidential. We respect your privacy and never share your data.
-        </div>
-      </form>
-      
-      <div class="inquiry-success" id="successMessage">
-        <div class="success-icon">✓</div>
-        <h3 class="success-title">Request Received!</h3>
-        <p class="success-text">Thank you for your custom order inquiry. Our design team will review your requirements and contact you within 24 hours with next steps and pricing.</p>
-        <button class="btn-primary" onclick="resetForm()" style="margin-top:1rem;">Submit Another Request</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
@@ -965,22 +1220,22 @@
 </footer>
 
 <script>
-// Form Handling
-const InquiryForm = {
-  form: document.getElementById('customInquiryForm'),
-  successMsg: document.getElementById('successMessage'),
-  submitBtn: document.getElementById('submitBtn'),
+// Hero Form Handling
+const HeroForm = {
+  form: document.getElementById('heroInquiryForm'),
+  successMsg: document.getElementById('heroSuccessMessage'),
+  submitBtn: document.getElementById('heroSubmitBtn'),
   
   validate() {
     let isValid = true;
-    this.form.querySelectorAll('.inquiry-form-group').forEach(group => {
+    this.form.querySelectorAll('.hero-form-group').forEach(group => {
       group.classList.remove('has-error');
     });
     
     const required = this.form.querySelectorAll('[required]');
     required.forEach(field => {
       if (!field.value.trim()) {
-        field.closest('.inquiry-form-group').classList.add('has-error');
+        field.closest('.hero-form-group').classList.add('has-error');
         isValid = false;
       }
     });
@@ -989,7 +1244,7 @@ const InquiryForm = {
     if (email && email.value) {
       const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!pattern.test(email.value)) {
-        email.closest('.inquiry-form-group').classList.add('has-error');
+        email.closest('.hero-form-group').classList.add('has-error');
         isValid = false;
       }
     }
@@ -1017,40 +1272,32 @@ const InquiryForm = {
       
       // Show success
       this.form.style.display = 'none';
-      this.successMsg.classList.add('active');
+      this.successMsg.style.display = 'block';
       
     } catch (error) {
       console.error(error);
       alert('Something went wrong. Please try again or email us directly.');
     } finally {
       this.submitBtn.disabled = false;
-      this.submitBtn.textContent = 'Submit Custom Request';
+      this.submitBtn.textContent = 'Get My Quote';
     }
   }
 };
 
-window.submitCustomInquiry = function(e) {
+window.submitHeroInquiry = function(e) {
   e.preventDefault();
   
-  if (!InquiryForm.validate()) return;
+  if (!HeroForm.validate()) return;
   
   const formData = {
-    name: InquiryForm.form.querySelector('[name="name"]').value,
-    email: InquiryForm.form.querySelector('[name="email"]').value,
-    phone: InquiryForm.form.querySelector('[name="phone"]').value,
-    category: InquiryForm.form.querySelector('[name="category"]').value,
-    quantity: InquiryForm.form.querySelector('[name="quantity"]').value,
-    timeline: InquiryForm.form.querySelector('[name="timeline"]').value,
-    details: InquiryForm.form.querySelector('[name="details"]').value
+    name: HeroForm.form.querySelector('[name="name"]').value,
+    email: HeroForm.form.querySelector('[name="email"]').value,
+    category: HeroForm.form.querySelector('[name="category"]').value,
+    quantity: HeroForm.form.querySelector('[name="quantity"]').value,
+    details: HeroForm.form.querySelector('[name="details"]').value
   };
   
-  InquiryForm.submit(formData);
-};
-
-window.resetForm = function() {
-  InquiryForm.form.reset();
-  InquiryForm.form.style.display = 'grid';
-  InquiryForm.successMsg.classList.remove('active');
+  HeroForm.submit(formData);
 };
 
 // Smooth scroll for nav links
